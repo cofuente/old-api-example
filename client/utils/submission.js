@@ -1,7 +1,7 @@
 
 var axios = require('axios');
 
-const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? 'http://localhost:1337' : 'https://postgress-express-backend.herokuapp.com'
+const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? 'http://localhost:1337' : 'https://secure-form-api.herokuapp.com'
 
 const options = {
   headers: {

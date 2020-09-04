@@ -1,10 +1,10 @@
 {
-  "name": "postgres-express-backend",
-  "version": "1.0.0",
+  "name": "secure-forms-api",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\"",
     "seed": "node server/utils/seed.js",
     "methods": "node server/utils/methods.js",
     "start": "node index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cofuente/postgres-express-backend.git"
+    "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
   },
   "author": "Chiara Marcial Martínez, Mohawk Greene",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cofuente/postgres-express-backend/issues"
+    "url": "https://github.com/next-harm-reduction/secure-form-api/issues"
   },
-  "homepage": "https://github.com/cofuente/postgres-express-backend#readme",
+  "homepage": "https://github.com/next-harm-reduction/secure-form-api#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
@@ -53,7 +53,10 @@
     "sequelize": "^5.21.7"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "prettier": "^2.0.5"
+    "mocha": "^8.1.3",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2"
   }
 }
