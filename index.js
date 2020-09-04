@@ -70,3 +70,5 @@ async function bootFullStack() {
 }
 
 bootFullStack()
+
+module.export = fullStack
