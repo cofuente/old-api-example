@@ -14,11 +14,15 @@ jobs:
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login 
-    - name: Build and push
+    - name: Push to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku run npm run seed 
+      run: git push heroku master 
+    - name: Run Seed
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku run npm run seed -a ${{ secrets.HEROKU_API_KEY }}
     - name: Boot API
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku run npm run start
+      run: heroku run npm run sstart -a ${{ secrets.HEROKU_API_KEY }}
