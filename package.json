@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\"",
     "seed": "node server/utils/seed.js",
     "methods": "node server/utils/methods.js",
     "start": "node index.js",
