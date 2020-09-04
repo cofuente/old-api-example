@@ -16,9 +16,9 @@ jobs:
     - name: Check for Updates
       run: npm update heroku 
     - name: Login
+      uses: actions/heroku@master
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku login 
     - name: Push to Heroku
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
@@ -26,7 +26,8 @@ jobs:
     - name: Run Seed
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku run npm run seed -a ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}  
+      run: heroku run npm run seed -a ${{ secrets.HEROKU_APP_NAME }}
     - name: Boot API
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
