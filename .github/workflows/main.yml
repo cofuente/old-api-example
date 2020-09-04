@@ -15,22 +15,15 @@ jobs:
     - uses: actions/checkout@v1
     - name: Check for Updates
       run: npm update heroku 
-    - name: Login
-      uses: actions/heroku@master
+    - name: Login to Heroku Container registry
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-    - name: Push to Heroku
-      env:
-        HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
-        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }} 
-      if: github.ref == 'refs/heads/master' && job.status == 'success'
-      run: git push heroku master
-    - name: Run Seed
+      run: heroku container:login 
+    - name: Build and push
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}  
-      run: heroku run npm run seed -a ${{ secrets.HEROKU_APP_NAME }}
-    - name: Boot API
+      run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
+    - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku run npm run start -a ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
