@@ -5,7 +5,7 @@ const express = require('express')
 const { db } = require('./server/db/models')
 const logger = require('./server/utils/logger')
 const PORT = process.env.PORT || 1337
-const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://postgress-express-backend.herokuapp.com'
+const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com/'
 const fullStack = express()
 const buildStack = async () => {
   // logging middleware
