@@ -1,0 +1,30 @@
+const {expect} = require('chai')
+const request = require('supertest')
+const db = require('../db/_db')
+const app = require('../index')
+const Form = db.model('form')
+
+describe('Form routes', () => {
+  beforeEach(() => {
+    return db.sync({force: true})
+  })
+
+  describe('/api/forms/', () => {
+    // const whateverForm = 'whatever'
+
+    beforeEach(() => {
+      return Form.create({
+        // form: whateverForm
+      })
+    })
+
+    it('GET /api/forms', async () => {
+      const res = await request(app)
+        .get('/api/forms')
+        .expect(200)
+
+      expect(res.body).to.be.an('array')
+      // expect(res.body[0].email).to.be.equal(whateverForm)
+    })
+  }) // end describe('/api/forms')
+}) // end describe('Form routes')
