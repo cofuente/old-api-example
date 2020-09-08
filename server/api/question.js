@@ -38,8 +38,11 @@ router.get('/:questionUUID', async (req, res, next) => {
 // delete a question
 router.delete('/:questionUUID', async (req, res, next) => {
   try {
-    await Question.destroy({ where: { questionUUID: req.params.questionUUID } })
-    res.status(204).send('deletion complete')
+    let requestedQuestion = await Question.findByPk(req.params.questionUUID)
+    if (requestedQuestion) {
+      await Question.destroy({ where: { questionUUID: req.params.questionUUID } })
+      res.status(204).send('deletion complete')
+    } else res.status(404).send('question not found')
   } catch (error) {
     next(error)
   }
