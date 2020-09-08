@@ -27,7 +27,7 @@ const bootServer = async () => {
   try {
     await db.sync()
     await server.listen(PORT)
-console.log(chalk.black.bgBlueBright('Server is up and running'))
+    console.log(chalk.black.bgBlueBright('Server is up and running'))
   } catch (err) {
     console.error(err)
   }
