@@ -12,23 +12,12 @@ const server = express()
 // session middleware 
 server.use(
   session({
-    secret: process.env.SESSION_SECRET || 'abc123',
-    cookie: { 
-      secure: true,
-      maxAge: 300000
-    }, // 5 mins for testing
+    secret: process.env.SESSION_SECRET || 'stop the unnecessary harm',
     store: sessionStore,
-    resave: false, // touch is enabled in sequelize store
+    resave: false,
     saveUninitialized: false
   })
 )
-
-// session counter function, maybe best to save it in utils folder
-server.use(function (req, res, next) {
-  if (!req.session.counter) req.session.counter = 0
-  console.log('counter', ++req.session.counter) // increment THEN log
-  next()
-
 // logging middleware
 server.use(logger)
 
