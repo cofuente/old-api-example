@@ -12,7 +12,8 @@ const server = express()
 // session middleware 
 server.use(
   session({
-    secret: process.env.SESSION_SECRET || 'stop the unnecessary harm',
+    secret: process.env.SESSION_SECRET || 'abc123',
+    cookie: { maxAge: 300000 }, // 5 mins for testing
     store: sessionStore,
     resave: false,
     saveUninitialized: false
