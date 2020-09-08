@@ -2,12 +2,32 @@ const path = require('path')
 const chalk = require('chalk')
 const bodyParser = require('body-parser')
 const express = require('express')
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
+const sessionStore = new SequelizeStore({db})
 const logger = require('./server/utils/logger')
 const PORT = process.env.PORT || 1337
 const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const fullStack = express()
 const buildStack = async () => {
+  // session middleware 
+  fullstack.use(
+    session({
+      secret: process.env.SESSION_SECRET || 'stop the unnecessary harm',
+      store: sessionStore,
+      resave: false,
+      saveUninitialized: false
+    })
+  )
+
+    // session counter function, maybe best to save it in utils folder
+  fullstack.use(function (req, res, next) {
+    if (!req.session.counter) req.session.counter = 0
+    console.log('counter', ++req.session.counter) // increment THEN log
+    next() // needed to continue through express middleware
+  })
+  
   // logging middleware
   fullStack.use(logger)
 
@@ -37,6 +57,7 @@ const postFormattedData = require('./client/utils/submission.js')
 
 const bootServer = async () => {
   try {
+    await sessionStore.sync()
     await db.sync()
     console.log(chalk.green(`Postgres server is up and running!`))
     await fullStack.listen(PORT)
