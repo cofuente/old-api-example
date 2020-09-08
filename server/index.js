@@ -1,11 +1,23 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const chalk = require('chalk')
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./db/models')
+const sessionStore = new SequelizeStore({db})
+const chalk = require('chalk')
 const logger = require('./utils/logger')
 const PORT = process.env.PORT || 1337
 const server = express()
 
+// session middleware 
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'stop the unnecessary harm',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+  })
+)
 // logging middleware
 server.use(logger)
 
