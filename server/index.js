@@ -45,6 +45,7 @@ server.use((err, req, res, next) => {
 
 const bootServer = async () => {
   try {
+    await sessionStore.sync()
     await db.sync()
     await server.listen(PORT)
     console.log(chalk.black.bgBlueBright('Server is up and running'))
