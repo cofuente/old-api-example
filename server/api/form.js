@@ -69,8 +69,11 @@ router.put('/r/:formUUID', async (req, res, next) => {
 // delete a form
 router.delete('/:formUUID', async (req, res, next) => {
   try {
-    await Form.destroy({ where: { formUUID: req.params.formUUID } })
-    res.status(200).send('deletion complete')
+    let requestedForm = await Form.findByPk(req.params.formUUID)
+    if (requestedForm) {
+      await Form.destroy({ where: { formUUID: req.params.formUUID } })
+      res.status(200).send('deletion complete')
+    } else res.status(404).send('form not found')
   } catch (error) {
     next(error)
   }
