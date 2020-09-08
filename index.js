@@ -12,6 +12,7 @@ const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://loca
 const fullStack = express()
 
 const buildStack = async () => {
+  
   // session middleware 
   fullStack.use(
     session({
@@ -25,8 +26,8 @@ const buildStack = async () => {
     // session counter function, maybe best to save it in utils folder
   fullStack.use(function (req, res, next) {
     if (!req.session.counter) req.session.counter = 0
-    console.log('counter', ++req.session.counter) // increment THEN log
-    next() // needed to continue through express middleware
+    console.log('counter', ++req.session.counter)
+    next()
   })
   
   // logging middleware
