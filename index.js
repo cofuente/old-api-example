@@ -17,9 +17,12 @@ const buildStack = async () => {
   fullStack.use(
     session({
       secret: process.env.SESSION_SECRET || 'abc123',
-      cookie: { maxAge: 300000 }, // 5 mins for testing
+      cookie: { 
+        secure: true,
+        maxAge: 300000
+      }, // 5 mins for testing
       store: sessionStore,
-      resave: false,
+      resave: false, // touch is enabled in sequelize store
       saveUninitialized: false
     })
   )
