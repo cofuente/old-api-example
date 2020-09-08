@@ -27,7 +27,8 @@ server.use(
 server.use(function (req, res, next) {
   if (!req.session.counter) req.session.counter = 0
   console.log('counter', ++req.session.counter) // increment THEN log
-  next()
+  next() // needed to continue through express middleware
+})
 
 // logging middleware
 server.use(logger)
