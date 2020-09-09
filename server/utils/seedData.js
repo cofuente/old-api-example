@@ -446,7 +446,7 @@ const questionData = [
     questionPrompt: 'Please provide a user handle, we will use this handle to communicate with you. Ensure the handle is one you\'ll remember. Please do not use any spaces. Examples are: Panda223, JoeShmo, Liz_Star, 777Ryder',
   },
   {
-    questionUUID: '149deff5-7886-401d-a456-9fd480eb912c',
+    questionUUID: '96ec1ef1-0767-41f6-9f19-8b538b7a09d6',
     required: true,
     questionType: 'input',
     questionPrompt: 'Please provide your user handle again. (Must be matching.)',
