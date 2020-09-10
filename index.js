@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') { // may have to update this to a dif
 }
 
 const buildStack = async () => {
-  console.log(process.env.SESSIONS_SECRET)
+
   // session middleware 
   fullStack.use(
     session({
