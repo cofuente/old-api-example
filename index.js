@@ -12,8 +12,7 @@ const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://loca
 const fullStack = express()
 
 const buildStack = async () => {
-  const secret = process.env.SESSION_SECRET || 'abc123'
-  console.log(secret)
+
   // session middleware 
   fullStack.use(
     session({
