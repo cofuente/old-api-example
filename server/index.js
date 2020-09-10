@@ -9,10 +9,14 @@ const logger = require('./utils/logger')
 const PORT = process.env.PORT || 1337
 const server = express()
 
+if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
+  require('dotenv').config()
+}
+
 // session middleware 
 server.use(
   session({
-    secret: process.env.SESSION_SECRET || 'abc123',
+    secret: process.env.SESSIONS_SECRET || 'abc123',
     cookie: { 
       secure: true,
       maxAge: 300000
