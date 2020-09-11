@@ -31,13 +31,6 @@ const buildStack = async () => {
     })
   )
 
-    // session counter function, maybe best to save it in utils folder
-  fullStack.use(function (req, res, next) {
-    if (!req.session.counter) req.session.counter = 0
-    console.log('counter', ++req.session.counter)
-    next()
-  })
-  
   // logging middleware
   fullStack.use(logger)
 
