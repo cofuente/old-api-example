@@ -25,7 +25,7 @@ const buildStack = async () => {
       name: process.env.SECRET_SESSION_NAME || 'nextharm',
       cookie: { 
         secure: true,
-        maxAge: 3 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+        maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
       },
       store: sessionStore,
       resave: true,
