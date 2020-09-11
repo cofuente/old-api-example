@@ -31,7 +31,7 @@ const buildStack = async () => {
       saveUninitialized: false
     })
   )
-
+  
   fullStack.use((req, res, next) => {
     if (req.session.views) req.session.views++
     else req.session.views = 1
