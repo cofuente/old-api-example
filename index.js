@@ -5,7 +5,12 @@ const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
-const sessionStore = new SequelizeStore({db})
+const storeOptions = {
+  db,
+  checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+  expiration: 24 * 60 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
+}
+const sessionStore = new SequelizeStore(storeOptions)
 const logger = require('./server/utils/logger')
 const PORT = process.env.PORT || 1337
 const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
@@ -31,6 +36,13 @@ const buildStack = async () => {
     })
   )
   await db.sync()
+
+  fullStack.use((req, res, next) => {
+    if (req.session.views) req.session.views++
+    else req.session.views = 1
+    next()
+  })
+
   // logging middleware
   fullStack.use(logger)
 
