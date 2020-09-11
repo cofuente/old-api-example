@@ -1,11 +1,12 @@
+const chalk = require('chalk')
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./db/models')
-const sessionStore = new SequelizeStore({db})
-const chalk = require('chalk')
-const logger = require('./utils/logger')
+const {customOptions, logger} = require('./utils')
+const storeOptions = customOptions(db) 
+const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
 const server = express()
 
@@ -17,22 +18,16 @@ if (process.env.NODE_ENV !== 'production') { // may have to update this to a dif
 server.use(
   session({
     secret: process.env.SESSIONS_SECRET || 'abc123',
+    name: process.env.SECRET_SESSION_NAME || 'nextharm',
     cookie: { 
       secure: true,
-      maxAge: 300000
-    }, // 5 mins for testing
+      maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+    },
     store: sessionStore,
-    resave: false, // touch is enabled in sequelize store
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
   })
 )
-
-// session counter function, maybe best to save it in utils folder
-server.use(function (req, res, next) {
-  if (!req.session.counter) req.session.counter = 0
-  console.log('counter', ++req.session.counter) // increment THEN log
-  next() // needed to continue through express middleware
-})
 
 // logging middleware
 server.use(logger)
@@ -56,7 +51,7 @@ const bootServer = async () => {
     await sessionStore.sync()
     await db.sync()
     await server.listen(PORT)
-    console.log(chalk.black.bgBlueBright('Server is up and running'))
+    console.log(chalk.white.bgBlueBright(` API is listening on port:${PORT} `))
   } catch (err) {
     console.error(err)
   }
