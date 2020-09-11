@@ -30,6 +30,11 @@ const buildStack = async () => {
       saveUninitialized: false
     })
   )
+  fullStack.use(function (req, res, next) {
+    if (!req.session.counter) req.session.counter = 0
+    console.log('counter', ++req.session.counter) 
+    next() 
+  })
 
   // logging middleware
   fullStack.use(logger)
