@@ -30,7 +30,7 @@ const buildStack = async () => {
       saveUninitialized: false
     })
   )
-
+  await db.sync()
   // logging middleware
   fullStack.use(logger)
 
@@ -61,7 +61,6 @@ const postFormattedData = require('./client/utils/submission.js')
 const bootServer = async () => {
   try {
     await sessionStore.sync()
-    await db.sync()
     console.log(chalk.green(`Postgres server is up and running!`))
     await fullStack.listen(PORT)
     console.log(chalk.blue(`API listening on port:${PORT}`))
