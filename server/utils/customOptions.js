@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 // The interval at which to cleanup expired sessions in the store (in milliseconds).
 const interval = 2 * 60 * 1000
 
-const customizeSessions = (db) => {
+const customOptions = (db) => {
 
   const sessions = db.define("sessions", {
     sid: {
@@ -27,4 +27,4 @@ const customizeSessions = (db) => {
   }
 }
 
-module.exports = customizeSessions
+module.exports = customOptions

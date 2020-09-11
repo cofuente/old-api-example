@@ -5,8 +5,8 @@ const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
-const {customizeSessions, logger} = require('./server/utils')
-const storeOptions = customizeSessions(db) 
+const {customOptions, logger} = require('./server/utils')
+const storeOptions = customOptions(db) 
 const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
 const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'

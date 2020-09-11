@@ -1,8 +1,8 @@
 const logger = require('./logger')
-const customizeSessions = require('./customizeSessions')
+const customOptions = require('./customOptions')
 
 
 module.exports = {
   logger,
-  customizeSessions
+  customOptions
 }
