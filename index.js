@@ -35,7 +35,6 @@ const buildStack = async () => {
       saveUninitialized: false
     })
   )
-  await db.sync()
 
   fullStack.use((req, res, next) => {
     if (req.session.views) req.session.views++
@@ -72,6 +71,7 @@ const postFormattedData = require('./client/utils/submission.js')
 
 const bootServer = async () => {
   try {
+    await db.sync()
     await sessionStore.sync()
     console.log(chalk.green(`Postgres server is up and running!`))
     await fullStack.listen(PORT)
