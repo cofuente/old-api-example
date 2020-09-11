@@ -5,11 +5,8 @@ const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
-const storeOptions = {
-  db,
-  checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
-  expiration: 24 * 60 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
-}
+const interval = 2 * 60 * 1000 // The interval at which to cleanup expired sessions in the store (in milliseconds).
+const storeOptions = { db, checkExpirationInterval: interval } 
 const sessionStore = new SequelizeStore(storeOptions)
 const logger = require('./server/utils/logger')
 const PORT = process.env.PORT || 1337
@@ -28,8 +25,8 @@ const buildStack = async () => {
       secret: process.env.SESSIONS_SECRET || 'abc123',
       cookie: { 
         secure: true,
-        maxAge: 300000
-      }, // 5 mins for testing
+        maxAge: 3 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+      },
       store: sessionStore,
       resave: false, // touch is enabled in sequelize store
       saveUninitialized: false
