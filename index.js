@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 1337
 const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const fullStack = express()
 
-if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
-  require('dotenv').config()
-}
+// if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
+//   require('dotenv').config()
+// }
 
 const buildStack = async () => {
 
