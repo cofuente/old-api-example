@@ -1,12 +1,29 @@
 const path = require('path')
 const chalk = require('chalk')
+const Sequelize = require('sequelize')
 const bodyParser = require('body-parser')
 const express = require('express')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
+const sessions = db.define("sessions", {
+  sid: {
+    type: Sequelize.STRING,
+    primaryKey: true,
+    unique: true
+  },
+  expires: Sequelize.DATE,
+  data: Sequelize.STRING(50000),
+})
+function extendDefaultFields(defaults, session) {
+  return {
+    data: defaults.data,
+    expires: defaults.expires,
+  }
+}
+
 const interval = 2 * 60 * 1000 // The interval at which to cleanup expired sessions in the store (in milliseconds).
-const storeOptions = { db, checkExpirationInterval: interval } 
+const storeOptions = {db, checkExpirationInterval: interval, table: "sessions", extendDefaultFields} 
 const sessionStore = new SequelizeStore(storeOptions)
 const logger = require('./server/utils/logger')
 const PORT = process.env.PORT || 1337
