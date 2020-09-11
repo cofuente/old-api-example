@@ -1,8 +1,9 @@
 const logger = require('./logger')
-const customOptions = require('./customOptions')
-
+const customOptions = require('./options')
+const seedData = require('./data')
 
 module.exports = {
   logger,
-  customOptions
+  customOptions,
+  seedData
 }

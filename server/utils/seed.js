@@ -4,12 +4,12 @@ const db = require('../db/_db')
 const chalk = require('chalk')
 const chalkAnimation = require('chalk-animation')
 const {Form, Question, Answer, Submission, QuestionForm} = require('../db/models')
-const questionData = require('./seedData')
+const { seedData } = require('./')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
-  const questionsArr = questionData.map((x)=>Question.create(x))
+  const questionsArr = seedData.map((x)=>Question.create(x))
   const questions = await Promise.all(questionsArr)
   const questionUUIDs = questions.map(x => x.dataValues.questionUUID)
 
