@@ -28,6 +28,7 @@ server.use(
     saveUninitialized: true
   })
 )
+sessionStore.sync()
 
 // logging middleware
 server.use(logger)
@@ -48,7 +49,6 @@ server.use((err, req, res, next) => {
 
 const bootServer = async () => {
   try {
-    await sessionStore.sync()
     await db.sync()
     await server.listen(PORT)
     console.log(chalk.white.bgBlueBright(` API is listening on port:${PORT} `))
