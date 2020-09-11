@@ -22,6 +22,7 @@ const buildStack = async () => {
   fullStack.use(
     session({
       secret: process.env.SESSIONS_SECRET || 'abc123',
+      name: process.env.SECRET_SESSION_NAME || 'nextharm',
       cookie: { 
         secure: true,
         maxAge: 3 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
