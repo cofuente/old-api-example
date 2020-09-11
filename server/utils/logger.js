@@ -42,7 +42,7 @@ const format = (tokens, req, res) =>{
   const remoteAddress = tokens['remote-addr'](req, res)
   const remoteUser = tokens['remote-user'](req, res) == undefined ? 'no remote user': tokens['remote-user'](req, res)
   const userAgent = tokens['user-agent'](req, res)
-  
+
   return [
     chalk.grey(httpVersion),
     methodColor(method),
