@@ -23,7 +23,8 @@ const customOptions = (db) => {
     db,
     checkExpirationInterval: interval,
     table: "sessions",
-    extendDefaultFields
+    extendDefaultFields,
+    disableTouch: true
   }
 }
 

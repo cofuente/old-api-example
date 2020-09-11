@@ -27,17 +27,11 @@ const buildStack = async () => {
         maxAge: 3 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
       },
       store: sessionStore,
-      resave: false, // touch is enabled in sequelize store
-      saveUninitialized: false
+      resave: true,
+      saveUninitialized: true
     })
   )
   
-  fullStack.use((req, res, next) => {
-    if (req.session.views) req.session.views++
-    else req.session.views = 1
-    next()
-  })
-
   // logging middleware
   fullStack.use(logger)
 
