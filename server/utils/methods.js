@@ -9,7 +9,7 @@ const {
   // Submission
 } = require('../db/models')
 
-async function methodTest() {
+async function runMethod() {
   await db.sync()
   console.log('DB Synced!')
   try {
@@ -22,9 +22,9 @@ async function methodTest() {
 }
 
 async function runMethodTest() {
-  console.log('attempting methodTest...')
+  console.log('attempting runMethod...')
   try {
-    await methodTest()
+    await runMethod()
   } catch (err) {
     console.error(err)
     process.exitCode = 1
@@ -39,4 +39,4 @@ if (module === require.main) {
   runMethodTest()
 }
 
-module.exports = methodTest
+module.exports = runMethod

@@ -5,15 +5,15 @@ const statusColor = (statusCode) => {
   const status = statusCode.toString()[0]
   switch (status) {
     case '5': 
-      return chalk.red(statusCode)
+      return chalk.black.bgRed(` ${statusCode} `)
     case '4': 
-      return chalk.yellow(statusCode)
+      return chalk.black.bgYellow(` ${statusCode} `)
     case '3': 
-      return chalk.cyan(statusCode)
+      return chalk.black.bgCyan(` ${statusCode} `)
     case '2': 
-      return chalk.green(statusCode)
+      return chalk.black.bgGreen(` ${statusCode} `)
     default:
-      return statusCode
+      return chalk.white.bgBlack(` ${statusCode} `)
   }
 }
 
@@ -34,15 +34,24 @@ const methodColor = (method) => {
 
 
 const format = (tokens, req, res) =>{
+  const httpVersion = `HTTPv${tokens['http-version'](req, res)}`
+  const method = tokens.method(req, res)
+  const url = tokens.url(req, res)
+  const httpStatus = tokens.status(req, res)
+  const referer = tokens['referrer'](req, res) == undefined ? 'no referer': tokens['referrer'](req, res)
+  const remoteAddress = tokens['remote-addr'](req, res)
+  const remoteUser = tokens['remote-user'](req, res) == undefined ? 'no remote user': tokens['remote-user'](req, res)
+  const userAgent = tokens['user-agent'](req, res)
+
   return [
-    `HTTPv${tokens['http-version'](req, res)}`,
-    methodColor(tokens.method(req, res)),
-    tokens.url(req, res),
-    statusColor(tokens.status(req, res)),
-    tokens['referrer'](req, res),
-    tokens['remote-addr'](req, res),
-    tokens['remote-user'](req, res),
-    tokens['user-agent'](req, res),
+    chalk.grey(httpVersion),
+    methodColor(method),
+    chalk.grey(url),
+    statusColor(httpStatus),
+    chalk.blue(referer),
+    chalk.cyan(remoteAddress),
+    chalk.blueBright(remoteUser),
+    chalk.green(userAgent)
   ].join(' ')
 }
 

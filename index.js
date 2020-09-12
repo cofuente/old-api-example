@@ -2,12 +2,37 @@ const path = require('path')
 const chalk = require('chalk')
 const bodyParser = require('body-parser')
 const express = require('express')
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./server/db/models')
-const logger = require('./server/utils/logger')
+const {customOptions, logger} = require('./server/utils')
+const storeOptions = customOptions(db) 
+const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
 const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const fullStack = express()
+
+if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
+  require('dotenv').config()
+}
+
 const buildStack = async () => {
+
+  // session middleware 
+  fullStack.use(
+    session({
+      secret: process.env.SESSIONS_SECRET || 'abc123',
+      name: process.env.SECRET_SESSION_NAME || 'nextharm',
+      cookie: { 
+        secure: true,
+        maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+      },
+      store: sessionStore,
+      resave: true,
+      saveUninitialized: true
+    })
+  )
+  
   // logging middleware
   fullStack.use(logger)
 
@@ -38,6 +63,7 @@ const postFormattedData = require('./client/utils/submission.js')
 const bootServer = async () => {
   try {
     await db.sync()
+    await sessionStore.sync()
     console.log(chalk.green(`Postgres server is up and running!`))
     await fullStack.listen(PORT)
     console.log(chalk.blue(`API listening on port:${PORT}`))

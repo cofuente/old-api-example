@@ -1,10 +1,34 @@
+const chalk = require('chalk')
 const express = require('express')
 const bodyParser = require('body-parser')
-const chalk = require('chalk')
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./db/models')
-const logger = require('./utils/logger')
+const {customOptions, logger} = require('./utils')
+const storeOptions = customOptions(db) 
+const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
 const server = express()
+
+if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
+  require('dotenv').config()
+}
+
+// session middleware 
+server.use(
+  session({
+    secret: process.env.SESSIONS_SECRET || 'abc123',
+    name: process.env.SECRET_SESSION_NAME || 'nextharm',
+    cookie: { 
+      secure: true,
+      maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+    },
+    store: sessionStore,
+    resave: true,
+    saveUninitialized: true
+  })
+)
+sessionStore.sync()
 
 // logging middleware
 server.use(logger)
@@ -27,7 +51,7 @@ const bootServer = async () => {
   try {
     await db.sync()
     await server.listen(PORT)
-console.log(chalk.black.bgBlueBright('Server is up and running'))
+    console.log(chalk.white.bgBlueBright(` API is listening on port:${PORT} `))
   } catch (err) {
     console.error(err)
   }
