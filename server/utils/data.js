@@ -26,6 +26,7 @@ const seedData = [
   },
   { 
     questionUUID: '9c8f020c-9ca9-4abc-90b2-817c6f49b1fa',
+    required: false,
     questionType: 'input',
     questionPrompt: 'Address (Apartment or Unit No.)',
   },
@@ -171,6 +172,7 @@ const seedData = [
   },
   {
     questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
+    required: false,
     questionType: 'checkbox',
     questionPrompt: 'My ethnicity could be described as: (check all that apply)',
     possibleAnswers: [
@@ -185,6 +187,7 @@ const seedData = [
   },
   { 
     questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
+    required: false,
     questionType: 'input',
     questionPrompt: 'Is there anything else you would like us to know to describe your identity?',
   },
@@ -203,6 +206,7 @@ const seedData = [
   },
   { 
     questionUUID: '2994a592-f148-4e91-8d4b-85fb85b0eb30',
+    required: false,
     questionType: 'heading',
     questionPrompt: 'AS A REMINDER, THIS FORM IS ENCRYPTED AND WILL NOT BE ACCESSED BY A THIRD PARTY.',
   },
@@ -236,11 +240,13 @@ const seedData = [
   },
   {
     questionUUID: '1d546604-8e0c-442b-b9c6-b10082de8b27',
+    required: false,
     questionType: 'input',
     questionPrompt: 'Have you had issues related to abscesses, cellulitis, endocarditis? Please explain.',
   },
   { 
     questionUUID: '0dd4fd38-3969-4d2d-a1da-48093a762c66',
+    required: false,
     questionType: 'checkbox',
     questionPrompt: 'Have you been diagnosed with any of the following (check all that apply)',
     possibleAnswers: [
@@ -285,11 +291,13 @@ const seedData = [
   },
   {
     questionUUID: '7f4a3588-3926-4132-a325-c7f33a1fbf25',
+    required: false,
     questionType: 'heading',
     questionPrompt: 'THE NEXT FEW QUESTIONS ARE ABOUT DRUGS AND DRUG USE',
   },
   { 
     questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
+    required: false,
     questionType: 'paragraph',
     questionPrompt: 'As a reminder this form is secure, your information will be kept confidential.',
 
@@ -353,11 +361,13 @@ const seedData = [
   },
   { 
     questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
+    required: false,
     questionType: 'heading',
     questionPrompt: 'THE FOLLOWING QUESTIONS ARE ABOUT OPIOID OVERDOSE',
   },
   { 
     questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
+    required: false,
     questionType: 'paragraph',
     questionPrompt: 'One of the most important things we do is look for ways to reach more people with injection supplies and naloxone-- we are looking to partner with people in the community who can help distribute naloxone to keep others safe.',
   },
@@ -408,11 +418,13 @@ const seedData = [
   },
   {
     questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
+    required: false,
     questionType: 'input',
     questionPrompt: 'Is there anything else we should know about you, your history, or situation?',
   },
   {
     questionUUID: '0f506b40-0d2a-41a4-a094-77ede62ba327',
+    required: false,
     questionType: 'input',
     questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.',
   },
@@ -453,6 +465,7 @@ const seedData = [
   },
   {
     questionUUID: 'eecfe0c7-8c0a-428f-a3bc-8de4bc6e268d',
+    required: false,
     questionType: 'paragraph',
     questionPrompt: 'Thank you for filling out this enrollment form. Text the handle you created above to 917-828-0293, email it to jamie@nextdistro.org, or message /u/nextdistro on Reddit. We\'ll respond about getting you supplies within 48 hours.',
   }
