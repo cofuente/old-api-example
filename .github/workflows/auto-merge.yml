@@ -11,18 +11,8 @@ jobs:
 
     if: github.actor == 'dependabot[bot]'
     steps:
-      - uses: actions/github-script@v3
-        with:
-          script: |
-            github.pullRequests.createReview({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number,
-              event: 'APPROVE'
-            })
-            github.pullRequests.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number
-            })
-          github-token: ${{secrets.GH_TOKEN}}
+  - name: Merge me!
+    uses: ridedott/merge-me-action@master
+    with:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      MERGE_METHOD: MERGE
