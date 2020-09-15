@@ -1,8 +1,12 @@
-# .github/workflows/continuous-integration.yaml
+name: "Automerge Dependabot"
+
+on:
+  pull-request:
+    branches:
+      - master
 
 jobs:
   merge-me:
-    name: "Automerge Dependabot"
     runs-on: ubuntu-latest
     steps:
       - name: "Merge me!"
