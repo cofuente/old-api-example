@@ -7,12 +7,11 @@ updates:
     schedule:
       timezone: "America/New_York" # Eastern Standard Time (UTC -04:00)
       interval: "daily"
-      time: "17:30" # temporarily set to 5:30 to test
+      time: "09:00"
     allow:
       - dependency-type: "production"
     labels: # Raise all PR's with custom labels
       - "dependencies"
-      - "npm"
       - "security"
 # Maintain dependencies for GitHub Actions    
   - package-ecosystem: "github-actions"
@@ -21,8 +20,7 @@ updates:
     schedule:
       timezone: "America/New_York"  # Eastern Standard Time (UTC -04:00)
       interval: "daily"
-      time: "17:30"
+      time: "09:00"
     labels:
       - "dependencies"
-      - "github-actions"
       - "security"
