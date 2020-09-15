@@ -1,17 +1,11 @@
-name: "Automerge Dependabot"
-
-on:
-  pull_request:
-    branches:
-      - master
+# .github/workflows/continuous-integration.yaml
 
 jobs:
-  worker:
+  merge-me:
+    name: "Automerge Dependabot"
     runs-on: ubuntu-latest
-
-    if: github.actor == 'dependabot[bot]'
     steps:
-    uses: ridedott/merge-me-action@master
-    with:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      MERGE_METHOD: MERGE
+      - name: "Merge me!"
+        uses: ridedott/merge-me-action@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
