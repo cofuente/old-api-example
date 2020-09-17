@@ -6,10 +6,11 @@ on:
       - master
 
 jobs:
-  merge-me:
+  auto-merge:
     runs-on: ubuntu-latest
+
     steps:
-      - name: "Merge me!"
-        uses: ridedott/merge-me-action@master
+      - uses: actions/checkout@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          github-token: ${{secrets.GH_TOKEN}}
