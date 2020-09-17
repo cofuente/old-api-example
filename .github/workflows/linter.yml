@@ -1,0 +1,33 @@
+name: Super-Linter
+
+on: push
+
+jobs:
+
+  super-lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: ['13.3.0']
+
+    steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Runs the Super-Linter action
+      - name: Run Super-Linter
+        uses: github/super-linter@v3
+        env:
+          DEFAULT_BRANCH: master
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_YAML: true
+          VALIDATE_MD: true
+          VALIDATE_JSON: true
+          VALIDATE_JAVASCRIPT_ES: true
+          JAVASCRIPT_ES_CONFIG_FILE: eslintrc.js
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
