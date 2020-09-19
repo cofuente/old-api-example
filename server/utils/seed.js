@@ -1,13 +1,23 @@
+/* eslint-disable no-undef */
 'use strict' // TODO: figure out why we're using strict here
 
-const db = require('../db/_db')
-const chalk = require('chalk')
-const chalkAnimation = require('chalk-animation')
-const {Form, Question, Answer, Submission, QuestionForm} = require('../db/models')
-const { seedData, dummySubmission } = require('./')
+import { sync, close } from '../db/_db'
+// import chalk from 'chalk'
+// import chalkAnimation from 'chalk-animation'
+import { 
+  Form, 
+  Question, 
+  // Answer, 
+  // Submission, 
+  // QuestionForm 
+} from '../db/models'
+import { 
+  seedData, 
+  // dummySubmission
+} from './'
 
 async function seed() {
-  await db.sync({force: true})
+  await sync({force: true})
   console.log('db synced!')
   // await dummySubmission('78d51d9e-0285-4022-81c5-7f14955315d0', seedData)
   const questionsArr = seedData.map((x)=>Question.create(x))
@@ -16,12 +26,12 @@ async function seed() {
 
   const forms = await Promise.all([
     Form.create({
-        formUUID: '78d51d9e-0285-4022-81c5-7f14955315d0',
-        title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program',
-        stateCode: 'NY',
-      }, {
-        include: [ Question ]
-      }
+      formUUID: '78d51d9e-0285-4022-81c5-7f14955315d0',
+      title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program',
+      stateCode: 'NY',
+    }, {
+      include: [ Question ]
+    }
     ).then(
       (form => form.addQuestions(questionUUIDs))
     ),
@@ -29,7 +39,7 @@ async function seed() {
 
   console.log(`seeded ${forms.length} forms`)
   console.log(`with ${questionUUIDs.length} questions`)
-  console.log(`seeded successfully`)
+  console.log('seeded successfully')
 }
 
 // Separated the `seed` function from the `runSeed` function.
@@ -44,7 +54,7 @@ async function runSeed() {
     process.exitCode = 1
   } finally {
     console.log('closing db connection')
-    await db.close()
+    await close()
     console.log('db connection closed')
   }
 }
@@ -53,9 +63,10 @@ async function runSeed() {
 // Execute the `seed` function, IF we ran this module directly (`node seed`).
 // `Async` functions always return a promise, so we can use `catch` to handle
 // any errors that might occur inside of `seed`.
+
 if (module === require.main) {
   runSeed()
 }
 
 // Exporting the seed function for testing purposes
-module.exports = seed
+export default seed
