@@ -1,23 +1,23 @@
 /* eslint-disable no-undef */
 'use strict' // TODO: figure out why we're using strict here
 
-import { sync, close } from '../db/_db'
+const db = require('../db/_db')
 // import chalk from 'chalk'
 // import chalkAnimation from 'chalk-animation'
-import { 
+const { 
   Form, 
   Question, 
   // Answer, 
   // Submission, 
   // QuestionForm 
-} from '../db/models'
-import { 
+} = require('../db/models')
+const { 
   seedData, 
   // dummySubmission
-} from './'
+} = require('./')
 
 async function seed() {
-  await sync({force: true})
+  await db.sync({force: true})
   console.log('db synced!')
   // await dummySubmission('78d51d9e-0285-4022-81c5-7f14955315d0', seedData)
   const questionsArr = seedData.map((x)=>Question.create(x))
@@ -54,7 +54,7 @@ async function runSeed() {
     process.exitCode = 1
   } finally {
     console.log('closing db connection')
-    await close()
+    await db.close()
     console.log('db connection closed')
   }
 }
@@ -69,4 +69,4 @@ if (module === require.main) {
 }
 
 // Exporting the seed function for testing purposes
-export default seed
+module.exports = seed
