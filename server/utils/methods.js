@@ -1,16 +1,16 @@
 /* eslint-disable no-undef */
 'use strict'
 
-import { sync, close } from '../db/_db'
-import {
-  Form,
-  // Question,
-  // Answer,
-  // Submission
-} from '../db/models'
+const db = require('../db/_db')
+const { 
+  Form, 
+  // Question, 
+  // Answer, 
+  // Submission, 
+} = require('../db/models')
 
 async function runMethod() {
-  await sync()
+  await db.sync()
   console.log('DB Synced!')
   try {
     const questionsBefore = await Form.getQuestions('e2ef8eca-d2cf-4e12-816e-8a970fc698e8')
@@ -30,7 +30,7 @@ async function runMethodTest() {
     process.exitCode = 1
   } finally {
     console.log('closing db connection')
-    await close()
+    await dbclose()
     console.log('db connection closed')
   }
 }
@@ -39,4 +39,4 @@ if (module === require.main) {
   runMethodTest()
 }
 
-export default runMethod
+module.exports = seed
