@@ -52,7 +52,7 @@ const buildStack = async () => {
   fullStack.use('/', express.static('./client/src/'))
 
   // error handling endware
-  fullStack.use((err, req, res, next) => {
+  fullStack.use((err, req, res) => {
     console.error(err)
     console.error(err.stack)
     res.status(err.status || 500).send(err.message || 'Internal server error.')
@@ -64,7 +64,7 @@ const bootServer = async () => {
   try {
     await db.sync()
     await sessionStore.sync()
-    console.log(chalk.green(`Postgres server is up and running!`))
+    console.log(chalk.green('Postgres server is up and running!'))
     await fullStack.listen(PORT)
     console.log(chalk.blue(`API listening on port:${PORT}`))
   } catch (err) {
@@ -78,10 +78,10 @@ const serveClient = async () => {
     await fullStack.get('/', (req, res) => {
       nextDistroEnrollmentForm.data.then( (data) => res.status(200).render('index', {data}))
     })
-    .post('/', function(req,res){
-      var data = req.body;
-      postFormattedData(data)
-    })    
+      .post('/', function(req){
+        var data = req.body
+        postFormattedData(data)
+      })    
     console.log(chalk.magenta(`Client awaits at ${current}`))
   } catch (err) {
     console.error(err)
