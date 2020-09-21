@@ -26,4 +26,4 @@ frontend.use(express.static(path.join(__dirname, './src/jade/next-distro-fe/')))
   })
 
 // Serve static files
-frontend.use('/static', express.static('client/public/'));
+frontend.use('/', express.static('client/src/'));

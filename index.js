@@ -49,7 +49,7 @@ const buildStack = async () => {
   fullStack.set('view engine', 'jade')
   
   // serve static files
-  fullStack.use('/static', express.static('./client/public/'))
+  fullStack.use('/', express.static('./client/src/'))
 
   // error handling endware
   fullStack.use((err, req, res, next) => {
