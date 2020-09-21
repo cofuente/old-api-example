@@ -33,6 +33,7 @@
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "imagemin-pngquant": "^9.0.1",
+    "jade": "^1.11.0",
     "morgan": "^1.10.0",
     "pg": "^8.0.3",
     "request": "^2.88.2",
