@@ -1,13 +1,14 @@
+/* eslint-disable no-undef */
 const chalkAnimation = require('chalk-animation')
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const PORT = process.env.PORT || 9000
-const frontend = new express();
+const frontend = new express()
 const nextDistroEnrollmentForm = require('./utils/data.js')
 
 frontend.use(cors())
-frontend.use(express.json());
+frontend.use(express.json())
 frontend.use(express.urlencoded({ extended: true }))
 
 // Serve Jade files 
@@ -26,4 +27,4 @@ frontend.use(express.static(path.join(__dirname, './src/jade/next-distro-fe/')))
   })
 
 // Serve static files
-frontend.use('/', express.static('client/src/'));
+frontend.use('/', express.static('client/src/'))
