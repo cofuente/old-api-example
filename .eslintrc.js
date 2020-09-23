@@ -1,38 +1,39 @@
-/* eslint-disable no-undef */
 module.exports = {
-  'env': {
-    'browser': true,
-    'es6': true,
-    'node': true
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+    jest: true,
+    mocha: true,
   },
-  'extends': 'eslint:recommended',
-  'globals': {
-    'Atomics': 'readonly',
-    'SharedArrayBuffer': 'readonly'
+  extends: [
+    'airbnb-base',
+    'plugin:node/recommended',
+  ],
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
-  'parserOptions': {
-    'ecmaVersion': 2018,
-    'sourceType': 'module'
-  },
-  'rules': {
-    'indent': [
+  rules: {
+    indent: [
       'error',
-      2
+      2,
     ],
-    'linebreak-style': [
+    quotes: [
       'error',
-      'unix'
+      'single',
     ],
-    'quotes': [
+    semi: [
       'error',
-      'single'
+      'never',
     ],
-    'semi': [
+    'no-console': [
       'error',
       'never'
-    ]
+    ],
+    'global-require': 'off',
   },
-  'ignorePatterns': [
+  ignorePatterns: [
     // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
     '**/*.spec.js',
     'client/src/scripts/*.*',
