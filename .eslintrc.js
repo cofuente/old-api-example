@@ -29,14 +29,17 @@ module.exports = {
     ],
     'no-console': [
       'error',
-      'never'
     ],
     'global-require': 'off',
+    'max-len': [
+      'error',
+      { code: 140 },
+    ],
   },
   ignorePatterns: [
     // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
     '**/*.spec.js',
     'client/src/scripts/*.*',
-    '**/*.min.js'
-  ]
+    '**/*.min.js',
+  ],
 }
