@@ -1,35 +1,35 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es6': true,
-    'node': true,
-    'jest': true,
-    'mocha': true
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+    jest: true,
+    mocha: true,
   },
-  'extends': [
+  extends: [
     'airbnb-base',
-    'plugin:node/recommended'
+    'plugin:node/recommended',
   ],
-  'parserOptions': {
-    'ecmaVersion': 2018,
-    'sourceType': 'module'
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
   },
-  'rules': {
-    'indent': [
+  rules: {
+    indent: [
       'error',
-      2
+      2,
     ],
-    'quotes': [
+    quotes: [
       'error',
-      'single'
+      'single',
     ],
-    'semi': [
+    semi: [
       'error',
-      'never'
+      'never',
     ],
     'no-console': [
-      'error'
+      'error',
     ],
-    'global-require': 'off'
-  }
+    'global-require': 'off',
+  },
 }
