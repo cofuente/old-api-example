@@ -31,5 +31,20 @@ module.exports = {
       'error',
     ],
     'global-require': 'off',
+    'max-len': [
+      'error',
+      { code: 140 },
+    ],
+    'node/no-unpublished-require': ['error', {
+      allowModules: ['electron', 'dotenv'],
+    }],
+    'node/no-missing-require': 'warn',
+    'import/no-unresolved': 'warn',
   },
+  ignorePatterns: [
+    // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
+    '**/*.spec.js',
+    'client/src/scripts/*.*',
+    '**/*.min.js',
+  ],
 }
