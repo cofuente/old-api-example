@@ -7,7 +7,7 @@ updates:
     schedule:
       timezone: "America/New_York" # Eastern Standard Time (UTC -04:00)
       interval: "daily"
-      time: "18:51"
+      time: "09:00"
     allow:
       - dependency-type: "production"
     labels: # Raise all PR's with custom labels
@@ -20,7 +20,7 @@ updates:
     schedule:
       timezone: "America/New_York"  # Eastern Standard Time (UTC -04:00)
       interval: "daily"
-      time: "18:51"
+      time: "09:00"
     labels:
       - "dependencies"
       - "security"
