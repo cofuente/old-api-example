@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 'use strict'
 
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
@@ -31,7 +30,7 @@ async function runMethodTest() {
     process.exitCode = 1
   } finally {
     console.log('closing db connection')
-    await dbclose()
+    await db.close()
     console.log('db connection closed')
   }
 }
@@ -40,4 +39,4 @@ if (module === require.main) {
   runMethodTest()
 }
 
-module.exports = seed
+module.exports = runMethod

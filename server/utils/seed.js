@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 'use strict' // TODO: figure out why we're using strict here
 
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
