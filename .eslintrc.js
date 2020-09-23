@@ -2,13 +2,14 @@ module.exports = {
   'env': {
     'browser': true,
     'es6': true,
-    'node': true
+    'node': true,
+    'jest': true,
+    'mocha': true
   },
-  'extends': 'airbnb-base',
-  'globals': {
-    'Atomics': 'readonly',
-    'SharedArrayBuffer': 'readonly'
-  },
+  'extends': [
+    'airbnb-base',
+    'plugin:node/recommended'
+  ],
   'parserOptions': {
     'ecmaVersion': 2018,
     'sourceType': 'module'
@@ -18,10 +19,6 @@ module.exports = {
       'error',
       2
     ],
-    'linebreak-style': [
-      'error',
-      'unix'
-    ],
     'quotes': [
       'error',
       'single'
@@ -29,6 +26,10 @@ module.exports = {
     'semi': [
       'error',
       'never'
-    ]
+    ],
+    'no-console': [
+      'error'
+    ],
+    'global-require': 'off'
   }
 }
