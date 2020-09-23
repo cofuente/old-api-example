@@ -1,5 +1,5 @@
+/* eslint-disable no-undef */
 const Sequelize = require('sequelize')
-const { Client } = require('pg')
 const chalk = require('chalk')
 
 const dbName = process.env.DB_NAME || 'pebe'
