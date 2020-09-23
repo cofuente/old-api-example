@@ -35,6 +35,9 @@ module.exports = {
       'error',
       { code: 140 },
     ],
+    'node/no-unpublished-require': ['error', {
+      allowModules: ['electron', 'dotenv'],
+    }],
   },
   ignorePatterns: [
     // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
