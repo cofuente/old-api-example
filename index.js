@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()  // may have to update this to a different heroku specific env
 const path = require('path')
 const chalk = require('chalk')
