@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()  // may have to update this to a different heroku specific env
 const chalk = require('chalk')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -10,9 +12,6 @@ const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
 const server = express()
 
-if (process.env.NODE_ENV !== 'production') { // may have to update this to a different heroku specific env
-  require('dotenv').config()
-}
 
 // session middleware 
 server.use(
@@ -41,7 +40,7 @@ server.use(bodyParser.urlencoded({extended: true}))
 server.use('/api', require('./api'))
 
 // error handling endware
-server.use((err, req, res, next) => {
+server.use((err, req, res) => {
   console.error(err)
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
