@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 if (process.env.NODE_ENV !== 'production') require('dotenv').config() // may have to update this to a different heroku specific env
 const path = require('path')
 const chalk = require('chalk')
@@ -50,7 +51,9 @@ const buildStack = async () => {
 
   // error handling endware
   fullStack.use((err, req, res) => {
+    // eslint-disable-next-line no-console
     console.error(err)
+    // eslint-disable-next-line no-console
     console.error(err.stack)
     res.status(err.status || 500).send(err.message || 'Internal server error.')
   })
@@ -61,10 +64,13 @@ const bootServer = async () => {
   try {
     await db.sync()
     await sessionStore.sync()
+    // eslint-disable-next-line no-console
     console.log(chalk.green('Postgres server is up and running!'))
     await fullStack.listen(PORT)
+    // eslint-disable-next-line no-console
     console.log(chalk.blue(`API listening on port:${PORT}`))
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error(err)
   }
 }
@@ -79,8 +85,10 @@ const serveClient = async () => {
         const data = req.body
         postFormattedData(data)
       })
+    // eslint-disable-next-line no-console
     console.log(chalk.magenta(`Client awaits at ${current}`))
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error(err)
   }
 }
