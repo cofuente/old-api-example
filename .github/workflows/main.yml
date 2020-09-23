@@ -15,11 +15,13 @@ jobs:
     strategy:
       matrix:
         node-version: ['13.3.0']
+
+    if: github.actor != 'dependabot[bot]'
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      # Uses recommended note setup
+      # Uses recommended node setup
     - name: Setup Node.js version ${{ matrix.node-version }}
       uses: actions/setup-node@v2.1.1
       with:
