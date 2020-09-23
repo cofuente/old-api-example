@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 'use strict'
 
+if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
 const db = require('../db/_db')
 const { 
   Form, 
