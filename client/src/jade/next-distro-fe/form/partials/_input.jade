@@ -1,8 +1,0 @@
-// Input text field
-.field
-  label.label(class=required)= field.questionPrompt
-  .control
-    if required === "required"
-      input.input(type= field.questionType name= field.questionUUID, placeholder='Your answer', required)
-    else
-      input.input(type= field.questionType name= field.questionUUID, placeholder='Your answer')
