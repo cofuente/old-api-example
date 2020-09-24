@@ -11,7 +11,7 @@ const { customOptions, logger } = require('./utils')
 const storeOptions = customOptions(db)
 const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
-const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
+// const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const server = express()
 
 // session middleware
@@ -29,7 +29,7 @@ server.use(
   }),
 )
 // still inclear if this should be invoked here or on line 55 w/ an await
-sessionStore.sync()
+// sessionStore.sync()
 
 // logging middleware
 server.use(logger)
@@ -53,13 +53,17 @@ server.use((err, req, res) => {
 const bootServer = async () => {
   try {
     await db.sync()
+    await sessionStore.sync()
+    // eslint-disable-next-line no-console
+    console.log(chalk.green('Postgres server is up and running!'))
     await server.listen(PORT) // linter says this await is unecessary should investigate
     // eslint-disable-next-line no-console
-    console.log(chalk.white.bgBlueBright(` API is listening on port:${PORT} `))
+    console.log(chalk.blueBright(` API is listening on port:${PORT} `))
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error(err)
   }
 }
-
-bootServer()
+module.exports = {
+  bootServer,
+}
