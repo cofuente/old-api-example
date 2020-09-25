@@ -1,1 +1,1 @@
-# back end using pg, sequelize & express
+# back end using pg, sequelize & expres
