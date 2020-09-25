@@ -44,7 +44,7 @@ module.exports = {
   ignorePatterns: [
     // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
     '**/*.spec.js',
-    'client/src/scripts/*.*',
+    'client/src/scripts/*.*', // TODO: remove this
     '**/*.min.js',
   ],
 }

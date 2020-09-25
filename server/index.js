@@ -1,46 +1,51 @@
-if (process.env.NODE_ENV !== 'production') require('dotenv').config()  // may have to update this to a different heroku specific env
+// eslint-disable-next-line import/no-extraneous-dependencies
+if (process.env.NODE_ENV !== 'production') require('dotenv').config() // may have to update this to a different heroku specific env
 const chalk = require('chalk')
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const { db } = require('./db/models')
-const {customOptions, logger} = require('./utils')
-const storeOptions = customOptions(db) 
+const { customOptions, logger } = require('./utils')
+
+const storeOptions = customOptions(db)
 const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
+// const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const server = express()
 
-
-// session middleware 
+// session middleware
 server.use(
   session({
     secret: process.env.SESSIONS_SECRET || 'abc123',
     name: process.env.SECRET_SESSION_NAME || 'nextharm',
-    cookie: { 
+    cookie: {
       secure: true,
-      maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+      maxAge: 30 * 60 * 1000, // The maximum age (in milliseconds) of a valid session.
     },
     store: sessionStore,
     resave: true,
-    saveUninitialized: true
-  })
+    saveUninitialized: true,
+  }),
 )
-sessionStore.sync()
+// still inclear if this should be invoked here or on line 55 w/ an await
+// sessionStore.sync()
 
 // logging middleware
 server.use(logger)
 
 // body parsing middleware
 server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({extended: true}))
+server.use(bodyParser.urlencoded({ extended: true }))
 
 // api routes
 server.use('/api', require('./api'))
 
 // error handling endware
 server.use((err, req, res) => {
+  // eslint-disable-next-line no-console
   console.error(err)
+  // eslint-disable-next-line no-console
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
@@ -48,11 +53,17 @@ server.use((err, req, res) => {
 const bootServer = async () => {
   try {
     await db.sync()
-    await server.listen(PORT)
-    console.log(chalk.white.bgBlueBright(` API is listening on port:${PORT} `))
+    await sessionStore.sync()
+    // eslint-disable-next-line no-console
+    console.log(chalk.green('Postgres server is up and running!'))
+    await server.listen(PORT) // linter says this await is unecessary should investigate
+    // eslint-disable-next-line no-console
+    console.log(chalk.blueBright(` API is listening on port:${PORT} `))
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error(err)
   }
 }
-
-bootServer()
+module.exports = {
+  bootServer,
+}
