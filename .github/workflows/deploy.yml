@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '13.3.0' ]
+        node: [ '14.11.0' ]
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.5.6
