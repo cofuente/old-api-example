@@ -29,12 +29,14 @@
    If you want deeper shell integration with nvm, you can add the following script to your [bash](https://github.com/nvm-sh/nvm#bash) or [zsh](https://github.com/nvm-sh/nvm#zsh) profiles to automatically use the correct nvm version of the directory you're in.
 1. Run `npm install`
 1. To start your postgres server, run `pg_ctl -D /usr/local/var/postgres start`. Keep this running while you continue in a different window
-1. (Only do this once) Create a database named pebe by running `createdb pebe`
+1. (Only do this the first time you set up your repo) Create a database named pebe by running `createdb pebe`
 1. Run `npm run seed`. This writes a seed entry to the database needed for the Sequelize model validation; otherwise, writing to the database will not work.
 1. Run `npm run start` You should see the message:
 
    > Postgres server is up and running!
+   >
    > API listening on port:1337
+   >
    > Client awaits at <http://localhost:1337>
 
 ## Development Information
