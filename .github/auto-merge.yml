@@ -4,8 +4,4 @@
 
 - match:
     dependency_type: all
-    update_type: security:minor
-
-- match:
-    dependency_type: all
-    update_type: security:patch
+    update_type: security:all
