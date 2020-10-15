@@ -23,4 +23,4 @@ updates:
       time: "09:00"
     labels:
       - "dependencies"
-      - "security"
+      - "actions"
