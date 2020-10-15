@@ -15,3 +15,5 @@ jobs:
       - uses: ahmadnassri/action-dependabot-auto-merge@v2.1.4
         with:
           github-token: ${{secrets.GH_TOKEN}}
+          approve: true
+          command: merge
