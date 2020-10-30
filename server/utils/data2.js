@@ -346,7 +346,7 @@ const reverseReportData = [
   {
     questionUUID: '',
     required: true,
-    questionType: ' ',
+    questionType: 'textarea',
     questionPrompt: ' We are trying to raise money to build out our website and get more postage to send supplies to more people. If you have a message you would be willing to anonymously give about why this program is important. Please include it here.',
     possibleAnswers: [
       ['No','No'],
