@@ -112,7 +112,8 @@ const reverseReportData = [
     questionUUID: '',
     required: true,
     questionType: 'date',
-    questionPrompt: 'Please provide the date the naloxone was used.'
+    questionPrompt: 'Please provide the date the naloxone was used.',
+    questionDescription: 'If you\'re not sure you can put the month/year.'
   },
   {
     questionUUID: '',
@@ -209,7 +210,7 @@ const reverseReportData = [
     questionUUID: '',
     required: true,
     questionType: 'checkbox',
-    questionPrompt: 'Has the person experienced an overdose in the past?',
+    questionPrompt: 'Did the person who experienced the overdose...',
     possibleAnswers: [
       ['Inject heroin','Inject heroin'],
       ['Sniff heroin','Sniff heroin'],
@@ -221,9 +222,10 @@ const reverseReportData = [
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'checkbox',
     questionPrompt: 'Do you know if the person who overdosed had used anything else?',
+    questionDescription: 'Check all that apply, not required',
     possibleAnswers: [
       ['Methadone','Methadone'],
       ['Pain Pills','Pain Pills'],
@@ -281,7 +283,7 @@ const reverseReportData = [
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'dropdown',
     questionPrompt: 'Did anyone else also give the person naloxone for the overdose?',
     possibleAnswers: [
@@ -292,9 +294,10 @@ const reverseReportData = [
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'dropdown',
     questionPrompt: 'If you answered "Yes" that someone else gave naloxone for the same overdose, were they...',
+    questionDescription: 'Check all that apply, not required',
     possibleAnswers: [
       ['Police','Police'],
       ['EMS','EMS'],
@@ -307,7 +310,8 @@ const reverseReportData = [
     questionUUID: '',
     required: true,
     questionType: 'input',
-    questionPrompt: 'If someone else gave the overdosing person naloxone, do you know what kind they used?'
+    questionPrompt: 'If someone else gave the overdosing person naloxone, do you know what kind they used?',
+    questionDescription: 'If so, please describe.'
   },
   {
     questionUUID: '',
@@ -322,21 +326,23 @@ const reverseReportData = [
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'input',
     questionPrompt: 'Please provide any other information that would be helpful in describing the overdose.',
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'input',
     questionPrompt: 'If you would like more naloxone sent to you, please write your full mailing address and email address (please use one we recognize if possible).',
+    questionDescription: 'We may contact you to confirm your address. Please look for our message.'
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'dropdown',
-    questionPrompt: 'Alternately, please call 917-828-0293. If we don\'t pick up right away, leave a message and someone will call you back as soon as possible.',
+    questionPrompt: 'Would you like us to call you to debrief the experience?',
+    questionDescription: 'Alternately, please call 917-828-0293. If we don\'t pick up right away, leave a message and someone will call you back as soon as possible.',
     possibleAnswers: [
       ['No','No'],
       ['Maybe','Maybe'],
@@ -345,7 +351,7 @@ const reverseReportData = [
   },
   {
     questionUUID: '',
-    required: true,
+    required: false,
     questionType: 'textarea',
     questionPrompt: ' We are trying to raise money to build out our website and get more postage to send supplies to more people. If you have a message you would be willing to anonymously give about why this program is important. Please include it here.',
     possibleAnswers: [
