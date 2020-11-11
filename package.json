@@ -25,7 +25,6 @@
   "dependencies": {
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
-    "chalk": "^4.1.0",
     "chalk-animation": "^1.6.0",
     "connect-session-sequelize": "^7.0.4",
     "express": "^4.17.1",
@@ -33,7 +32,6 @@
     "fs": "0.0.1-security",
     "morgan": "^1.10.0",
     "pg": "^8.5.0",
-    "request": "^2.88.2",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
