@@ -6,7 +6,7 @@ module.exports = {
     jest: true,
     mocha: true
   },
-  extends: ['airbnb-base', 'plugin:node/recommended', 'plugin:prettier/recommended'],
+  extends: ['airbnb-base', 'plugin:node/recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module'
@@ -18,8 +18,7 @@ module.exports = {
     'no-console': ['error'],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'never'],
-    'global-require': 'off',
-    'max-len': ['error', { code: 140 }],
+    'max-len': ['error', { code: 140, ignoreUrls: true }],
     'node/no-unpublished-require': [
       'error',
       {
