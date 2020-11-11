@@ -2,15 +2,16 @@
 const fs = require('fs')
 const path = require('path')
 
+// eslint-disable-next-line consistent-return
 const valueParser = (x) => {
-  if (x.questionType == 'paragraph') return 'this is a standard paragraph answer'
-  if (x.questionType == 'input') return 'this is a standard input answer'
-  if (x.questionType == 'checkbox' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
-  if (x.questionType == 'date') return '2020-08-11'
-  if (x.questionType == 'dropdown' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
-  if (x.questionType == 'radio' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
-  if (x.questionType == 'heading') return ''
-  if (x.questionType == 'number') return '90210'
+  if (x.questionType === 'paragraph') return 'this is a standard paragraph answer'
+  if (x.questionType === 'input') return 'this is a standard input answer'
+  if (x.questionType === 'checkbox' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
+  if (x.questionType === 'date') return '2020-08-11'
+  if (x.questionType === 'dropdown' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
+  if (x.questionType === 'radio' && x.possibleAnswers.length) return x.possibleAnswers[0][0]
+  if (x.questionType === 'heading') return ''
+  if (x.questionType === 'number') return '90210'
 } 
 
 // create a json to use with postman
