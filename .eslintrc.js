@@ -6,50 +6,28 @@ module.exports = {
     jest: true,
     mocha: true
   },
-  extends: [
-    'airbnb-base',
-    'plugin:node/recommended'
-  ],
+  extends: ['airbnb-base', 'plugin:node/recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
   rules: {
-    indent: [
-      'error',
-      2
-    ],
-    quotes: [
-      'error',
-      'single'
-    ],
-    semi: [
-      'error',
-      'never'
-    ],
-    'no-console': [
-      'error'
-    ],
-    'comma-dangle': [
-      'error',
-      'never'
-    ],
-    'eol-last': [
-      'error',
-      'never'],
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
+    semi: ['error', 'never'],
+    'no-console': ['error'],
+    'comma-dangle': ['error', 'never'],
+    'eol-last': ['error', 'never'],
     'global-require': 'off',
-    'max-len': [
+    'max-len': ['error', { code: 140 }],
+    'node/no-unpublished-require': [
       'error',
-      { code: 140 }
+      {
+        allowModules: ['electron', 'dotenv']
+      }
     ],
-    'node/no-unpublished-require': ['error', {
-      allowModules: ['electron', 'dotenv']
-    }],
     'node/no-missing-require': 'warn',
     'import/no-unresolved': 'warn'
   },
-  ignorePatterns: [
-    '**/*.spec.js',
-    '**/*.min.js'
-  ]
+  ignorePatterns: ['**/*.spec.js', '**/*.min.js', 'dist/', 'node_modules']
 }
