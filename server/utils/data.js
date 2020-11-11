@@ -1,40 +1,41 @@
+/* eslint-disable max-len */
 
 const seedData = [
   { 
     questionUUID: '50e1ee43-03f6-4231-affc-195ee76c7e12',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
+    questionPrompt: 'Please tell us how you learned about NEXT. Be specific.'
   },
   {
     questionUUID: '842c7508-b000-4fc7-9c9f-4e934d0b8ed0',
     required: true,
     questionType: 'input',
-    questionPrompt: 'First Name',
+    questionPrompt: 'First Name'
   },
   { 
     questionUUID: '26464b66-7afb-443d-bc69-e6b3cb16ecfa',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Last Name',
+    questionPrompt: 'Last Name'
   },
   {
     questionUUID: 'b1a3c65a-1ddd-4666-a1b0-4d2842577094',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Address (this is the location where you want supplies sent in your name)',
+    questionPrompt: 'Address (this is the location where you want supplies sent in your name)'
   },
   { 
     questionUUID: '9c8f020c-9ca9-4abc-90b2-817c6f49b1fa',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Address (Apartment or Unit No.)',
+    questionPrompt: 'Address (Apartment or Unit No.)'
   },
   {
     questionUUID: '65809857-da07-4a65-8656-d158a5bb0b75',
     required: true,
     questionType: 'input',
-    questionPrompt: 'City',
+    questionPrompt: 'City'
   },
   { 
     questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
@@ -98,13 +99,13 @@ const seedData = [
     questionUUID: 'c0e71e1b-c7d0-47dd-8b7b-17ebc37a7b95',
     required: true,
     questionType: 'number',
-    questionPrompt: 'Zip Code',
+    questionPrompt: 'Zip Code'
   },
   { 
     questionUUID: '98e8fa30-9792-4081-830f-96a236fac83d',
     required: true,
     questionType: 'date',
-    questionPrompt: 'Date of Birth',
+    questionPrompt: 'Date of Birth'
   },
   {
     questionUUID: 'b9dc6102-502b-4ab6-b4f3-2b3ee161b5ce',
@@ -136,7 +137,7 @@ const seedData = [
     questionUUID: '440af351-63d2-454b-a3af-a18d40d9d8f5',
     required: true,
     questionType: 'input',
-    questionPrompt: 'How would you describe your sexual orientation (some answers may include gay, straight, bisexual, queer, lesbian, etc)',
+    questionPrompt: 'How would you describe your sexual orientation (some answers may include gay, straight, bisexual, queer, lesbian, etc)'
   },
   { 
     questionUUID: '872af9f8-d99c-46e0-b222-a1cbdc6490d4',
@@ -146,7 +147,7 @@ const seedData = [
     possibleAnswers: [
       ['Yes','Yes'],
       ['No','No']
-      ]
+    ]
   },
   {
     questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
@@ -189,7 +190,7 @@ const seedData = [
     questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Is there anything else you would like us to know to describe your identity?',
+    questionPrompt: 'Is there anything else you would like us to know to describe your identity?'
   },
   {
     questionUUID: 'cd6e3ccf-279b-4fa3-bbd3-e566a3d99773',
@@ -201,14 +202,14 @@ const seedData = [
       ['Spanish','Spanish'],
       ['Russian','Russian'],
       ['Chinese (Cantonese or Mandarin)','Chinese (Cantonese or Mandarin)'],
-      ['Other','Other'],
+      ['Other','Other']
     ]
   },
   { 
     questionUUID: '2994a592-f148-4e91-8d4b-85fb85b0eb30',
     required: false,
     questionType: 'heading',
-    questionPrompt: 'AS A REMINDER, THIS FORM IS ENCRYPTED AND WILL NOT BE ACCESSED BY A THIRD PARTY.',
+    questionPrompt: 'AS A REMINDER, THIS FORM IS ENCRYPTED AND WILL NOT BE ACCESSED BY A THIRD PARTY.'
   },
   {
     questionUUID: 'c2c0d01f-4187-4f51-9b3b-8ad246aa11cc',
@@ -236,13 +237,13 @@ const seedData = [
     questionUUID: '07136a3c-5439-4f70-bc4b-3788578e99dd',
     required: true,
     questionType: 'input',
-    questionPrompt: 'If you have been hospitalized within the past six months, how many times?',
+    questionPrompt: 'If you have been hospitalized within the past six months, how many times?'
   },
   {
     questionUUID: '1d546604-8e0c-442b-b9c6-b10082de8b27',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Have you had issues related to abscesses, cellulitis, endocarditis? Please explain.',
+    questionPrompt: 'Have you had issues related to abscesses, cellulitis, endocarditis? Please explain.'
   },
   { 
     questionUUID: '0dd4fd38-3969-4d2d-a1da-48093a762c66',
@@ -286,27 +287,27 @@ const seedData = [
       ['Yes, awaiting trial/judge', 'Yes, awaiting trial/judge'],
       ['Yes, outstanding warrant', 'Yes, outstanding warrant'],
       ['Yes, case pending', 'Yes, case pending'],
-      ['Yes, none of the above', 'Yes, none of the above'],
+      ['Yes, none of the above', 'Yes, none of the above']
     ]
   },
   {
     questionUUID: '7f4a3588-3926-4132-a325-c7f33a1fbf25',
     required: false,
     questionType: 'heading',
-    questionPrompt: 'THE NEXT FEW QUESTIONS ARE ABOUT DRUGS AND DRUG USE',
+    questionPrompt: 'THE NEXT FEW QUESTIONS ARE ABOUT DRUGS AND DRUG USE'
   },
   { 
     questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
     required: false,
     questionType: 'paragraph',
-    questionPrompt: 'As a reminder this form is secure, your information will be kept confidential.',
+    questionPrompt: 'As a reminder this form is secure, your information will be kept confidential.'
 
   },
   {
     questionUUID: '2ae2c762-2373-4034-b2af-959304a39b19',
     required: true,
     questionType: 'input',
-    questionPrompt: 'How old were you when you started injecting drugs?',
+    questionPrompt: 'How old were you when you started injecting drugs?'
   },
   { 
     questionUUID: 'f766957a-e5b0-4e90-a239-8071102e96f8',
@@ -324,7 +325,7 @@ const seedData = [
     questionUUID: '8575fc03-b4fe-4f5d-9353-0b502baac1ac',
     required: true,
     questionType: 'input',
-    questionPrompt: 'How do you currently dispose of your used syringes? Please be specific.',
+    questionPrompt: 'How do you currently dispose of your used syringes? Please be specific.'
   },
   { 
     questionUUID: 'a6ba3467-cd78-4e1c-9f3c-567edf5651d0',
@@ -356,20 +357,20 @@ const seedData = [
     possibleAnswers: [
       ['Yes', 'Yes'],
       ['No', 'No'],
-      ['Yes, rarely', 'Yes, rarely'],
+      ['Yes, rarely', 'Yes, rarely']
     ]
   },
   { 
     questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
     required: false,
     questionType: 'heading',
-    questionPrompt: 'THE FOLLOWING QUESTIONS ARE ABOUT OPIOID OVERDOSE',
+    questionPrompt: 'THE FOLLOWING QUESTIONS ARE ABOUT OPIOID OVERDOSE'
   },
   { 
     questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
     required: false,
     questionType: 'paragraph',
-    questionPrompt: 'One of the most important things we do is look for ways to reach more people with injection supplies and naloxone-- we are looking to partner with people in the community who can help distribute naloxone to keep others safe.',
+    questionPrompt: 'One of the most important things we do is look for ways to reach more people with injection supplies and naloxone-- we are looking to partner with people in the community who can help distribute naloxone to keep others safe.'
   },
   {
     questionUUID: '33ef7055-5edf-4edf-baf9-83d6ef9b076b',
@@ -408,25 +409,25 @@ const seedData = [
     questionUUID: 'e496c927-bb34-4c43-9115-83e43889ed05',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Where do you currently obtain injection related supplies?',
+    questionPrompt: 'Where do you currently obtain injection related supplies?'
   },
   {
     questionUUID: '753eda43-a227-4651-a3b2-b6538ce6f54c',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.',
+    questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.'
   },
   {
     questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Is there anything else we should know about you, your history, or situation?',
+    questionPrompt: 'Is there anything else we should know about you, your history, or situation?'
   },
   {
     questionUUID: '0f506b40-0d2a-41a4-a094-77ede62ba327',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.',
+    questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.'
   },
   {
     questionUUID: 'f77af752-cf87-48ec-86cc-eccc800be9f5',
@@ -455,19 +456,19 @@ const seedData = [
     questionUUID: '149deff5-7886-401d-a456-9fd480eb912b',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Please provide a user handle, we will use this handle to communicate with you. Ensure the handle is one you\'ll remember. Please do not use any spaces. Examples are: Panda223, JoeShmo, Liz_Star, 777Ryder',
+    questionPrompt: 'Please provide a user handle, we will use this handle to communicate with you. Ensure the handle is one you\'ll remember. Please do not use any spaces. Examples are: Panda223, JoeShmo, Liz_Star, 777Ryder'
   },
   {
     questionUUID: '96ec1ef1-0767-41f6-9f19-8b538b7a09d6',
     required: true,
     questionType: 'input',
-    questionPrompt: 'Please provide your user handle again. (Must be matching.)',
+    questionPrompt: 'Please provide your user handle again. (Must be matching.)'
   },
   {
     questionUUID: 'eecfe0c7-8c0a-428f-a3bc-8de4bc6e268d',
     required: false,
     questionType: 'paragraph',
-    questionPrompt: 'Thank you for filling out this enrollment form. Text the handle you created above to 917-828-0293, email it to jamie@nextdistro.org, or message /u/nextdistro on Reddit. We\'ll respond about getting you supplies within 48 hours.',
+    questionPrompt: 'Thank you for filling out this enrollment form. Text the handle you created above to 917-828-0293, email it to jamie@nextdistro.org, or message /u/nextdistro on Reddit. We\'ll respond about getting you supplies within 48 hours.'
   }
 ]
 

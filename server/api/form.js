@@ -29,7 +29,7 @@ router.post('/', async (req, res, next) => {
 router.get('/:formUUID', async (req, res, next) => {
   try {
     const { formUUID } = req.params
-    let requestedForm = await Form.findOne({
+    const requestedForm = await Form.findOne({
       where: { formUUID },
       include: {
         model: Question,
@@ -69,7 +69,7 @@ router.put('/r/:formUUID', async (req, res, next) => {
 // delete a form
 router.delete('/:formUUID', async (req, res, next) => {
   try {
-    let requestedForm = await Form.findByPk(req.params.formUUID)
+    const requestedForm = await Form.findByPk(req.params.formUUID)
     if (requestedForm) {
       await Form.destroy({ where: { formUUID: req.params.formUUID } })
       res.status(200).send('deletion complete')

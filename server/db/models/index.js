@@ -23,8 +23,8 @@ Answer.belongsTo(Question, { foreignKey: 'questionUUID' })
 Submission.hasMany(Answer, { foreignKey: 'submissionUUID' })
 
 module.exports = {
-	db,
-	Question,
+  db,
+  Question,
   Answer,
   Form,
   Submission,

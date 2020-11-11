@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const Sequelize = require('sequelize')
 const chalk = require('chalk')
 
@@ -7,7 +8,7 @@ console.log(chalk.cyan(`using database < ${dbName} >`))
 // Passing a connection URI
 const db = new Sequelize( process.env.DATABASE_URL || `postgres://localhost:5432/${dbName}`, {
   define: {
-    timestamps: true,
+    timestamps: true
   },
   logging: false
 })

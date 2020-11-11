@@ -4,47 +4,29 @@ module.exports = {
     es6: true,
     node: true,
     jest: true,
-    mocha: true,
+    mocha: true
   },
-  extends: [
-    'airbnb-base',
-    'plugin:node/recommended',
-  ],
+  extends: ['airbnb-base', 'plugin:node/recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
-    indent: [
+    indent: ['error', 2],
+    quotes: ['error', 'single'],
+    semi: ['error', 'never'],
+    'no-console': ['error'],
+    'comma-dangle': ['error', 'never'],
+    'eol-last': ['error', 'never'],
+    'max-len': ['error', { code: 140, ignoreUrls: true }],
+    'node/no-unpublished-require': [
       'error',
-      2,
+      {
+        allowModules: ['electron', 'dotenv']
+      }
     ],
-    quotes: [
-      'error',
-      'single',
-    ],
-    semi: [
-      'error',
-      'never',
-    ],
-    'no-console': [
-      'error',
-    ],
-    'global-require': 'off',
-    'max-len': [
-      'error',
-      { code: 140 },
-    ],
-    'node/no-unpublished-require': ['error', {
-      allowModules: ['electron', 'dotenv'],
-    }],
     'node/no-missing-require': 'warn',
-    'import/no-unresolved': 'warn',
+    'import/no-unresolved': 'warn'
   },
-  ignorePatterns: [
-    // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
-    '**/*.spec.js',
-    'client/src/scripts/*.*', // TODO: remove this
-    '**/*.min.js',
-  ],
+  ignorePatterns: ['**/*.spec.js', '**/*.min.js', 'dist/', 'node_modules']
 }

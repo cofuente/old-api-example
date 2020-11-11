@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 const db = require('../_db')
-const { Form } = require('../models')
 
 const Submission = db.define('submission', {
   submissionUUID: {
@@ -12,10 +11,10 @@ const Submission = db.define('submission', {
   formUUID: {
     type: Sequelize.UUID,
     references: {
-      model: Form,
+      model: db.model.Form,
       key: 'formUUID'
     },
-    allowNull:false
+    allowNull: false
   }
 })
 
