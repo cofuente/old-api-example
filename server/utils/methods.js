@@ -1,9 +1,11 @@
-'use strict'
-
+/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies */
+// @ts-nocheck
+// eslint-disable-next-line global-require
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
 const db = require('../db/_db')
 const { 
-  Form, 
+  Form 
   // Question, 
   // Answer, 
   // Submission, 
