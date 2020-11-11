@@ -19,7 +19,10 @@ jobs:
       uses: actions/setup-node@v2.1.2
       with:
         node-version: ${{ matrix.node-version }}
-      # Cache the node_modules for faster workflow
+      
+    - name: Updating relevant peer dependencies
+      run: npm run update-linter
+
     - name: Cache node modules
       uses: actions/cache@v2
       env:
@@ -30,11 +33,8 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-node-
           ${{ runner.OS }}-
-      
-    - name: Updating Linter Peer Deps
-      run: npm run update-linter
 
-    - name: Running Linter
+    - name: Running linter using eslint config file
       run: npx eslint -c ./.eslintrc.js .
       env:
         CI: true
