@@ -4,52 +4,52 @@ module.exports = {
     es6: true,
     node: true,
     jest: true,
-    mocha: true,
+    mocha: true
   },
   extends: [
     'airbnb-base',
-    'plugin:node/recommended',
+    'plugin:node/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   rules: {
-    'indent': [
+    indent: [
       'error',
-      2,
+      2
     ],
-    'quotes': [
+    quotes: [
       'error',
-      'single',
+      'single'
     ],
-    'semi': [
+    semi: [
       'error',
-      'never',
+      'never'
     ],
     'no-console': [
-      'error',
+      'error'
     ],
     'comma-dangle': [
       'error',
       'never'
     ],
     'eol-last': [
-      'error', 
+      'error',
       'never'],
     'global-require': 'off',
     'max-len': [
       'error',
-      { code: 140 },
+      { code: 140 }
     ],
     'node/no-unpublished-require': ['error', {
-      allowModules: ['electron', 'dotenv'],
+      allowModules: ['electron', 'dotenv']
     }],
     'node/no-missing-require': 'warn',
-    'import/no-unresolved': 'warn',
+    'import/no-unresolved': 'warn'
   },
   ignorePatterns: [
     '**/*.spec.js',
-    '**/*.min.js',
-  ],
+    '**/*.min.js'
+  ]
 }
