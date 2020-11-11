@@ -18,13 +18,13 @@ const valueParser = (x) => {
 const dummySubmission = async (formUUID, questions) => {
   const parsedQuestions = questions.map((x) => ({
     questionUUID: x.questionUUID,
-    value: valueParser(x),
+    value: valueParser(x)
   }))
   const submissionData = {
     formUUID,
     answers: parsedQuestions,
     stateCode: 'NY',
-    title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program',
+    title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program'
   }
   await fs.writeFile(path.join('dummy-submission.json'), JSON.stringify(submissionData), (err) => {
     if (err) throw err
