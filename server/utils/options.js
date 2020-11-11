@@ -1,28 +1,26 @@
+/* eslint-disable no-unused-vars */
 const Sequelize = require('sequelize')
 
 // The interval at which to cleanup expired sessions in the store (in milliseconds).
 const interval = 2 * 60 * 1000
 
 const customOptions = (db) => {
-
-  const sessions = db.define("sessions", {
+  const sessions = db.define('sessions', {
     sid: {
       type: Sequelize.STRING,
       primaryKey: true,
       unique: true
     },
     expires: Sequelize.DATE,
-    data: Sequelize.STRING(50000),
+    data: Sequelize.STRING(50000)
   })
 
-  const extendDefaultFields = (defaults, session) => {
-    return {data: defaults.data, expires: defaults.expires}
-  }
+  const extendDefaultFields = (defaults, session) => ({ data: defaults.data, expires: defaults.expires })
 
   return {
     db,
     checkExpirationInterval: interval,
-    table: "sessions",
+    table: 'sessions',
     extendDefaultFields,
     disableTouch: true
   }
