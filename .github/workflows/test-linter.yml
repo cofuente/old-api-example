@@ -35,6 +35,6 @@ jobs:
       run: npm run update-linter
 
     - name: Running Linter
-      run: npm run eslint -c ./.eslintrc.js .
+      run: npx eslint -c ./.eslintrc.js .
       env:
         CI: true
