@@ -6,16 +6,16 @@ const Submission = db.define('submission', {
     primaryKey: true,
     type: Sequelize.UUID,
     defaultValue: Sequelize.UUIDV4,
-    unique: true,
+    unique: true
   },
   formUUID: {
     type: Sequelize.UUID,
     references: {
       model: db.model.Form,
-      key: 'formUUID',
+      key: 'formUUID'
     },
-    allowNull: false,
-  },
+    allowNull: false
+  }
 })
 
 module.exports = Submission

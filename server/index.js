@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable global-require */
 // eslint-disable-next-line import/no-extraneous-dependencies
 if (process.env.NODE_ENV !== 'production') require('dotenv').config() // may have to update this to a different heroku specific env
 const chalk = require('chalk')
@@ -21,14 +23,14 @@ server.use(
     name: process.env.SECRET_SESSION_NAME || 'nextharm',
     cookie: {
       secure: true,
-      maxAge: 30 * 60 * 1000, // The maximum age (in milliseconds) of a valid session.
+      maxAge: 30 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
     },
     store: sessionStore,
     resave: true,
-    saveUninitialized: true,
-  }),
+    saveUninitialized: true
+  })
 )
-// still inclear if this should be invoked here or on line 55 w/ an await
+// still unclear if this should be invoked here or on line 55 w/ an await
 // sessionStore.sync()
 
 // logging middleware
@@ -43,9 +45,7 @@ server.use('/api', require('./api'))
 
 // error handling endware
 server.use((err, req, res) => {
-  // eslint-disable-next-line no-console
   console.error(err)
-  // eslint-disable-next-line no-console
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
@@ -54,16 +54,13 @@ const bootServer = async () => {
   try {
     await db.sync()
     await sessionStore.sync()
-    // eslint-disable-next-line no-console
     console.log(chalk.green('Postgres server is up and running!'))
     await server.listen(PORT) // linter says this await is unecessary should investigate
-    // eslint-disable-next-line no-console
     console.log(chalk.blueBright(` API is listening on port:${PORT} `))
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(err)
   }
 }
 module.exports = {
-  bootServer,
+  bootServer
 }
