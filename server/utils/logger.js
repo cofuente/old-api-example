@@ -38,9 +38,9 @@ const format = (tokens, req, res) =>{
   const method = tokens.method(req, res)
   const url = tokens.url(req, res)
   const httpStatus = tokens.status(req, res)
-  const referer = tokens['referrer'](req, res) == undefined ? 'no referer': tokens['referrer'](req, res)
+  const referer = tokens.referrer(req, res) === undefined ? 'no referer': tokens.referrer(req, res)
   const remoteAddress = tokens['remote-addr'](req, res)
-  const remoteUser = tokens['remote-user'](req, res) == undefined ? 'no remote user': tokens['remote-user'](req, res)
+  const remoteUser = tokens['remote-user'](req, res) === undefined ? 'no remote user': tokens['remote-user'](req, res)
   const userAgent = tokens['user-agent'](req, res)
 
   return [
