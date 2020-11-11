@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
+// @ts-nocheck
+// eslint-disable-next-line global-require
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
 const db = require('../db/_db')
 const {
