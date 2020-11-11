@@ -7,5 +7,5 @@ module.exports = {
   logger,
   customOptions,
   seedData,
-  dummySubmission,
+  dummySubmission
 }
