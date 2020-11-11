@@ -4,31 +4,31 @@ const chalk = require('chalk')
 const statusColor = (statusCode) => {
   const status = statusCode.toString()[0]
   switch (status) {
-    case '5': 
-      return chalk.black.bgRed(` ${statusCode} `)
-    case '4': 
-      return chalk.black.bgYellow(` ${statusCode} `)
-    case '3': 
-      return chalk.black.bgCyan(` ${statusCode} `)
-    case '2': 
-      return chalk.black.bgGreen(` ${statusCode} `)
-    default:
-      return chalk.white.bgBlack(` ${statusCode} `)
+  case '5': 
+    return chalk.black.bgRed(` ${statusCode} `)
+  case '4': 
+    return chalk.black.bgYellow(` ${statusCode} `)
+  case '3': 
+    return chalk.black.bgCyan(` ${statusCode} `)
+  case '2': 
+    return chalk.black.bgGreen(` ${statusCode} `)
+  default:
+    return chalk.white.bgBlack(` ${statusCode} `)
   }
 }
 
 const methodColor = (method) => {
   switch (method) {
-    case 'GET': 
-      return chalk.black.bgGreenBright(` ${method} `)
-    case 'POST': 
-      return chalk.black.bgBlueBright(` ${method} `)
-    case 'PUT': 
-      return chalk.black.bgYellowBright(` ${method} `)
-    case 'DELETE': 
-      return chalk.black.bgMagentaBright(` ${method} `)
-    default:
-      return chalk.white.bgBlack(` ${method} `)
+  case 'GET': 
+    return chalk.black.bgGreenBright(` ${method} `)
+  case 'POST': 
+    return chalk.black.bgBlueBright(` ${method} `)
+  case 'PUT': 
+    return chalk.black.bgYellowBright(` ${method} `)
+  case 'DELETE': 
+    return chalk.black.bgMagentaBright(` ${method} `)
+  default:
+    return chalk.white.bgBlack(` ${method} `)
   }
 }
 
