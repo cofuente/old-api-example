@@ -15,21 +15,28 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    indent: [
+    'indent': [
       'error',
       2,
     ],
-    quotes: [
+    'quotes': [
       'error',
       'single',
     ],
-    semi: [
+    'semi': [
       'error',
       'never',
     ],
     'no-console': [
       'error',
     ],
+    'comma-dangle': [
+      'error',
+      'never'
+    ],
+    'eol-last': [
+      'error', 
+      'never'],
     'global-require': 'off',
     'max-len': [
       'error',
@@ -42,9 +49,7 @@ module.exports = {
     'import/no-unresolved': 'warn',
   },
   ignorePatterns: [
-    // TODO: consider these should also be added to the git ignore, as well as any other build script produced file
     '**/*.spec.js',
-    'client/src/scripts/*.*', // TODO: remove this
     '**/*.min.js',
   ],
 }
