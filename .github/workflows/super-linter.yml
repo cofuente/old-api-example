@@ -23,7 +23,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           DEFAULT_BRANCH: master
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           VALIDATE_YAML: true
           VALIDATE_MD: true
           VALIDATE_JSON: true
