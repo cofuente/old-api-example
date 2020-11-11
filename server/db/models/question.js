@@ -15,7 +15,7 @@ const Question = db.define('question', {
   },
   questionPrompt: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: false
   },
   questionType: {
     type: Sequelize.ENUM(
@@ -28,15 +28,15 @@ const Question = db.define('question', {
       'dropdown',
       'heading',
       'number'
-      ),
-    allowNull: false,
+    ),
+    allowNull: false
   },
   possibleAnswers: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [
       'n/a'
     ]
-  },
+  }
 }, {
   timestamps: false
 })

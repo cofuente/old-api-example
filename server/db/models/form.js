@@ -11,12 +11,12 @@ const Form = db.define('form', {
   stateCode: {
     // expand this list to include other state codes
     type: Sequelize.ENUM('NY', 'CA'),
-    allowNull: false,
+    allowNull: false
   },
   title: {
     type: Sequelize.STRING,
-    allowNull: false,
-  },
+    allowNull: false
+  }
 })
 Form.getQuestions = async (formUUID) => {
   const formWithQs = await Form.findOne({ where: {formUUID}, include:{ model: db.model('question')}})
@@ -24,6 +24,7 @@ Form.getQuestions = async (formUUID) => {
   return questions
 }
 
+// eslint-disable-next-line func-names
 Form.prototype.assimilateForm = async function (otherFormUUID) {
   const questionsToAdd = await Form.getQuestions(otherFormUUID)
   return this.addQuestions(questionsToAdd)

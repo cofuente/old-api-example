@@ -9,23 +9,23 @@ const Answer = db.define(
       primaryKey: true,
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
-      unique: true,
+      unique: true
     },
     value: {
       type: Sequelize.STRING,
-      defaultValue: '',
+      defaultValue: ''
     },
     questionUUID: {
       type: Sequelize.UUID,
       references: {
         model: db.model.Question,
-        key: 'questionUUID',
+        key: 'questionUUID'
       },
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
-    timestamps: false,
+    timestamps: false
   }
 )
 
