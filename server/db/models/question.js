@@ -30,8 +30,8 @@ const Question = db.define('question', {
       'number',
       'questionDescription',
       'textarea'
-      ),
-    allowNull: false,
+    ),
+    allowNull: false
   },
   possibleAnswers: {
     type: Sequelize.ARRAY(Sequelize.TEXT),

@@ -328,7 +328,7 @@ const reverseReportData = [
     questionUUID: 'c3c23698-2f5c-11eb-adc1-0242ac120002',
     required: false,
     questionType: 'input',
-    questionPrompt: 'Please provide any other information that would be helpful in describing the overdose.',
+    questionPrompt: 'Please provide any other information that would be helpful in describing the overdose.'
   },
   {
     questionUUID: 'c3c2381e-2f5c-11eb-adc1-0242ac120002',

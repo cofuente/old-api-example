@@ -42,13 +42,13 @@ async function seed() {
     Form.create({
       formUUID: '78d51d9e-0285-4022-81c5-7f14955315d1',
       title: 'Opioid Overdose Incident Form',
-      stateCode: 'NY',
+      stateCode: 'NY'
     }, {
       include: [ Question ]
     }
     ).then(
       (form => form.addQuestions(reverseReportQuestionUUIDs))
-    ),
+    )
   ])
 
   console.log(`seeded ${forms.length} forms`)
