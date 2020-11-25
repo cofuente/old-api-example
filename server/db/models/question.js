@@ -28,10 +28,13 @@ const Question = db.define('question', {
       'dropdown',
       'heading',
       'number',
-      'questionDescription',
       'textarea'
     ),
     allowNull: false
+  },
+  questionDescription: {
+    type: Sequelize.STRING,
+    allowNull: true
   },
   possibleAnswers: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
