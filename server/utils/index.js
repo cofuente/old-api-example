@@ -1,11 +1,13 @@
 const logger = require('./logger')
 const customOptions = require('./options')
-const seedData = require('./data')
+const distroEnrollmentData = require('./distroEnrollment')
+const reverseReportData = require('./reverseReport')
 const dummySubmission = require('./dummy')
 
 module.exports = {
   logger,
   customOptions,
-  seedData,
+  distroEnrollmentData,
+  reverseReportData,
   dummySubmission
 }
