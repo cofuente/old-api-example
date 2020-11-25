@@ -12,8 +12,8 @@ const {
   // QuestionForm 
 } = require('../db/models')
 const { 
-  distroEnrollmentData
-  // reverseReportData
+  distroEnrollmentData,
+  reverseReportData
   // dummySubmission
 } = require('./')
 
@@ -25,6 +25,10 @@ async function seed() {
   const distroQuestions = await Promise.all(distroQuestionsArr)
   const distroQuestionUUIDs = distroQuestions.map(x => x.dataValues.questionUUID)
 
+  const reverseReportQuestionsArr = reverseReportData.map((x)=>Question.create(x))
+  const reverseReportQuestions = await Promise.all(reverseReportQuestionsArr)
+  const reverseReportQuestionUUIDs = reverseReportQuestions.map(x => x.dataValues.questionUUID)
+
   const forms = await Promise.all([
     Form.create({
       formUUID: '78d51d9e-0285-4022-81c5-7f14955315d0',
@@ -35,6 +39,17 @@ async function seed() {
     }
     ).then(
       (form => form.addQuestions(distroQuestionUUIDs))
+    ),
+
+    Form.create({
+      formUUID: '78d51d9e-0285-4022-81c5-7f14955315d1',
+      title: 'Opioid Overdose Incident Form',
+      stateCode: 'NY',
+    }, {
+      include: [ Question ]
+    }
+    ).then(
+      (form => form.addQuestions(reverseReportQuestionUUIDs))
     ),
   ])
 
