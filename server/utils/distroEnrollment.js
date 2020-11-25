@@ -1,5 +1,5 @@
 
-const seedData = [
+const distroEnrollmentData = [
   { 
     questionUUID: '50e1ee43-03f6-4231-affc-195ee76c7e12',
     required: true,
@@ -465,4 +465,4 @@ const seedData = [
   }
 ]
 
-module.exports = seedData
+module.exports = distroEnrollmentData

@@ -12,17 +12,18 @@ const {
   // QuestionForm 
 } = require('../db/models')
 const { 
-  seedData, 
+  distroEnrollmentData
+  // reverseReportData
   // dummySubmission
 } = require('./')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
-  // await dummySubmission('78d51d9e-0285-4022-81c5-7f14955315d0', seedData)
-  const questionsArr = seedData.map((x)=>Question.create(x))
-  const questions = await Promise.all(questionsArr)
-  const questionUUIDs = questions.map(x => x.dataValues.questionUUID)
+  // await dummySubmission('78d51d9e-0285-4022-81c5-7f14955315d0', distroEnrollmentData)
+  const distroQuestionsArr = distroEnrollmentData.map((x)=>Question.create(x))
+  const distroQuestions = await Promise.all(distroQuestionsArr)
+  const distroQuestionUUIDs = distroQuestions.map(x => x.dataValues.questionUUID)
 
   const forms = await Promise.all([
     Form.create({
@@ -33,12 +34,12 @@ async function seed() {
       include: [ Question ]
     }
     ).then(
-      (form => form.addQuestions(questionUUIDs))
+      (form => form.addQuestions(distroQuestionUUIDs))
     ),
   ])
 
   console.log(`seeded ${forms.length} forms`)
-  console.log(`with ${questionUUIDs.length} questions`)
+  console.log(`with ${distroQuestionUUIDs.length} distroQuestions`)
   console.log('seeded successfully')
 }
 
