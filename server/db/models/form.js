@@ -16,6 +16,10 @@ const Form = db.define('form', {
   title: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  instructions: {
+    type: Sequelize.STRING,
+    allowNull: true
   }
 })
 Form.getQuestions = async (formUUID) => {
