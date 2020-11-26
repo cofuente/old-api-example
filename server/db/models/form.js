@@ -18,7 +18,7 @@ const Form = db.define('form', {
     allowNull: false
   },
   instructions: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: true
   }
 })
