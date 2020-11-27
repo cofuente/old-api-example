@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-const seedData = [
+const distroEnrollmentData = [
   { 
     questionUUID: '50e1ee43-03f6-4231-affc-195ee76c7e12',
     required: true,
@@ -424,12 +424,6 @@ const seedData = [
     questionPrompt: 'Is there anything else we should know about you, your history, or situation?'
   },
   {
-    questionUUID: '0f506b40-0d2a-41a4-a094-77ede62ba327',
-    required: false,
-    questionType: 'input',
-    questionPrompt: 'Can you explain why you have difficulty accessing syringes in your own community? Please be as specific as possible.'
-  },
-  {
     questionUUID: 'f77af752-cf87-48ec-86cc-eccc800be9f5',
     required: true,
     questionType: 'dropdown',
@@ -472,4 +466,4 @@ const seedData = [
   }
 ]
 
-module.exports = seedData
+module.exports = distroEnrollmentData
