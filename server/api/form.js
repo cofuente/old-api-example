@@ -3,7 +3,6 @@ const { Form, Question } = require('../db/models')
 
 
 // get all forms
-// Note: will eventually be deleted, only useful for development
 router.get('', async (req, res, next) => {
   try {
     const allForms = await Form.findAll()
