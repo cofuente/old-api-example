@@ -19,7 +19,8 @@ const Form = db.define('form', {
   },
   instructions: {
     type: Sequelize.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: 'n/a'
   }
 })
 Form.getQuestions = async (formUUID) => {
