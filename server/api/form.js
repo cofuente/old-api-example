@@ -3,6 +3,7 @@ const { Form, Question } = require('../db/models')
 
 
 // get all forms
+// necessary for development but perhaps not for production?
 router.get('', async (req, res, next) => {
   try {
     const allForms = await Form.findAll()
@@ -44,10 +45,12 @@ router.get('/:formUUID', async (req, res, next) => {
 
 // add a question or questions to a form
 router.put('/a/:formUUID', async (req, res, next) => {
+  const { questions } = req.body
+  const { formUUID } = req.params
   try {
-    const formToUpdate = await Form.findByPk(req.params.formUUID)
-    formToUpdate.addQuestions(req.body)
-    res.status(202).json(formToUpdate.formUUID)
+    const formToUpdate = await Form.findByPk(formUUID)
+    const updatedForm = await formToUpdate.addQuestions( questions )
+    res.status(202).json(updatedForm)
   } catch (error) {
     next(error)
   }
@@ -56,10 +59,13 @@ router.put('/a/:formUUID', async (req, res, next) => {
 
 // remove a question or questions from a form
 router.put('/r/:formUUID', async (req, res, next) => {
+  const { questions } = req.body
+  const { formUUID } = req.params
   try {
-    const formToUpdate = await Form.findByPk(req.params.formUUID)
-    formToUpdate.removeQuestions(req.body)
-    res.status(202).json(formToUpdate.formUUID)
+    const formToUpdate = await Form.findByPk( formUUID )
+    // this remove method remains untested
+    const updatedForm = await formToUpdate.removeQuestions( questions )
+    res.status(202).json(updatedForm)
   } catch (error) {
     next(error)
   }
