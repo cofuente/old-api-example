@@ -6,8 +6,8 @@ const { Question } = require('../db/models')
 router.get('', async (req, res, next) => {
   try {
     const allQuestions = await Question.findAll()
-    if (allQuestions) res.status(200).json(allQuestions) 
-    else res.status(404).send('There are no questions in this database.')
+    if (allQuestions.length) res.status(200).json(allQuestions) 
+    else res.status(404).send('Oh, wow. There are no questions in this database.')
   } catch (error) {
     next(error)
   }
@@ -37,10 +37,11 @@ router.get('/:questionUUID', async (req, res, next) => {
 
 // delete a question
 router.delete('/:questionUUID', async (req, res, next) => {
+  const { questionUUID } = req.params
   try {
-    const requestedQuestion = await Question.findByPk(req.params.questionUUID)
-    if (requestedQuestion) {
-      await Question.destroy({ where: { questionUUID: req.params.questionUUID } })
+    const questionToDelete = await Question.findByPk(questionUUID)
+    if (questionToDelete) {
+      await Question.destroy({ where: { questionUUID } })
       res.status(204).send('deletion complete')
     } else res.status(404).send('question not found')
   } catch (error) {
