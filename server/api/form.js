@@ -63,21 +63,22 @@ router.put('/r/:formUUID', async (req, res, next) => {
   const { formUUID } = req.params
   try {
     const formToUpdate = await Form.findByPk( formUUID )
-    // this remove method remains untested
-    const updatedForm = await formToUpdate.removeQuestions( questions )
-    res.status(202).json(updatedForm)
+    await formToUpdate.removeQuestions( questions )
+    const message = `the following questions were successfully removed from form ${formUUID}: ${questions}`
+    res.status(202).send(message)
   } catch (error) {
     next(error)
   }
 })
 
 // delete a form
-router.delete('/:formUUID', async (req, res, next) => {
+router.delete( '/:formUUID',async ( req,res,next ) => {
+  const { formUUID } = req.params
   try {
-    const requestedForm = await Form.findByPk(req.params.formUUID)
-    if (requestedForm) {
-      await Form.destroy({ where: { formUUID: req.params.formUUID } })
-      res.status(200).send('deletion complete')
+    const formToDelete = await Form.findByPk(formUUID)
+    if (formToDelete) {
+      await Form.destroy({ where: { formUUID } })
+      res.status(204).send('deletion complete')
     } else res.status(404).send('form not found')
   } catch (error) {
     next(error)
