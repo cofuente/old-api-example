@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 // @ts-nocheck
