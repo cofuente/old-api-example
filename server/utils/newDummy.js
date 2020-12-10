@@ -21,8 +21,9 @@ const generateAnswer = (requiredQ) => {
   return standardAnswers(requiredQ)
 }
 
+// takes a complete form and generates complete dummy submission data
 const generateFromQuestions = ( completeForm ) => {
-  const {formUUID, stateCode, title} = completeForm
+  const {formUUID} = completeForm
   const requiredQuestionsOnly = completeForm.questions.filter(x => x.required === true)
   const answers = requiredQuestionsOnly.map(x => ({
     questionUUID: x.questionUUID,
@@ -30,14 +31,12 @@ const generateFromQuestions = ( completeForm ) => {
   }))
   return {
     formUUID,
-    answers,
-    stateCode,
-    title
+    answers
   }
 }
 
 
-// This creates randomly generated json submissions for each form in the test seed data 
+// Generates the dummy-submission.js files
 const generateSubmissions = async () => {
   const existingForms = await Form.findAll()
   const formUUIDs = existingForms.map( x => x.formUUID )
