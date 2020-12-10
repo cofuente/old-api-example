@@ -6,7 +6,6 @@ const db = require('../db/_db')
 const {
   Form,
   Question
-  // Submission
 } = require('../db/models')
 
 const { testData } = require('.')
