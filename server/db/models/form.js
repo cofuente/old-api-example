@@ -19,12 +19,13 @@ const Form = db.define('form', {
   },
   instructions: {
     type: Sequelize.TEXT,
-    allowNull: true
+    allowNull: true,
+    defaultValue: 'n/a'
   }
 })
-Form.getQuestions = async (formUUID) => {
-  const formWithQs = await Form.findOne({ where: {formUUID}, include:{ model: db.model('question')}})
-  const questions = formWithQs.dataValues.questions.map((question) => question.questionUUID)
+Form.getQuestions = async ( formUUID ) => {
+  const formWithQs = await Form.findOne( { where: { formUUID },include: { model: db.model( 'question' ) } } )
+  const questions = formWithQs.dataValues.questions.map( ( question ) => question.questionUUID )
   return questions
 }
 

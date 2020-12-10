@@ -3,7 +3,7 @@ const { Form, Question } = require('../db/models')
 
 
 // get all forms
-// Note: will eventually be deleted, only useful for development
+// necessary for development but perhaps not for production?
 router.get('', async (req, res, next) => {
   try {
     const allForms = await Form.findAll()
@@ -45,10 +45,14 @@ router.get('/:formUUID', async (req, res, next) => {
 
 // add a question or questions to a form
 router.put('/a/:formUUID', async (req, res, next) => {
+  const { questions } = req.body
+  const { formUUID } = req.params
   try {
-    const formToUpdate = await Form.findByPk(req.params.formUUID)
-    formToUpdate.addQuestions(req.body)
-    res.status(202).json(formToUpdate.formUUID)
+    const formToUpdate = await Form.findByPk(formUUID)
+    const update = await formToUpdate.addQuestions( questions )
+    if ( update ) { 
+      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
+    } else res.status(400).send('an error has ocurred with your request, please try again')
   } catch (error) {
     next(error)
   }
@@ -57,22 +61,27 @@ router.put('/a/:formUUID', async (req, res, next) => {
 
 // remove a question or questions from a form
 router.put('/r/:formUUID', async (req, res, next) => {
+  const { questions } = req.body
+  const { formUUID } = req.params
   try {
-    const formToUpdate = await Form.findByPk(req.params.formUUID)
-    formToUpdate.removeQuestions(req.body)
-    res.status(202).json(formToUpdate.formUUID)
+    const formToUpdate = await Form.findByPk( formUUID )
+    const deletion = await formToUpdate.removeQuestions( questions )
+    if ( deletion ) { 
+      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
+    } else res.status(400).send('an error has ocurred with your request, please try again')
   } catch (error) {
     next(error)
   }
 })
 
 // delete a form
-router.delete('/:formUUID', async (req, res, next) => {
+router.delete( '/:formUUID',async ( req,res,next ) => {
+  const { formUUID } = req.params
   try {
-    const requestedForm = await Form.findByPk(req.params.formUUID)
-    if (requestedForm) {
-      await Form.destroy({ where: { formUUID: req.params.formUUID } })
-      res.status(200).send('deletion complete')
+    const formToDelete = await Form.findByPk(formUUID)
+    if (formToDelete) {
+      await Form.destroy({ where: { formUUID } })
+      res.status(204).send('deletion complete')
     } else res.status(404).send('form not found')
   } catch (error) {
     next(error)
