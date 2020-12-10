@@ -16,25 +16,12 @@ async function seed() {
   console.log('db synced!')
   const questionsData = testData.questions.map( ( x ) => Question.create( x ) )
   const questions = await Promise.all(questionsData)
-  const questionUUIDs = questions.map(x => x.dataValues.questionUUID)
-  // const questionUUIDs = testData.questions.map(x => x.questionUUID)
+  
+  const formsData = testData.forms.map( ( x ) => Form.create( x ) )
+  const forms = await Promise.all(formsData)
 
-
-  const forms = await Promise.all([
-    Form.create({
-      formUUID: '78d51d9e-0285-4022-81c5-7f14955315d0',
-      title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program',
-      stateCode: 'NY'
-    }, {
-      include: [ Question ]
-    }
-    ).then(
-      (form => form.addQuestions(questionUUIDs))
-    )
-  ])
-
-  console.log(`seeded ${forms.length} forms`)
-  console.log(`with ${questions.length} questions`)
+  console.log(`seeded ${forms.length} test forms`)
+  console.log(`with ${questions.length} test questions`)
   console.log('seeded successfully')
 }
 
