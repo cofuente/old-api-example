@@ -51,8 +51,8 @@ router.put('/a/:formUUID', async (req, res, next) => {
     const formToUpdate = await Form.findByPk(formUUID)
     const update = await formToUpdate.addQuestions( questions )
     if ( update ) { 
-      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
-    } else res.status(400).send('an error has ocurred with your request, please try again')
+      res.status(202).send(`The following questions were successfully added to form ${formUUID}: ${questions}`)
+    } else res.status(400).send('An error has ocurred with your request, please try again')
   } catch (error) {
     next(error)
   }
@@ -67,8 +67,8 @@ router.put('/r/:formUUID', async (req, res, next) => {
     const formToUpdate = await Form.findByPk( formUUID )
     const deletion = await formToUpdate.removeQuestions( questions )
     if ( deletion ) { 
-      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
-    } else res.status(400).send('an error has ocurred with your request, please try again')
+      res.status(202).send(`The following questions were successfully added to form ${formUUID}: ${questions}`)
+    } else res.status(400).send('An error has ocurred with your request, please try again')
   } catch (error) {
     next(error)
   }
