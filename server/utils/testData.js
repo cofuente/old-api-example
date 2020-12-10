@@ -15,7 +15,8 @@ const testData = {
       required: true,
       questionPrompt: 'This is the question prompt.',
       questionType: 'checkbox',
-      questionDescription: 'This is the question description.'
+      questionDescription: 'This is the question description.',
+      possibleAnswers: [ 'checkbox option a', 'checkbox option b' ]
     },
     { 
       questionUUID: '886d73ab-1a54-4616-b1fd-f4c4898ed059',
@@ -43,7 +44,8 @@ const testData = {
       required: true,
       questionPrompt: 'This is the question prompt.',
       questionType: 'radio',
-      questionDescription: 'This is the question description.'
+      questionDescription: 'This is the question description.',
+      possibleAnswers: [ 'radio option a', 'radio option b' ]
     },
     { 
       questionUUID: '2ebb72be-a117-491c-bf52-64f57e358475',
