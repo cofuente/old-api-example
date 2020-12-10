@@ -14,9 +14,11 @@ const { testData } = require('.')
 async function seed() {
   await db.sync({ force: true })
   console.log('db synced!')
-  const questionsArr = testData.map((x)=>Question.create(x))
-  const questions = await Promise.all(questionsArr)
+  const questionsData = testData.questions.map( ( x ) => Question.create( x ) )
+  const questions = await Promise.all(questionsData)
   const questionUUIDs = questions.map(x => x.dataValues.questionUUID)
+  // const questionUUIDs = testData.questions.map(x => x.questionUUID)
+
 
   const forms = await Promise.all([
     Form.create({
