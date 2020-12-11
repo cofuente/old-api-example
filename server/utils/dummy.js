@@ -4,6 +4,7 @@ const path = require('path')
 const { Form, Question } = require( '../db/models' )
 
 // returns a standardized answer for every question type that does not have a possibleAnswers array
+// eslint-disable-next-line consistent-return
 const standardAnswers = (x) => {
   if (x.questionType === 'paragraph') return 'this is a standard paragraph answer'
   if (x.questionType === 'input') return 'this is a standard input answer'
