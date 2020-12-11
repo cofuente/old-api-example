@@ -6,7 +6,9 @@
   "scripts": {
     "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\"",
     "seed": "node server/utils/seed.js",
+    "oldSeed": "node server/utils/oldSeed.js",
     "methods": "node server/utils/methods.js",
+    "dummy": "node server/utils/dummy.js",
     "start": "node index.js",
     "lint": "npm run update-linter && eslint -c ./.eslintrc.js .",
     "lint:fix": "npm run update-linter && eslint -c ./.eslintrc.js . --fix",
