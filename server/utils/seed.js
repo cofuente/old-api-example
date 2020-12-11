@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-// @ts-nocheck
 // eslint-disable-next-line global-require
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
 const db = require('../db/_db')
@@ -10,16 +9,13 @@ const {
   Question
 
 } = require('../db/models')
-const { 
-  distroEnrollmentData,
-  reverseReportData
-  // dummySubmission
-} = require('.')
+const distroEnrollmentData = require( './distroEnrollment' )
+const reverseReportData = require('./reverseReport')
+
 
 async function seed() {
   await db.sync({ force: true })
   console.log('db synced!')
-  // await dummySubmission('78d51d9e-0285-4022-81c5-7f14955315d0', distroEnrollmentData)
   const distroQuestionsArr = distroEnrollmentData.map((x)=>Question.create(x))
   const distroQuestions = await Promise.all(distroQuestionsArr)
   const distroQuestionUUIDs = distroQuestions.map(x => x.dataValues.questionUUID)
