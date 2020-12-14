@@ -1,14 +1,11 @@
-/* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
-// @ts-nocheck
-// eslint-disable-next-line global-require
+/* eslint-disable */
 if (process.env.NODE !== '/app/.heroku/node/bin/node') require('dotenv').config()
 const db = require('../db/_db')
 const { 
-  Form 
-  // Question, 
-  // Answer, 
-  // Submission, 
+  Form,
+  Question, 
+  Answer, 
+  Submission, 
 } = require('../db/models')
 
 async function runMethod() {
