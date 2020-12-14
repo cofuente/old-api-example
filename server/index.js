@@ -29,8 +29,6 @@ server.use(
     saveUninitialized: true
   })
 )
-// still unclear if this should be invoked here or on line 55 w/ an await
-// sessionStore.sync()
 
 // logging middleware
 server.use(logger)
