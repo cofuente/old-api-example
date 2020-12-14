@@ -13,7 +13,6 @@ const { customOptions, logger } = require('./utils')
 const storeOptions = customOptions(db)
 const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
-// const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const server = express()
 
 // session middleware
