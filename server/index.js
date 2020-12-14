@@ -44,7 +44,7 @@ server.use('/api', require('./api'))
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {
   console.error(err.stack)
-  return res.status(500).send('Something broke!')
+  return res.status(500).send('An error has ocurred with your request.')
 }
 server.use(errorHandler)
 
