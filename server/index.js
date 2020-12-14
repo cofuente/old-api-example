@@ -44,11 +44,11 @@ server.use(bodyParser.json())
 server.use('/api', require('./api'))
 
 // error handling endware
-server.use((err, req, res) => {
-  console.error(err)
+const errorHandler = (err, req, res, next) => {
   console.error(err.stack)
-  res.status(err.status || 500).send(err.message || 'Internal server error.')
-})
+  return res.status(500).send('Something broke!')
+}
+server.use(errorHandler)
 
 const bootServer = async () => {
   try {
