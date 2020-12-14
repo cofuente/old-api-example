@@ -37,8 +37,8 @@ server.use(
 server.use(logger)
 
 // body parsing middleware
-server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
+server.use(bodyParser.json())
 
 // api routes
 server.use('/api', require('./api'))
