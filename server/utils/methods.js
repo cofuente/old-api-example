@@ -12,8 +12,8 @@ async function runMethod() {
   await db.sync()
   console.log('DB Synced!')
   try {
-    const formToUpdate = await Form.findByPk( 'd899fc93-5479-497f-81ed-d362075d7bb3' )
-    const updatedForm = await formToUpdate.removeQuestions( '26464b66-7afb-443d-bc69-e6b3cb16ecfa' )
+    const formToUpdate = await Form.findByPk( '' )
+    const updatedForm = await formToUpdate.removeQuestions( '' )
     console.log(updatedForm)
   } catch (error) {
     console.log('eeeeeeeeee:', error)
