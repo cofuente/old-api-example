@@ -1,0 +1,22 @@
+{
+  "questionUUID": "a6ba3467-cd78-4e1c-9f3c-567edf5651d0",
+  "required": true,
+  "questionType": "checkbox",
+  "questionPrompt": "What drugs have you used in the past 30 days?",
+  "possibleAnswers": [
+    ["Heroin", "Heroin"],
+    ["Cocaine", "Cocaine"],
+    ["Methamphetamine", "Methamphetamine"],
+    ["Crack-cocaine", "Crack-cocaine"],
+    ["Marijuana", "Marijuana"],
+    ["Alcohol", "Alcohol"],
+    ["Methadone (prescribed/from a doctor)", "Methadone (prescribed/from a doctor)"],
+    ["Methadone (not prescribed)", "Methadone (not prescribed)"],
+    ["Buprenorphine (prescribed/from a doctor)", "Buprenorphine (prescribed/from a doctor)"],
+    ["Buprenorphine (not prescribed)", "Buprenorphine (not prescribed)"],
+    ["Other opiates such as Oxycontin, Vicodin, Percocet, etc.", "Other opiates such as Oxycontin, Vicodin, Percocet, etc."],
+    ["Benzos such as Valium, Ativan, Xanax", "Benzos such as Valium, Ativan, Xanax"],
+    ["Synthetic marijuana/ K2", "Synthetic marijuana/ K2"],
+    ["Other", "Other"]
+  ]
+}

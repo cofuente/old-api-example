@@ -1,0 +1,15 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "ebee6a78-fc10-4766-a80e-9bcff977acee",
+  "required": true,
+  "questionType": "checkbox",
+  "questionPrompt": "Did the person who experienced the overdose...",
+  "possibleAnswers": [
+    ["Inject heroin", "Inject heroin"],
+    ["Sniff heroin", "Sniff heroin"],
+    ["Use heroin, but how is unknown", "Use heroin, but how is unknown"],
+    ["Not use heroin", "Not use heroin"],
+    ["Not sure if heroin was used", "Not sure if heroin was used"],
+    ["Other", "Other"]
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "possibleAnswers": ["n/a"],
+  "questionUUID": "497bc235-a557-4091-be11-88ea31ebadf4",
+  "required": false,
+  "questionType": "input",
+  "questionPrompt": "If you would like more naloxone sent to you, please write your full mailing address and email address (please use one we recognize if possible).",
+  "questionDescription": "We may contact you to confirm your address. Please look for our message."
+}

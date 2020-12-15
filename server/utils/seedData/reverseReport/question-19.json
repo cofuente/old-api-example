@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "52118e33-1b54-41df-8523-0f7f556b4824",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Were EMS (911) contacted?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Unknown", "Unknown"]
+  ]
+}

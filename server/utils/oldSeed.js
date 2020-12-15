@@ -9,8 +9,8 @@ const {
   Question
 
 } = require('../db/models')
-const distroEnrollmentData = require( './distroEnrollment' )
-// const reverseReportData = require('./reverseReport')
+const distroEnrollmentData = require( './seedData/distroEnrollment' )
+// const reverseReportData = require('./seedData/reverseReport')
 
 
 async function seed() {

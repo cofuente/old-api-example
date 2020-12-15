@@ -1,0 +1,13 @@
+{
+  "questionUUID": "43aea536-e644-4d67-8881-11873f4c10f6",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Would you describe yourself as transgender?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Nonbinary", "Nonbinary"],
+    ["Other", "Other"],
+    ["Prefer not to say", "Prefer not to say"]
+  ]
+}

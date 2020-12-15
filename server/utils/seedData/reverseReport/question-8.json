@@ -1,0 +1,19 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "a50d37b4-13a7-44eb-baef-902684769516",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Was this location...",
+  "possibleAnswers": [
+    ["Someone's home or apartment", "Someone's home or apartment"],
+    ["Shelter or in a supportive housing setting", "Shelter or in a supportive housing setting"],
+    ["A business such as a store, bar, or restaurant", "A business such as a store, bar, or restaurant"],
+    ["Syringe exchange, drug treatment, or social services", "Syringe exchange, drug treatment, or social services"],
+    ["Public place OUTSIDE (park, street, sidewalk, yard)", "Public place OUTSIDE (park, street, sidewalk, yard)"],
+    ["Public place INSIDE other than a library school or college", "Public place INSIDE other than a library school or college"],
+    ["A library", "A library"],
+    ["A college, university, or trade school campus", "A college, university, or trade school campus"],
+    ["A secondary school (middle school, high school)", "A secondary school (middle school, high school)"],
+    ["Other", "Other"]
+  ]
+}

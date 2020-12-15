@@ -1,0 +1,6 @@
+{
+  "questionUUID": "07136a3c-5439-4f70-bc4b-3788578e99dd",
+  "required": true,
+  "questionType": "input",
+  "questionPrompt": "If you have been hospitalized within the past six months, how many times?"
+}

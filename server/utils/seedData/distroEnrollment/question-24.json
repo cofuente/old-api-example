@@ -1,0 +1,15 @@
+{
+  "questionUUID": "d54adbba-1524-4568-93d7-dc5c1cffaf31",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "What is your housing status?",
+  "possibleAnswers": [
+    ["I rent or own my own home/apartment- Stable Situation", "I rent or own my own home/apartment- Stable Situation"],
+    ["I rent or own my own home/apartment- Unstable Situation", "I rent or own my own home/apartment- Unstable Situation"],
+    ["I live with family or friends - Stable Situation", "I live with family or friends - Stable Situation"],
+    ["I live with family or friends- Unstable Situation", "I live with family or friends- Unstable Situation"],
+    ["Homeless in the Shelter System", "Homeless in the Shelter System"],
+    ["Homeless not in the Shelter System", "Homeless not in the Shelter System"],
+    ["Other", "My housing status is not described here"]
+  ]
+}

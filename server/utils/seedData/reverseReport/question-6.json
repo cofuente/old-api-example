@@ -1,0 +1,8 @@
+{
+  "possibleAnswers": ["n/a"],
+  "questionUUID": "14082857-5610-4e24-8190-360188243a97",
+  "required": true,
+  "questionType": "date",
+  "questionPrompt": "Please provide the date the naloxone was used.",
+  "questionDescription": "If you're not sure you can put the month/year."
+}

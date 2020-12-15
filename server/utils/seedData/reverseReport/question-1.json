@@ -1,0 +1,14 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "27816e7b-24d2-422c-8a94-deb2420e2f15",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "What is your relationship to the person who experienced the overdose?",
+  "possibleAnswers": [
+    ["Friend or acquaintance", "Friend or acquaintance"],
+    ["Wife/husband/partner, girlfriend/boyfriend", "Wife/husband/partner, girlfriend/boyfriend"],
+    ["Family member", "Family member"],
+    ["Stranger", "Stranger"],
+    ["Prefer not to answer", "Prefer not to answer"]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "a102e925-0959-40da-a676-de10b7548ba5",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Has the person experienced an overdose in the past?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Not sure", "Not sure"]
+  ]
+}

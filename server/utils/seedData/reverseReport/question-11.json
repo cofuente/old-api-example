@@ -1,0 +1,15 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "5cda099f-189b-4e91-82c5-e1ca99704920",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Was the person who experienced the overdose...",
+  "possibleAnswers": [
+    ["African-American/Black", "African-American/Black"],
+    ["Hispanic/Latinx", "Hispanic/Latinx"],
+    ["Caucasian/White", "Caucasian/White"],
+    ["Asian/Pacific Islander", "Asian/Pacific Islander"],
+    ["Native American", "Native American"],
+    ["I'm not sure", "I'm not sure"]
+  ]
+}

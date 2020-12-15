@@ -1,0 +1,10 @@
+{
+  "questionUUID": "f04b3676-1999-47c5-9394-3c36421aa40c",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "NEXT usually uses USPS, and we can send your package one of two ways. Please take a minute to think about which option works best for you:",
+  "possibleAnswers": [
+    ["Tracked", "NEXT will send me a tracking number so I will know when to expect my package"],
+    ["Untracked", "NEXT will send me a tracking number so I will know when to expect my package"]
+  ]
+}

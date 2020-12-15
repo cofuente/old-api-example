@@ -1,0 +1,10 @@
+{
+  "questionUUID": "872af9f8-d99c-46e0-b222-a1cbdc6490d4",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "I am a US veteran or in active duty",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"]
+  ]
+}

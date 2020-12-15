@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "4fd792c4-4ef6-488e-8212-9d6eef8b0a51",
+  "required": false,
+  "questionType": "dropdown",
+  "questionPrompt": "Did anyone else also give the person naloxone for the overdose?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Unknown", "Unknown"]
+  ]
+}

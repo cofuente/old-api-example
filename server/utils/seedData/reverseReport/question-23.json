@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "13aefbf9-a014-4376-8d04-f08cbf00679a",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Did the person who overdosed survive?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["I'm not sure", "I'm not sure"]
+  ]
+}

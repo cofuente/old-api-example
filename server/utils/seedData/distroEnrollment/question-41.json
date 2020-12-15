@@ -1,0 +1,13 @@
+{
+  "questionUUID": "f77af752-cf87-48ec-86cc-eccc800be9f5",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "We understand that in some circumstances, you may support other people in need with the supplies we send. If this is likely, about how many people do you expect will receive supplies that we send to you for their own use?",
+  "possibleAnswers": [
+    ["1 - 10 people", "1 - 10 people"],
+    ["20 - 30 people", "20 - 30 people"],
+    ["30 - 40 people", "30 - 40 people"],
+    ["40 - 50 people", "40 - 50 people"],
+    ["More than 50 people", "More than 50 people"]
+  ]
+}

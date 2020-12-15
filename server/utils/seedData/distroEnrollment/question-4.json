@@ -1,0 +1,6 @@
+{
+  "questionUUID": "9c8f020c-9ca9-4abc-90b2-817c6f49b1fa",
+  "required": false,
+  "questionType": "input",
+  "questionPrompt": "Address (Apartment or Unit No.)"
+}

@@ -1,0 +1,15 @@
+{
+  "questionUUID": "e7581915-b0a9-464f-a9b1-5f6fd293cec6",
+  "required": false,
+  "questionType": "checkbox",
+  "questionPrompt": "My ethnicity could be described as: (check all that apply)",
+  "possibleAnswers": [
+    ["Ethnicity - Asian", "Asian"],
+    ["Ethnicity - Black/African American", "Black/African Americano"],
+    ["Ethnicity - Hispanic/Latinx", "Hispanic/Latinx"],
+    ["Ethnicity - Native American or Alaskan Native", "Native American or Alaskan Native"],
+    ["Ethnicity - White/Caucasian", "White/Caucasian"],
+    ["Ethnicity - Other", "Other"],
+    ["Prefer not to answer", "Prefer not to answer"]
+  ]
+}

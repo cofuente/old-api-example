@@ -1,0 +1,17 @@
+{
+  "questionUUID": "9ccc9f10-3604-4064-8ee6-b7054790d7f1",
+  "required": false,
+  "questionType": "checkbox",
+  "questionPrompt": "Do you know if the person who overdosed had used anything else?",
+  "questionDescription": "Check all that apply, not required",
+  "possibleAnswers": [
+    ["Methadone", "Methadone"],
+    ["Pain Pills", "Pain Pills"],
+    ["Cocaine", "Cocaine"],
+    ["Alcohol", "Alcohol"],
+    ["Benzos", "Benzos"],
+    ["Amphetamine/Methamphetamine", "Amphetamine/Methamphetamine"],
+    ["Fentanyl", "Fentanyl"],
+    ["Something else", "Something else"]
+  ]
+}

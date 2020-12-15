@@ -1,0 +1,11 @@
+{
+  "questionUUID": "3e53d554-f50a-4866-85ec-aeab31af2c64",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Have you witnessed someone overdose in the past year?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Unsure", "I don't know / I don't remember"]
+  ]
+}

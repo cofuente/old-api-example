@@ -1,0 +1,14 @@
+{
+  "questionUUID": "b64ab5c2-3d8a-4740-bdec-a71513c6740d",
+  "required": false,
+  "questionType": "dropdown",
+  "questionPrompt": "If you answered \"Yes\" that someone else gave naloxone for the same overdose, were they...",
+  "questionDescription": "Check all that apply, not required",
+  "possibleAnswers": [
+    ["Police", "Police"],
+    ["EMS", "EMS"],
+    ["Firefighter", "Firefighter"],
+    ["Another Civilian", "Another Civilian"],
+    ["Other", "Other"]
+  ]
+}

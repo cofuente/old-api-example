@@ -1,0 +1,8 @@
+{
+  "possibleAnswers": ["n/a"],
+  "questionUUID": "3bbbd1f1-4ddc-4f72-893c-01f67ab79a1b",
+  "required": true,
+  "questionType": "input",
+  "questionPrompt": "If someone else gave the overdosing person naloxone, do you know what kind they used?",
+  "questionDescription": "If so, please describe."
+}

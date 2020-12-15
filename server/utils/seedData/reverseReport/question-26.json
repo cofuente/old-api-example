@@ -1,0 +1,12 @@
+{
+  "questionUUID": "8e7adbb8-c0a2-47b0-8848-f0721798592d",
+  "required": false,
+  "questionType": "dropdown",
+  "questionPrompt": "Would you like us to call you to debrief the experience?",
+  "questionDescription": "Alternately, please call 917-828-0293. If we don't pick up right away, leave a message and someone will call you back as soon as possible.",
+  "possibleAnswers": [
+    ["No", "No"],
+    ["Maybe", "Maybe"],
+    ["Yes", "Yes"]
+  ]
+}

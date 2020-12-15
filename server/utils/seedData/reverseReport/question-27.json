@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "38076f1a-2c3c-4fff-aa31-7809d4d03a9f",
+  "required": false,
+  "questionType": "textarea",
+  "questionPrompt": " We are trying to raise money to build out our website and get more postage to send supplies to more people. If you have a message you would be willing to anonymously give about why this program is important. Please include it here.",
+  "possibleAnswers": [
+    ["No", "No"],
+    ["Maybe", "Maybe"],
+    ["Yes", "Yes"]
+  ]
+}

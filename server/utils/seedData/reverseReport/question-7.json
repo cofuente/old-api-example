@@ -1,0 +1,15 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "0f978d79-4e33-437e-8d4b-51422b0318a4",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "How many doses of naloxone was used?",
+  "possibleAnswers": [
+    ["1", "1"],
+    ["2", "2"],
+    ["3", "3"],
+    ["4", "4"],
+    ["5+", "5+"],
+    ["Don't recall", "Don't recall"]
+  ]
+}

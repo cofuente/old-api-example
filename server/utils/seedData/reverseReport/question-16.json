@@ -1,0 +1,12 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "1b9a0fcf-1cc8-408c-ba14-3fad67003819",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Was the person who overdosed conscious before naloxone was used?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Unknown", "Unknown"]
+  ]
+}

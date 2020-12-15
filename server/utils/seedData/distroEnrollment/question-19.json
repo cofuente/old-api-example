@@ -1,0 +1,11 @@
+{
+  "questionUUID": "c2c0d01f-4187-4f51-9b3b-8ad246aa11cc",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Do you have health insurance?",
+  "possibleAnswers": [
+    ["Yes", "Yes"],
+    ["No", "No"],
+    ["Not sure", "I'm not sure"]
+  ]
+}

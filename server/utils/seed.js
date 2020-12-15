@@ -24,6 +24,7 @@ async function seed() {
   const seededQuestions = await Promise.all(questionsData)
   console.log(`with ${seededQuestions.length} test questions`)
   
+  // allows for optional assignment of questions to forms to add submissions
   if (process.argv[2]) {
     const form1 = await Form.findByPk('184a6221-3871-4db0-8081-a42c0ecff497')
     await form1.addQuestions([

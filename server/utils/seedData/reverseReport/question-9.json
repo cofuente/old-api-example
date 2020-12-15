@@ -1,0 +1,15 @@
+{
+  "questionDescription": "n/a",
+  "questionUUID": "ce957635-af0a-4879-a7c9-3d5bc542387e",
+  "required": true,
+  "questionType": "dropdown",
+  "questionPrompt": "Was the person who experienced the overdose...",
+  "possibleAnswers": [
+    ["Cis Woman (non-transgender)", "Cis Woman (non-transgender)"],
+    ["Cis Man (non-transgender)", "Cis Man (non-transgender)"],
+    ["Transgender Woman (MTF)", "Transgender Woman (MTF)"],
+    ["Transgender Man (FTM)", "Transgender Man (FTM)"],
+    ["Non-binary or genderqueer, assigned female at birth", "Non-binary or genderqueer, assigned female at birth"],
+    ["Non-binary or genderqueer, assigned male at birth", "Non-binary or genderqueer, assigned male at birth"]
+  ]
+}

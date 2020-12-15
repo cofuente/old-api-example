@@ -1,0 +1,8 @@
+{
+  "questionDescription": "n/a",
+  "possibleAnswers": ["n/a"],
+  "questionUUID": "fde1b1d9-587c-4ca3-85dd-f7791ecbb115",
+  "required": false,
+  "questionType": "input",
+  "questionPrompt": "Please provide any other information that would be helpful in describing the overdose."
+}
