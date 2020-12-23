@@ -1,8 +1,0 @@
-{
-  "questionDescription": "n/a",
-  "possibleAnswers": ["n/a"],
-  "questionUUID": "a5e0761f-9998-4d3b-b45d-fd7a8efa96c4",
-  "required": true,
-  "questionType": "input",
-  "questionPrompt": "In what zip code did the overdose occur?"
-}
