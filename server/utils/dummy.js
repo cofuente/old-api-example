@@ -54,7 +54,7 @@ const generateSubmissions = async () => {
   const dummySubmissions = await Promise.all(submissionData.map( async (submission, i) => {
     await fs.writeFile(path.join(`submission-${i}-dummy.json`), JSON.stringify(submission), (err) => {
       if (err) throw err
-      console.log('A new submission has been generated!')
+      console.log(`A new submission for form ${submission.formUUID} has been generated!`)
     })
   }))
   return dummySubmissions
