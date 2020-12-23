@@ -49,10 +49,10 @@ const generateSubmissions = async () => {
     }
   })
   const completeForms = await Promise.all(formUUIDs.map(getCompleteForm))
-  const submissionData = completeForms.filter(x =>x.questions.length).map(generateFromQuestions)
+  const submissionData = completeForms.filter(x=>x.questions.length).map(generateFromQuestions)
   
   const dummySubmissions = await Promise.all(submissionData.map( async (submission, i) => {
-    await fs.writeFile(path.join(`dummy-submission-${i}.json`), JSON.stringify(submission), (err) => {
+    await fs.writeFile(path.join(`submission-${i}-dummy.json`), JSON.stringify(submission), (err) => {
       if (err) throw err
       console.log('A new submission has been generated!')
     })
