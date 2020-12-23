@@ -18,7 +18,7 @@ module.exports = {
     'no-console': ['error'],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'never'],
-    'max-len': ['error', { code: 140, ignoreUrls: true }],
+    'max-len': ['warn', { code: 140, ignoreUrls: true }],
     'node/no-unpublished-require': [
       'error',
       {
