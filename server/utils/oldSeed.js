@@ -47,7 +47,6 @@ async function seed() {
   ])
 
   console.log(`seeded ${forms.length} forms`)
-  // console.log(`with ${distroQuestionUUIDs.length} distroQuestions`)
   console.log('seeded successfully')
 }
 
