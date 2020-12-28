@@ -19,7 +19,7 @@ router.post('/', async (req, res, next) => {
   try {
     const newForm = await Form.create(req.body)
     if (newForm) res.status(201).json(newForm)
-    else res.status(500).send('Something went wrong')
+    else res.status(400).send('An error has ocurred with your request.')
   } catch (error) {
     next(error)
   } 
@@ -37,7 +37,7 @@ router.get('/:formUUID', async (req, res, next) => {
       }
     })
     if (requestedForm) res.status(200).json(requestedForm) 
-    else res.status(404).send('form not found')
+    else res.status(404).send('Form not found.')
   } catch (error) {
     next(error)
   }
@@ -51,8 +51,8 @@ router.put('/a/:formUUID', async (req, res, next) => {
     const formToUpdate = await Form.findByPk(formUUID)
     const update = await formToUpdate.addQuestions( questions )
     if ( update ) { 
-      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
-    } else res.status(400).send('an error has ocurred with your request, please try again')
+      res.status(202).send(`The following questions were successfully added to form ${formUUID}: ${questions}`)
+    } else res.status(400).send('An error has ocurred with your request.')
   } catch (error) {
     next(error)
   }
@@ -67,8 +67,8 @@ router.put('/r/:formUUID', async (req, res, next) => {
     const formToUpdate = await Form.findByPk( formUUID )
     const deletion = await formToUpdate.removeQuestions( questions )
     if ( deletion ) { 
-      res.status(202).send(`the following questions were successfully added to form ${formUUID}: ${questions}`)
-    } else res.status(400).send('an error has ocurred with your request, please try again')
+      res.status(202).send(`The following questions were successfully removed from form ${formUUID}: ${questions}`)
+    } else res.status(400).send('An error has ocurred with your request.')
   } catch (error) {
     next(error)
   }
@@ -81,8 +81,8 @@ router.delete( '/:formUUID',async ( req,res,next ) => {
     const formToDelete = await Form.findByPk(formUUID)
     if (formToDelete) {
       await Form.destroy({ where: { formUUID } })
-      res.status(204).send('deletion complete')
-    } else res.status(404).send('form not found')
+      res.status(202).send(`Form ${formUUID} was successfully removed from the database.`)
+    } else res.status(404).send('Form not found.')
   } catch (error) {
     next(error)
   }

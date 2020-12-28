@@ -10,7 +10,7 @@ router.post('/', async (req, res, next) => {
       include: [ Answer ]
     })
     if (newSubmission) res.status(201).json(newSubmission)
-    else res.status(500).send('Something went wrong')
+    else res.status(500).send('An error has ocurred with your request.')
   } catch (error) {
     next(error)
   } 

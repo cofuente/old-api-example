@@ -18,7 +18,7 @@ router.post('/', async (req, res, next) => {
   try {
     const newQuestion = await Question.create(req.body)
     if (newQuestion) res.status(201).json(newQuestion)
-    else res.status(500).send('Something went wrong')
+    else res.status(500).send('An error has ocurred with your request.')
   } catch (error) {
     next(error)
   } 
@@ -29,7 +29,7 @@ router.get('/:questionUUID', async (req, res, next) => {
   try {
     const requestedQuestion = await Question.findByPk(req.params.questionUUID)
     if (requestedQuestion) res.status(200).json(requestedQuestion) 
-    else res.status(404).send('question not found')
+    else res.status(404).send('Question not found.')
   } catch (error) {
     next(error)
   }
@@ -42,8 +42,8 @@ router.delete('/:questionUUID', async (req, res, next) => {
     const questionToDelete = await Question.findByPk(questionUUID)
     if (questionToDelete) {
       await Question.destroy({ where: { questionUUID } })
-      res.status(204).send('deletion complete')
-    } else res.status(404).send('question not found')
+      res.status(202).send(`Question ${questionUUID} was successfully removed from the database.`)
+    } else res.status(404).send('Question not found.')
   } catch (error) {
     next(error)
   }

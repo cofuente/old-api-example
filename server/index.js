@@ -13,7 +13,6 @@ const { customOptions, logger } = require('./utils')
 const storeOptions = customOptions(db)
 const sessionStore = new SequelizeStore(storeOptions)
 const PORT = process.env.PORT || 1337
-// const current = process.env.NODE !== '/app/.heroku/node/bin/node' ? `http://localhost:${PORT}` : 'https://secure-form-api.herokuapp.com'
 const server = express()
 
 // session middleware
@@ -30,25 +29,24 @@ server.use(
     saveUninitialized: true
   })
 )
-// still unclear if this should be invoked here or on line 55 w/ an await
-// sessionStore.sync()
 
 // logging middleware
 server.use(logger)
 
 // body parsing middleware
-server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
+server.use(bodyParser.json())
 
 // api routes
 server.use('/api', require('./api'))
 
 // error handling endware
-server.use((err, req, res) => {
-  console.error(err)
+// eslint-disable-next-line no-unused-vars
+const errorHandler = (err, req, res, next) => {
   console.error(err.stack)
-  res.status(err.status || 500).send(err.message || 'Internal server error.')
-})
+  return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
+}
+server.use(errorHandler)
 
 const bootServer = async () => {
   try {
