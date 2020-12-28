@@ -43,6 +43,25 @@ router.get('/:formUUID', async (req, res, next) => {
   }
 })
 
+// alter the order of questions on a specific form
+router.put('/:formUUID', async (req, res, next) => {
+  // const { formUUID } = req.params
+  try {
+    // const formToUpdate = await Form.findOne({
+    //   where: { formUUID },
+    //   include: {
+    //     model: Question,
+    //     as: 'questions'
+    //   }
+    // })
+    // const update = await.formToUpdate.WHATEVERMETHOD(questionOrderObjectobject)
+    // if (formToUpdate) res.status(200).json(formToUpdate) 
+    // else res.status(400).send('An error has ocurred with your request.')
+  } catch (error) {
+    next(error)
+  }
+})
+
 // add a question or questions to a form
 router.put('/a/:formUUID', async (req, res, next) => {
   const { questions } = req.body
