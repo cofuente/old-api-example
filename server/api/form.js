@@ -59,7 +59,7 @@ router.put('/:formUUID', async (req, res, next) => {
         as: 'questions'
       }
     })
-    //database q's
+    // database q's
     const databaseQuestions = formToUpdate.questions.map((x)=> {
       return {questionUUID: x.questionUUID}
     }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
