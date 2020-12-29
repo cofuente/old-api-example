@@ -6,15 +6,43 @@ const {
   Question, 
   Answer, 
   Submission, 
+  QuestionForm
 } = require('../db/models')
 
 async function runMethod() {
   await db.sync()
   console.log('DB Synced!')
+  const formUUID = '1dfb1ed3-58c8-434b-839e-feaae4e7e2ed'
+  questionsArr = [
+    { order: 3, questionUUID: '4a37e32c-34d9-4519-b374-75e34bae10f2' },
+    { order: 4, questionUUID: '30ff124b-5133-40c6-987d-7b1f08f7e2cb' },
+    { order: 1, questionUUID: '9bc94a01-a61f-4a01-a4df-cbd523d4fa7c' },
+    { order: 5, questionUUID: '1e45d100-93a5-41b2-bc53-cba12a5616d5' },
+    { order: 2, questionUUID: '56fdc70e-e37f-4794-bc81-5e4544bc9915' }
+  ]
+
   try {
-    const formToUpdate = await Form.findByPk( '' )
-    const updatedForm = await formToUpdate.removeQuestions( '' )
-    console.log(updatedForm)
+    const formToUpdate = await Form.findOne({
+      where: { formUUID },
+      include: {
+        model: Question,
+        as: 'questions'
+      }
+    })
+    console.log(formToUpdate.questions.map((x)=> {
+      return {questionUUID: x.questionUUID, order: x.questionsforms.order}
+    }))
+    const update = await QuestionForm.updateOrder(questionsArr, formUUID)
+    const updatedForm = await Form.findOne({
+      where: { formUUID },
+      include: {
+        model: Question,
+        as: 'questions'
+      }
+    })
+    console.log(updatedForm.questions.map((x)=> {
+      return {questionUUID: x.questionUUID, order: x.questionsforms.order}
+    }))
   } catch (error) {
     console.log('eeeeeeeeee:', error)
   }
