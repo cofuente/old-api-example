@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Form, Question } = require('../db/models')
+const { Form, Question, QuestionForm } = require('../db/models')
 
 
 // get all forms
@@ -45,18 +45,31 @@ router.get('/:formUUID', async (req, res, next) => {
 
 // alter the order of questions on a specific form
 router.put('/:formUUID', async (req, res, next) => {
-  // const { formUUID } = req.params
+  const { formUUID } = req.params
+  const { questions } = req.body
   try {
-    // const formToUpdate = await Form.findOne({
-    //   where: { formUUID },
-    //   include: {
-    //     model: Question,
-    //     as: 'questions'
-    //   }
-    // })
-    // const update = await.formToUpdate.WHATEVERMETHOD(questionOrderObjectobject)
-    // if (formToUpdate) res.status(200).json(formToUpdate) 
-    // else res.status(400).send('An error has ocurred with your request.')
+    const questionUUIDs = questions.map((x)=> {
+      return {questionUUID: x.questionUUID}
+    }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
+    const formToUpdate = await Form.findOne({
+      where: { formUUID },
+      include: {
+        model: Question,
+        as: 'questions'
+      }
+    })
+    const databaseQuestions = formToUpdate.questions.map((x)=> {
+      return {questionUUID: x.questionUUID}
+    }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
+
+    
+    if(JSON.stringify(questionUUIDs) !== JSON.stringify(databaseQuestions)) {
+      res.status(406).send('An error has ocurred with your request.')
+    } else {
+      const update = await QuestionForm.updateOrder(questions, formUUID)
+      if (update) res.status(200).send('Success.')
+      else res.status(400).send('An error has ocurred with your request.')
+    }
   } catch (error) {
     next(error)
   }
