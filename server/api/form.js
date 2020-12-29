@@ -49,9 +49,8 @@ router.put('/:formUUID', async (req, res, next) => {
   const { questions } = req.body
   try {
     // cleaning up the req to compare to database
-    const questionUUIDs = questions.map((x)=> {
-      return {questionUUID: x.questionUUID}
-    }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
+    const questionUUIDs = questions.map((x)=> ({questionUUID: x.questionUUID}))
+      .sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
     const formToUpdate = await Form.findOne({
       where: { formUUID },
       include: {
@@ -60,9 +59,8 @@ router.put('/:formUUID', async (req, res, next) => {
       }
     })
     // database q's
-    const databaseQuestions = formToUpdate.questions.map((x)=> {
-      return {questionUUID: x.questionUUID}
-    }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
+    const databaseQuestions = formToUpdate.questions.map((x)=> ({questionUUID: x.questionUUID}))
+      .sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
 
     
     // if requested q's and database q's don't match, send error
