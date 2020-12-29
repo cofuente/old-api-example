@@ -48,6 +48,7 @@ router.put('/:formUUID', async (req, res, next) => {
   const { formUUID } = req.params
   const { questions } = req.body
   try {
+    // cleaning up the req to compare to database
     const questionUUIDs = questions.map((x)=> {
       return {questionUUID: x.questionUUID}
     }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
@@ -58,11 +59,13 @@ router.put('/:formUUID', async (req, res, next) => {
         as: 'questions'
       }
     })
+    //database q's
     const databaseQuestions = formToUpdate.questions.map((x)=> {
       return {questionUUID: x.questionUUID}
     }).sort((a,b)=> Number(a.questionUUID[0])-Number(b.questionUUID[0]))
 
     
+    // if requested q's and database q's don't match, send error
     if(JSON.stringify(questionUUIDs) !== JSON.stringify(databaseQuestions)) {
       res.status(406).send('An error has ocurred with your request.')
     } else {
