@@ -3,7 +3,7 @@ name: "Automerge Dependabot"
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   auto-merge:

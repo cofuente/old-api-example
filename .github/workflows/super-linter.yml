@@ -22,7 +22,7 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v3
         env:
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_YAML: true
           VALIDATE_MD: true
