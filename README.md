@@ -41,5 +41,5 @@
 
 ## Development Information
 
-* Changes should pass `npm run test` before merging/commiting/whatever.
+* Changes should pass `npm run test` before merging/commiting.
 * To stop your Postgres server, run `pg_ctl -D /usr/local/var/postgres stop`.
