@@ -1,5 +1,5 @@
 # README
-
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 ## Setting up your environment
 
 1. Install Node.js and npm using Homebrew
