@@ -56,5 +56,10 @@
     "semi": false,
     "singleQuote": true,
     "printWidth": 140
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
