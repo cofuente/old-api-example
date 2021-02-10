@@ -16,7 +16,7 @@
    1. Run `brew install postgresql`
    1. (Optional) You can use the [Postgres app](https://postgresapp.com/) if you'd like to have a richer UI than the command line
 
-## Getting started? 
+## Getting started
 
 1. `cd` into this repository
 1. Check that you're using the same version as specified in `./nvmrc`. You can check this manually by running `node -v` and seeing if the values match. If not, run the following commands.
