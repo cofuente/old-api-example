@@ -1,5 +1,5 @@
 # README
-
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 ## Setting up your environment
 
 1. Install Node.js and npm using Homebrew
@@ -16,7 +16,7 @@
    1. Run `brew install postgresql`
    1. (Optional) You can use the [Postgres app](https://postgresapp.com/) if you'd like to have a richer UI than the command line
 
-## Getting started
+## Getting started? 
 
 1. `cd` into this repository
 1. Check that you're using the same version as specified in `./nvmrc`. You can check this manually by running `node -v` and seeing if the values match. If not, run the following commands.
@@ -41,5 +41,5 @@
 
 ## Development Information
 
-* Changes should pass `npm run test` before committing.
+* Changes should pass `npm run test` before merging.
 * To stop your Postgres server, run `pg_ctl -D /usr/local/var/postgres stop`.

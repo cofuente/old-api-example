@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -55,5 +56,10 @@
     "semi": false,
     "singleQuote": true,
     "printWidth": 140
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
