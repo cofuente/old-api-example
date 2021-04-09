@@ -17,6 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
   },
+  "engines": {
+    "node": "14.11.0"
+  },
   "author": "Chiara Marcial Martínez, Mohawk Greene",
   "license": "ISC",
   "bugs": {
