@@ -23,14 +23,14 @@
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
     {
-      "name" : "Mohawk Greene",
-      "email" : "technology@nextdistro.org",
-      "url" : "https://github.com/drakeltheryuujin"
+      "name": "Mohawk Greene",
+      "email": "technology@nextdistro.org",
+      "url": "https://github.com/drakeltheryuujin"
     },
     {
-      "name" : "Amy Zeng",
-      "email" : "amyzeng.am@gmail.com",
-      "url" : "https://github.com/amyvzeng"
+      "name": "Amy Zeng",
+      "email": "amyzeng.am@gmail.com",
+      "url": "https://github.com/amyvzeng"
     }
   ],
   "license": "ISC",
