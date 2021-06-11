@@ -4,9 +4,6 @@ const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 1337
 const server = express()
 
-// session middleware
-
-
 
 // body parsing middleware
 server.use(bodyParser.urlencoded({ extended: true }))
