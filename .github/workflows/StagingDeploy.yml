@@ -31,7 +31,7 @@ jobs:
       run: npx eslint -c ./.eslintrc.js .
       env:
         CI: true
-
+  
   deploy:
     runs-on: ubuntu-latest
     strategy:
