@@ -1,8 +1,6 @@
 const router = require('express').Router()
 
-router.use('/forms', require('./form'))
-router.use('/submissions', require('./submission'))
-router.use('/questions', require('./question'))
+router.use('/forms', require('./forms/form'))
 
 
 module.exports = router
