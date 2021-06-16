@@ -1,4 +1,4 @@
-name: "Automerge Dependabot"
+name: "Automerge For Dependabot"
 
 on:
   pull_request_target
