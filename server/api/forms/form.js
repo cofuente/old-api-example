@@ -10,7 +10,7 @@ router.get('/test', async (req,res) =>{
         res.send(results.json())
         
     }catch(err){
-
+        console.log("Error Occured:  ",err)
     }
     
 
