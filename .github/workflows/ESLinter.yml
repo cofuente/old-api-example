@@ -1,0 +1,32 @@
+name: ES Linter
+
+on: 
+  push:
+    branches:
+      - staging
+
+jobs:
+  es-lint:
+    name: Lint javascript files
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.17.0']
+
+    if: github.actor != 'dependabot[bot]'
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js version ${{ matrix.node-version }}
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dev dependencies
+      run: npm install
+
+    - name: Running linter using eslint config file
+      run: npx eslint -c ./.eslintrc.js .
+      env:
+        CI: true
