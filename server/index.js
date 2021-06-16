@@ -10,8 +10,6 @@ const pool = new Pool({
   ssl: false
 })
 
-console.log("Connecting to Postgres........")
-const client = await pool.connect();
 
 
 server.use(bodyParser.urlencoded({ extended: true }))
@@ -21,14 +19,6 @@ server.use(bodyParser.json())
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-
-server.get('/form', function (req, res) {
-  console.log("Connecting to Postgres........")
-  const client = await pool.connect();
-  const result = await client.query('SELECT * FROM test_table');
-  const results = { 'form results': (result) ? result.rows : null};
-  res.send(results.json())
-})
 
 
 server.get('/', function (req, res) {
