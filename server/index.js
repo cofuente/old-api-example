@@ -26,7 +26,7 @@ server.get('/', function (req, res) {
 server.use('/api', require('./api'))
 
 
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, res) => {
   console.error(err.stack)
   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
 }
@@ -34,7 +34,6 @@ server.use(errorHandler)
 
 const bootServer = async () => {
   try {
-
     server.listen(PORT) 
     console.log(` API is listening on port:${PORT} `)
   } catch (err) {
