@@ -1,11 +1,7 @@
 name: "Automerge Dependabot"
 
 on:
-  pull_request:
-    branches:
-      - staging
-      - production
-      - main
+  pull_request_target:
 
 jobs:
   auto-merge:
