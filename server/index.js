@@ -3,12 +3,7 @@ const bodyParser = require('body-parser')
 
 const PORT = process.env.PORT || 1337
 const server = express()
-const {Pool} = require("pg")
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: false
-})
 
 
 
@@ -29,6 +24,7 @@ server.use('/api', require('./api'))
 
 
 const errorHandler = (err, res) => {
+/* eslint-disable no-alert, no-console */
   console.error(err.stack)
   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
 }
@@ -39,6 +35,8 @@ const bootServer = async () => {
     server.listen(PORT) 
     console.log(` API is listening on port:${PORT} `)
   } catch (err) {
+
+  /* eslint-disable no-alert, no-console */
     console.error(err)
   }
 }
