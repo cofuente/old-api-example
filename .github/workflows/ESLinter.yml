@@ -2,8 +2,6 @@ name: ES Linter
 
 on: 
   push:
-    branches:
-      - staging
 
 jobs:
   es-lint:
