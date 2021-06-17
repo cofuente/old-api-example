@@ -8,7 +8,7 @@ updates:
       timezone: "America/New_York"
     labels:
       - "security"
-      - "dependency"
+      - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
