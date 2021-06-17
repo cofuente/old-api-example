@@ -1,15 +1,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const PORT = process.env.PORT || 1337
 const server = express()
 
 
 
-
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
-
+server.use(cors())
 
 
 
@@ -33,7 +33,7 @@ server.use(errorHandler)
 const bootServer = async () => {
   try {
     server.listen(PORT) 
-    console.log(` API is listening on port:${PORT} `)
+    // console.log(` API is listening on port:${PORT} `)
   } catch (err) {
 
   /* eslint-disable no-alert, no-console */
