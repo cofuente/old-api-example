@@ -16,7 +16,6 @@ server.use(bodyParser.json())
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
-
 server.get('/', function (req, res) {
   res.send({'enviroment': CURRENT_ENV})
 })
