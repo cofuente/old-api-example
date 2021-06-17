@@ -36,7 +36,8 @@ server.use('/api', require('./api'))
 
 
 const errorHandler = (err, res) => {
-  // console.error(err.stack)
+/* eslint-disable no-alert, no-console */
+  console.error(err.stack)
   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
 }
 server.use(errorHandler)
@@ -46,6 +47,8 @@ const bootServer = async () => {
     server.listen(PORT) 
     // console.log(` API is listening on port:${PORT} `)
   } catch (err) {
+
+  /* eslint-disable no-alert, no-console */
     console.error(err)
   }
 }

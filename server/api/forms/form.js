@@ -5,14 +5,14 @@ router.get('/test', async (req,res) =>{
 
    
     try{
-        const result = await db.query('SELECT * FROM test_table');
-        console.log('results => ',result)
-        const results = { 'form results': (result) ? result.rows : null};
-        console.log(results)
-        res.send(results)
+        // eslint-disable-next-line no-undef
+        const result = await client.query('SELECT * FROM test_table')
+        const results = { 'form results': (result) ? result.rows : null}
+        res.send(results.json())
         
     }catch(err){
-        
+        // eslint-disable-next-line no-console
+        console.log('Error Occured:  ',err)
     }
     
 
