@@ -33,6 +33,16 @@
       "url": "https://github.com/amyvzeng"
     },
     {
+      "name": "Bonga Ngcobo",
+      "email": "bonga.developer@outlook.com",
+      "url": "https://github.com/BongaDev"
+    },
+    {
+      "name": "Khanyisani Buthelezi",
+      "email": "khanyisani.buthelezi03@gmail.com",
+      "url": "https://github.com/KhanyiTheGreat"
+    },
+    {
       "name": "Kestrel Gorlick",
       "email": "kestrel.gorlick@gmail.com",
       "url": "https://github.com/kestrelgorlick"
@@ -44,17 +54,15 @@
   },
   "homepage": "https://github.com/next-harm-reduction/secure-form-api#readme",
   "dependencies": {
-    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
-    "chalk": "^4.1.0",
-    "chalk-animation": "^1.6.0",
-    "connect-session-sequelize": "^7.1.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "fs": "0.0.1-security",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
-    "sequelize": "^6.5.0"
+    "postgresql": "0.0.1",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
