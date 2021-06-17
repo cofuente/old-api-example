@@ -11,8 +11,6 @@ const pool = new Pool({
   pool.connect()
     .then(() => {
       
-       // console.log('Connecting to Postgres..')
-       // console.log('Postgres Connected.....')
   }).catch(err =>{
     /* eslint-disable no-alert, no-console */
      console.log('could not connect to postgres:',err)
