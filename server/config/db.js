@@ -1,4 +1,4 @@
-const {Pool} = require("pg")
+const {Pool} = require('pg')
 
 const pool = new Pool({
     
@@ -10,12 +10,14 @@ const pool = new Pool({
   
   pool.connect()
     .then(() => {
-      // console.log('Connecting to Postgres..')
-      // console.log('Postgres Connected....')
+      
+       // console.log('Connecting to Postgres..')
+       // console.log('Postgres Connected.....')
   }).catch(err =>{
-    // console.log("could not connect to postgres:",err)
+    /* eslint-disable no-alert, no-console */
+     console.log('could not connect to postgres:',err)
   })
 
   module.exports = {
-    query: (text, params) => pool.query(text, params),
-  };
+    query: (text, params) => pool.query(text, params)
+  }

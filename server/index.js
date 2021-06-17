@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const cors = require('cors');
-const { trace } = require('./api');
+const cors = require('cors')
+
 const PORT = process.env.PORT || 1337
 const server = express()
 
@@ -14,18 +14,6 @@ server.use(cors())
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-server.get('/form', async (req,res) => {
-  try{
-    // console.log('Connecting to Postgres........')
-    const client = await pool.connect();
-    const result = await client.query('SELECT * FROM test_table');
-    const results = { 'form results': (result) ? result.rows : null};
-    res.send(results)
-  }catch(err){
-    // console.log(err)
-  }
-})
-
 
 
 server.get('/', function (req, res) {
