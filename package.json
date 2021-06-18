@@ -61,8 +61,7 @@
     "fs": "0.0.1-security",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
-    "postgresql": "0.0.1",
-    "sequelize": "^6.3.5"
+    "postgresql": "0.0.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
