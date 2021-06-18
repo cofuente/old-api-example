@@ -4,8 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "13:12"
+      time: "14:15"
       timezone: "America/New_York"
+    
+    target-branch: staging
+      
     labels:
       - "security"
       - "dependencies"
