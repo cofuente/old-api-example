@@ -13,4 +13,5 @@ jobs:
         with:
           target: patch
           github-token: ${{secrets.GH_TOKEN}}
+          approve: true
           command: merge
