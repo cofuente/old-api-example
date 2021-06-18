@@ -4,7 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "14:34"
+      time: "14:36"
       timezone: "America/New_York"
     allow: 
       - dependency-type: "all"
