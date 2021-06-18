@@ -4,9 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "14:23"
+      time: "14:32"
       timezone: "America/New_York"
-    
+    allow: 
+      - dependency-type: "all"
     target-branch: "staging"
       
     labels:
