@@ -60,7 +60,7 @@
     "express-session": "^1.17.2",
     "fs": "0.0.1-security",
     "morgan": "^1.10.0",
-    "pg": "^8.5.1",
+    "pg": "^8.6.0",
     "postgresql": "0.0.1"
   },
   "devDependencies": {
