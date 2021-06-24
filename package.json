@@ -18,7 +18,7 @@
     "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
   },
   "engines": {
-    "node": "14.11.0"
+    "node": "14.17.0"
   },
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
