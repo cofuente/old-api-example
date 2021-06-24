@@ -3,21 +3,18 @@ name: "Deploy to Heroku Staging"
 on:
   push:
     branches:
-      - staging # Changing the branch here would also work
+      - staging
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node: ["14.17.0"]
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME_STAGING}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME_PRODUCTION}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          justlogin: true
-      - run: heroku auth:whoami
-      - run: heroku deploy 
