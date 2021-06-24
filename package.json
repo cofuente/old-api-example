@@ -15,21 +15,6 @@
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
     {
-      "name": "Mohawk Greene",
-      "email": "technology@nextdistro.org",
-      "url": "https://github.com/drakeltheryuujin"
-    },
-    {
-      "name": "Amy Zeng",
-      "email": "amyzeng.am@gmail.com",
-      "url": "https://github.com/amyvzeng"
-    },
-    {
-      "name": "Bonga Ngcobo",
-      "email": "bonga.developer@outlook.com",
-      "url": "https://github.com/BongaDev"
-    },
-    {
       "name": "Khanyisani Buthelezi",
       "email": "khanyisani.buthelezi03@gmail.com",
       "url": "https://github.com/KhanyiTheGreat"
@@ -38,6 +23,21 @@
       "name": "Kestrel Gorlick",
       "email": "kestrel.gorlick@gmail.com",
       "url": "https://github.com/kestrelgorlick"
+    },
+    {
+      "name": "Mohawk Greene",
+      "email": "technology@nextdistro.org",
+      "url": "https://github.com/drakeltheryuujin"
+    },
+    {
+      "name": "Bonga Ngcobo",
+      "email": "bonga.developer@outlook.com",
+      "url": "https://github.com/BongaDev"
+    },
+    {
+      "name": "Amy Zeng",
+      "email": "amyzeng.am@gmail.com",
+      "url": "https://github.com/amyvzeng"
     }
   ],
   "license": "ISC",
