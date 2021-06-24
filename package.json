@@ -1,25 +1,16 @@
 {
   "name": "secure-form-api",
   "version": "2.0.0",
-  "description": "",
+  "engines": {
+    "node": "14.17.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\"",
-    "seed": "node server/utils/seed.js",
-    "methods": "node server/utils/methods.js",
-    "dummy": "node server/utils/dummy.js",
     "start": "node index.js",
     "just-lint": "npx eslint -c ./.eslintrc.js .",
     "lint": "npm run update-linter && eslint -c ./.eslintrc.js .",
     "lint:fix": "npm run update-linter && eslint -c ./.eslintrc.js . --fix",
     "update-linter": "npx install-peerdeps --dev eslint-config-airbnb-base && npx install-peerdeps --dev eslint-config-prettier"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
-  },
-  "engines": {
-    "node": "14.17.0"
   },
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
@@ -53,6 +44,10 @@
   "bugs": {
     "url": "https://github.com/next-harm-reduction/secure-form-api/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
+  },
   "homepage": "https://github.com/next-harm-reduction/secure-form-api#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -82,8 +77,7 @@
     "trailingComma": "none",
     "tabWidth": 2,
     "semi": false,
-    "singleQuote": true,
-    "printWidth": 140
+    "singleQuote": true
   },
   "config": {
     "commitizen": {
