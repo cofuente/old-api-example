@@ -1,7 +1,6 @@
 const {Pool} = require('pg')
 
 const pool = new Pool({
-    
   connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
@@ -12,7 +11,6 @@ const pool = new Pool({
     .then(() => {
       
   }).catch(err =>{
-    /* eslint-disable no-alert, no-console */
      console.log('could not connect to postgres:',err)
   })
 

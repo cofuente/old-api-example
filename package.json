@@ -9,6 +9,7 @@
     "methods": "node server/utils/methods.js",
     "dummy": "node server/utils/dummy.js",
     "start": "node index.js",
+    "just-lint": "npx eslint -c ./.eslintrc.js .",
     "lint": "npm run update-linter && eslint -c ./.eslintrc.js .",
     "lint:fix": "npm run update-linter && eslint -c ./.eslintrc.js . --fix",
     "update-linter": "npx install-peerdeps --dev eslint-config-airbnb-base && npx install-peerdeps --dev eslint-config-prettier"
@@ -18,7 +19,7 @@
     "url": "git+https://github.com/next-harm-reduction/secure-form-api.git"
   },
   "engines": {
-    "node": "14.11.0"
+    "node": "14.17.0"
   },
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
