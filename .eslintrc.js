@@ -13,15 +13,10 @@ module.exports = {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'never'],
     'eol-last': ['error', 'never'],
-    'max-len': ['warn', { code: 140, ignoreUrls: true }],
-    'node/no-unpublished-require': [
-      'error',
-      {
-        allowModules: ['electron', 'dotenv']
-      }
-    ],
+    'import/no-unresolved': 'warn',
+    'node/no-unpublished-require': ['error'],
     'node/no-missing-require': 'warn',
-    'import/no-unresolved': 'warn'
+    'node/no-unsupported-features/es-syntax': ['warn', {'version': '14.17.0'}]
   },
   ignorePatterns: ['**/*.spec.js', '**/*.min.js', 'dist/', 'node_modules']
 }
