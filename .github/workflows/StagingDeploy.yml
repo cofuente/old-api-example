@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         node: ["14.17.0"]
+        
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
@@ -18,3 +19,14 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME_STAGING}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
+          
+  notify:
+    name: Discord Notification
+    needs: # make sure the notification is sent AFTER the jobs you want included have completed
+      - deploy
+    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+      - name: Notify
+        uses: nobrayner/discord-webhook@v1
+        with:
+          github-token: ${{ secrets.github_token }}
+          discord-webhook: ${{ secrets.DISCORD_ALERTS }}
