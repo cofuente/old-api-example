@@ -29,3 +29,16 @@ jobs:
       run: npx eslint -c ./.eslintrc.js .
       env:
         CI: true
+        
+  notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    needs: # make sure the notification is sent AFTER the jobs you want included have completed
+      - es-lint
+    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    steps:
+      - name: Notify
+        uses: nobrayner/discord-webhook@v1
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          discord-webhook: ${{ secrets.DISCORD_ALERTS }}
