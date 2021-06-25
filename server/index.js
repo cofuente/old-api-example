@@ -10,7 +10,7 @@ const server = express()
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(cors())
-
+app.use(morgan('dev'))
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
