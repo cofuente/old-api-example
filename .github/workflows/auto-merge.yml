@@ -1,31 +1,29 @@
-name: "Deploy to Heroku Production"
+name: "Automerge For Dependabot"
 
-on:
-  push:
-    branches:
-      - production
+on: pull_request_target
 
 jobs:
-  deploy:
+  auto-merge:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ["14.17.0"]
+
+    if: github.actor == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME_PRODUCTION}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          target: patch
+          github-token: ${{secrets.GH_TOKEN}}
+          approve: true
+          command: merge
   notify:
     name: Discord Notification
     runs-on: ubuntu-latest
     needs: # make sure the notification is sent AFTER the jobs you want included have completed
-      - deploy
+      - auto-merge
     if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
     steps:
       - name: Notify
         uses: nobrayner/discord-webhook@v1
         with:
           github-token: ${{ secrets.GH_TOKEN }}
+          discord-webhook: ${{ secrets.DISCORD_ALERTS }}

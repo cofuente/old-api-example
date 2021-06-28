@@ -4,8 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "9:00"
+      time: "09:00"
       timezone: "America/New_York"
+    allow: 
+      - dependency-type: "all"
+    target-branch: "staging"
+      
     labels:
       - "security"
       - "dependencies"
@@ -13,7 +17,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "9:00"
+      time: "09:00"
       timezone: "America/New_York"
     labels:
       - "security"
