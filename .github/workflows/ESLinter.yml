@@ -1,4 +1,4 @@
-name: ES Linter
+name: "ES Lint"
 
 on: 
   push:
