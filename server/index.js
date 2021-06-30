@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const morgan = require('morgan')
+const db = require('./config/db')
 
 const PORT = process.env.PORT || 1337
 const server = express()
@@ -10,13 +12,13 @@ const server = express()
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(cors())
-app.use(morgan('dev'))
+server.use(morgan('dev'))
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
-server.get('/', function (req, res) {
+server.get('/', (req, res) => {
   res.send({'enviroment': CURRENT_ENV})
 })
 
@@ -33,13 +35,26 @@ server.use(errorHandler)
 const bootServer = async () => {
   try {
     server.listen(PORT) 
-    // console.log(` API is listening on port:${PORT} `)
+    console.log(` API is listening on port:${PORT} `)
   } catch (err) {
 
   /* eslint-disable no-alert, no-console */
     console.error(err)
   }
 }
+
+const syncDb = () => db.sync() 
+
+async function bootApp() {
+  try{
+    await bootServer()
+  await syncDb()
+  }catch(err){
+    console.error(err)
+  }
+  
+}
+
 module.exports = {
-  bootServer
+  bootApp
 }

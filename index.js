@@ -1,3 +1,4 @@
-const { bootServer } = require('./server')
+const { bootApp } = require('./server')
 
-bootServer()
+
+bootApp()
