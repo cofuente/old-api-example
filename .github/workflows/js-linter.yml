@@ -2,7 +2,7 @@ name: "ES Lint"
 
 on: 
   push:
-    branches-ignore: production
+    branches-ignore: [production,'dependabot/npm_and_yarn/**']
 
 jobs:
   es-lint:
