@@ -7,17 +7,20 @@ const db = require('./config/db')
 const PORT = process.env.PORT || 1337
 const server = express()
 
-
-
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(cors())
+<<<<<<< HEAD
 server.use(morgan('dev'))
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
+=======
+
+const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
+>>>>>>> staging
 server.get('/', (req, res) => {
   res.send({'enviroment': CURRENT_ENV})
 })
@@ -26,7 +29,6 @@ server.use('/api', require('./api'))
 
 
 const errorHandler = (err, res) => {
-/* eslint-disable no-alert, no-console */
   console.error(err.stack)
   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
 }
@@ -37,8 +39,6 @@ const bootServer = async () => {
     server.listen(PORT) 
     console.log(` API is listening on port:${PORT} `)
   } catch (err) {
-
-  /* eslint-disable no-alert, no-console */
     console.error(err)
   }
 }

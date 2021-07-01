@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const pkg = require('../../package.json')
 
+<<<<<<< HEAD
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
 let config
@@ -14,6 +15,12 @@ if (process.env.DATABASE_URL) {
         require: true,
         rejectUnauthorized: false
       }
+=======
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+>>>>>>> staging
     }
   }
 } else {
@@ -24,11 +31,20 @@ if (process.env.DATABASE_URL) {
 
 const db = new Sequelize(
   
+<<<<<<< HEAD
   process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
   config
 )
 
 module.exports = db
+=======
+  pool.connect()
+    .then(() => {
+      
+  }).catch(err =>{
+     console.log('could not connect to postgres:',err)
+  })
+>>>>>>> staging
 
 // This is a global Mocha hook used for resource cleanup.
 // Otherwise, Mocha v4+ does not exit after tests.
