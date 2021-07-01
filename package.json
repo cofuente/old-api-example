@@ -56,14 +56,9 @@
     "express-session": "^1.17.2",
     "fs": "0.0.1-security",
     "morgan": "^1.10.0",
-<<<<<<< HEAD
     "pg": "^8.5.1",
     "postgresql": "0.0.1",
     "sequelize": "^6.6.2"
-=======
-    "pg": "^8.6.0",
-    "postgresql": "0.0.1"
->>>>>>> staging
   },
   "devDependencies": {
     "chai": "^4.3.4",

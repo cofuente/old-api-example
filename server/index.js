@@ -10,17 +10,12 @@ const server = express()
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(cors())
-<<<<<<< HEAD
 server.use(morgan('dev'))
 
 
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
-=======
-
-const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
->>>>>>> staging
 server.get('/', (req, res) => {
   res.send({'enviroment': CURRENT_ENV})
 })
