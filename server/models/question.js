@@ -12,6 +12,10 @@ const Question = db.define('question', {
     type: Sequelize.BOOLEAN,
     defaultValue: false
   },
+  encryptAnswer: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  },
   questionPrompt: {
     type: Sequelize.STRING,
     allowNull: false
@@ -43,7 +47,7 @@ const Question = db.define('question', {
     ]
   }
 }, {
-  timestamps: false
+  timestamps: true
 })
 
 module.exports = Question
