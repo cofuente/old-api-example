@@ -1,19 +1,31 @@
-const {Pool} = require('pg')
+const Sequelize = require('sequelize')
+const pkg = require('../../package.json')
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false
+const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
+
+let config
+
+if (process.env.DATABASE_URL) {
+  config = {
+    logging: false,
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
     }
-  })
-  
-  pool.connect()
-    .then(() => {
-      
-  }).catch(err =>{
-     console.log('could not connect to postgres:',err)
-  })
-
-  module.exports = {
-    query: (text, params) => pool.query(text, params)
   }
+} else {
+  config = {
+    logging: false
+  }
+}
+
+const db = new Sequelize(
+  
+  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
+  config
+)
+
+module.exports = db
