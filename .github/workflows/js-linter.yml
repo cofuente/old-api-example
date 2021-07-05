@@ -26,7 +26,7 @@ jobs:
       run: npm install
 
     - name: Running linter using eslint config file
-      run: npx eslint -c ./.eslintrc.js .
+      run: npx eslint -c ./.eslintrc.js . --ext .js --no-inline-config
       env:
         CI: true
         
