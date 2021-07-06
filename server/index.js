@@ -29,8 +29,9 @@ const errorHandler = (err, res) => {
 }
 server.use(errorHandler)
 
-const bootServer = async () => {
+const init = async () => {
   try {
+    await db.sync()
     server.listen(PORT) 
     console.log(` API is listening on port:${PORT} `)
   } catch (err) {
@@ -38,18 +39,6 @@ const bootServer = async () => {
   }
 }
 
-const syncDb = () => db.sync() 
-
-async function bootApp() {
-  try{
-    await bootServer()
-  await syncDb()
-  }catch(err){
-    console.error(err)
-  }
-  
-}
-
 module.exports = {
-  bootApp
+  init
 }
