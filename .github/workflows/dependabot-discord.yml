@@ -1,0 +1,21 @@
+name: Build and Test
+on: 
+  pull_request: 
+    branches: 
+      - dependabot/npm_and_yarn/**
+
+
+jobs:
+ notify:
+    name: Discord Notification
+    runs-on: ubuntu-latest
+    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    steps:
+      - name: Notify
+        uses: nobrayner/discord-webhook@v1
+        with:
+          title: '${{ github.workflow }}: {{STATUS}}'
+          description: '(DEV) Dependabot Package Pull Request ${{ github.event_name }} trigged this {{STATUS}}!'
+          github-token: ${{ secrets.GH_TOKEN }}
+          discord-webhook: ${{ secrets.DISCORD_ALERTS }}
+
