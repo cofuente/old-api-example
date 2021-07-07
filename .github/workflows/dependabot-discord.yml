@@ -1,15 +1,12 @@
 name: Build and Test
-on: 
-  pull_request: 
-    branches: 
-      - dependabot/npm_and_yarn/**
+on: [pull_request]
 
 
 jobs:
  notify:
     name: Discord Notification
     runs-on: ubuntu-latest
-    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    if: ${{ always() }} && startsWith(github.head.ref,'dependabot/npm_and_yarn/') == true # You always want to be notified: success, failure, or cancelled
     steps:
       - name: Notify
         uses: nobrayner/discord-webhook@v1
