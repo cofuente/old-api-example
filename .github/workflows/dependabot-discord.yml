@@ -15,4 +15,6 @@ jobs:
           description: '(DEV) Dependabot Package Pull Request ${{ github.event_name }} trigged this {{STATUS}}!'
           github-token: ${{ secrets.GH_TOKEN }}
           discord-webhook: ${{ secrets.DISCORD_ALERTS }}
+        env:
+          BRANCH_PREFIX: "dependabot/npm_and_yarn/"
 
