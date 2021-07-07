@@ -11,8 +11,9 @@ jobs:
       - name: Notify
         uses: nobrayner/discord-webhook@v1
         with:
-          title: '${{ github.workflow }}: {{STATUS}}'
-          description: '(DEV) Dependabot Package Pull Request ${{ github.event_name }} trigged this {{STATUS}}!'
           github-token: ${{ secrets.GH_TOKEN }}
           discord-webhook: ${{ secrets.DISCORD_ALERTS }}
+          title: '${{ github.workflow }}: {{STATUS}}'
+          description: '(DEV) Dependabot Package Pull Request ${{ github.event_name }} trigged this {{STATUS}}!'
+          
 
