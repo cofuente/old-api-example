@@ -27,3 +27,4 @@ jobs:
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           discord-webhook: ${{ secrets.DISCORD_ALERTS }}
+          description: 'Auto-merge ran for ${{ github.event.pull_request.title }} '
