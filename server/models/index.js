@@ -17,17 +17,17 @@ Form.belongsToMany(Question, {
   foreignKey: 'formUUID'
 })
 
-Submission.belongsTo(Form, { foreignKey: 'formUUID' })
+Submission.belongsTo(Form, {foreignKey: 'formUUID'})
 
-Form.belongsTo( Program, { foreignKey: 'programUUID' } )
+Form.belongsTo( Program, {foreignKey: 'programUUID'} )
 
-Client.belongsTo( Program, { foreignKey: 'programUUID' } )
+Client.belongsTo( Program, {foreignKey: 'programUUID'} )
 
-User.belongsTo(Program, { foreignKey: 'programUUID' })
-  
-Answer.belongsTo(Question, { foreignKey: 'questionUUID' } )
-  
-Submission.hasMany(Answer, { foreignKey: 'submissionUUID' })
+User.belongsTo(Program, {foreignKey: 'programUUID'})
+
+Answer.belongsTo(Question, {foreignKey: 'questionUUID'} )
+
+Submission.hasMany(Answer, {foreignKey: 'submissionUUID'})
 
 module.exports = {
   Question,

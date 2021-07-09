@@ -9,6 +9,11 @@ module.exports = {
     'eslint:recommended',
     'prettier'
   ],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {jsx: true},
+    sourceType: 'module'
+  },
   rules: {
     // ECMAScript 6-Specific Rules
     'arrow-body-style': 0,

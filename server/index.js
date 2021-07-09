@@ -7,7 +7,7 @@ const db = require('./config/db')
 const PORT = process.env.PORT || 1337
 const server = express()
 
-server.use(bodyParser.urlencoded({ extended: true }))
+server.use(bodyParser.urlencoded({extended: true}))
 server.use(bodyParser.json())
 server.use(cors())
 server.use(morgan('dev'))
@@ -17,7 +17,7 @@ const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
 server.get('/', (req, res) => {
-  res.send({'enviroment': CURRENT_ENV})
+  res.send({enviroment: CURRENT_ENV})
 })
 
 server.use('/api', require('./api'))
@@ -32,7 +32,7 @@ server.use(errorHandler)
 const init = async () => {
   try {
     await db.sync()
-    server.listen(PORT) 
+    server.listen(PORT)
     console.log(` API is listening on port:${PORT} `)
   } catch (err) {
     console.error(err)

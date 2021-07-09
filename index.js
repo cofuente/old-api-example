@@ -1,4 +1,4 @@
-const { init } = require('./server')
+const {init} = require('./server')
 
 
 init()

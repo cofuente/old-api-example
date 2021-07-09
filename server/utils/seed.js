@@ -5,12 +5,12 @@ const {
   Program
 } = require('../models')
 
-const { testData } = require('.')
+const {testData} = require('.')
 
 async function seed() {
-  await db.sync({ force: true })
+  await db.sync({force: true})
   console.log('db synced!')
-  const { questions, programs, forms } = testData
+  const {questions, programs, forms} = testData
   const questionsData = questions.map( ( x ) => Question.create( x ) )
   const seededQuestions = await Promise.all(questionsData)
   console.log(`with ${seededQuestions.length} test questions`)
@@ -18,11 +18,11 @@ async function seed() {
   const programsData = programs.map( ( x ) => Program.create( x ) )
   const seededPrograms = await Promise.all(programsData)
   console.log( `seeded ${ seededPrograms.length } test programs` )
-  
+
   const formsData = forms.map( ( x ) => Form.create( x ) )
   const seededForms = await Promise.all(formsData)
   console.log(`seeded ${seededForms.length} test forms`)
-  
+
   // const form1 = await Form.findByPk('184a6221-3871-4db0-8081-a42c0ecff497')
   // await form1.addQuestions([
   //   'ede83751-33f3-4dcf-8c12-b7fc650c501c',
