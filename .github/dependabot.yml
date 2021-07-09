@@ -1,11 +1,10 @@
-name: "Depandabot Package Updater"
 version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-      time: "09:13"
+      time: "09:00"
       timezone: "America/New_York"
     allow: 
       - dependency-type: "all"
@@ -18,7 +17,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "09:13"
+      time: "09:00"
       timezone: "America/New_York"
     labels:
       - "security"
