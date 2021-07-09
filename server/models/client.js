@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const Sequelize = require('sequelize')
 const db = require('../config/db')
 
-const Client = db.define( 'client',{
+const Client = db.define( 'client', {
   clientUUID: {
     primaryKey: true,
     type: Sequelize.UUID,

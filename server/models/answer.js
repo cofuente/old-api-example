@@ -28,7 +28,6 @@ const Answer = db.define('answer', {
   },
   {
     timestamps: true
-  }
-)
+  })
 
 module.exports = Answer
