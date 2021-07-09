@@ -13,7 +13,9 @@ jobs:
       with:
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
         severity: info
-        description: ' Dependabot Pull Request ${{ github.event.pull_request.title }}'
+        username: ${{ github.actor }}
+        details: 'Pull Request branch name: ${{ github.event.pull_request.base.ref }} . This is the body ${{ github.event.pull_request.body }}'
+        description: ' Dependabot Pull Request to ${{ github.event.pull_request.title }}'
         
           
 
