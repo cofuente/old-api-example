@@ -11,9 +11,10 @@ jobs:
     steps:
     - uses: rjstone/discord-webhook-notify@v1
       with:
+        webhookUrl: ${{ secrets.DISCORD_ALERTS }}
         severity: info
         description: ' Dependabot Pull Request ${{ github.event.pull_request.title }}'
         footer: ${{ github.event.pull_request.name }}.
-        webhookUrl: ${{ secrets.DISCORD_ALERTS }}
+        
           
 
