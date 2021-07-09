@@ -58,7 +58,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "postgresql": "0.0.1",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
