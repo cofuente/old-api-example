@@ -1,6 +1,6 @@
 name: "Dependabot-Discord Notification"
 on: 
-  pull_request:
+  pull_request_target:
     branches:
       - staging
 jobs:
@@ -9,12 +9,11 @@ jobs:
     name: From Dependabot
     if: github.actor == 'dependabot[bot]'
     steps:
-    - uses: rjstone/discord-webhook-notify@v1
+    - uses: rjstone/discord-webhook-notify@v1.0.4
       with:
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
         severity: info
         description: ' Dependabot Pull Request ${{ github.event.pull_request.title }}'
-        footer: ${{ github.event.pull_request.name }}.
         
           
 
