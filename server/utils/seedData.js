@@ -109,7 +109,7 @@ const testData = {
       instructions: 'Here go example instructions.'
     }
   ],
-  users:[
+  users: [
     {
       u: 'jamie',
       p: 'SUPERb4sicpaz123'
@@ -121,7 +121,7 @@ const testData = {
     {
       u: 'chiara',
       p: '*********'
-    },  
+    },
   ]
 }
 
