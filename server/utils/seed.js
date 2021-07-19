@@ -2,7 +2,8 @@ const db = require('../config/db')
 const {
   Form,
   Question,
-  Program
+  Program,
+  User
 } = require('../models')
 
 const {testData} = require('.')
@@ -10,8 +11,9 @@ const {testData} = require('.')
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
-  const {questions, programs, forms} = testData
+  const {questions, programs, forms, users} = testData
   const questionsData = questions.map( ( x ) => Question.create( x ) )
+  const userdata = users.map((x) => User.create(x) )
   const seededQuestions = await Promise.all(questionsData)
   console.log(`with ${seededQuestions.length} test questions`)
 
@@ -22,6 +24,10 @@ async function seed() {
   const formsData = forms.map( ( x ) => Form.create( x ) )
   const seededForms = await Promise.all(formsData)
   console.log(`seeded ${seededForms.length} test forms`)
+
+  const seededUsers = await Promise.all(userdata)
+  console.log(`with ${seededUsers.length} test users`)
+
   console.log('seeded successfully')
 }
 
