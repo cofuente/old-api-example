@@ -1,12 +1,16 @@
 {
 	"info": {
-		"_postman_id": "448cfd59-8397-4113-b724-58cdf860c19b",
-		"name": "Test-All-EndpointsV2",
+		"_postman_id": "a6dfb4d7-2b59-4451-8fed-e9383a524f24",
+		"name": "API-Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get the Enviroment",
+			"name": "forms",
+			"item": []
+		},
+		{
+			"name": "test",
 			"event": [
 				{
 					"listen": "test",
