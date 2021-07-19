@@ -1,16 +1,18 @@
 const router = require('express').Router()
 const db = require('../../config/db')
+const User = require('../../models/user')
 
 router.post('/login', async (req, res) => {
     try {
-        const params = req.params
-        const submission = Submission.findAll({
+        const user = User.findAll({
             where: {
-              Id: params
+              username: req.body.username
             }
           })
-        res.send( submission )
+        res.send( user )
     } catch ( err ) {
         console.log('Error Occured:  ', err)
     }
-}
+})
+
+r
