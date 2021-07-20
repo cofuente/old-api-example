@@ -1,6 +1,7 @@
 name: "Automerge For Dependabot"
 
 on: pull_request_target
+  
 
 jobs:
   auto-merge:
@@ -20,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: # make sure the notification is sent AFTER the jobs you want included have completed
       - auto-merge
-    if: ${{ always() }} && github.actor == 'dependabot[bot]' # You always want to be notified: success, failure, or cancelled
+    if: ${{ always() && github.actor == 'dependabot[bot]' }} # You always want to be notified: success, failure, or cancelled
     steps:
       - name: Notify
         uses: nobrayner/discord-webhook@v1

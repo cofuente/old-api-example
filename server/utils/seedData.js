@@ -111,16 +111,16 @@ const testData = {
   ],
   users: [
     {
-      username: 'jamie',
-      password: 'SUPERb4sicpaz123'
+      u: 'jamie',
+      p: 'SUPERb4sicpaz123'
     },
     {
-      username: 'schuyler',
-      password: 'SUPERpaz123'
+      u: 'schuyler',
+      p: 'SUPERpaz123'
     },
     {
-      username: 'chiara',
-      password: '*********'
+      u: 'chiara',
+      p: '*********'
     },
   ]
 }
