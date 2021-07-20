@@ -108,20 +108,6 @@ const testData = {
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     }
-  ],
-  users: [
-    {
-      u: 'jamie',
-      p: 'SUPERb4sicpaz123'
-    },
-    {
-      u: 'schuyler',
-      p: 'SUPERpaz123'
-    },
-    {
-      u: 'chiara',
-      p: '*********'
-    },
   ]
 }
 
