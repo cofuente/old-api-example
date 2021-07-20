@@ -9,8 +9,12 @@ router.post('/login', async (req, res) => {
               username: req.body.username
             }
           })
-        res.send( user )
+          if (user){
+            res.status(200).json(user)
+          }
     } catch ( err ) {
         console.log('Error Occured:  ', err)
     }
 })
+
+module.exports = router
