@@ -4,7 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const PORT = process.env.PORT || 1337
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-const db = require('./config/db')
+const db = require('./config')
 const server = express()
 
 // BONGA MUST REFACTOR TO REMOVE DEPRECATED PACKAGES
