@@ -9,9 +9,8 @@ const server = express()
 
 module.exports = server
 
-// BONGA MUST REFACTOR TO REMOVE DEPRECATED PACKAGES
-server.use(bodyParser.urlencoded({extended: true}))
-server.use(bodyParser.json())
+server.use(express.urlencoded({extended: true}))
+server.use(express.json())
 server.use(cors())
 server.use(morgan('dev'))
 
