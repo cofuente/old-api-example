@@ -112,17 +112,17 @@ const testData = {
   users: [
     {
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      user: 'jamie',
+      username: 'jamie',
       password: 'SUPERb4sicpaz123'
     },
     {
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      user: 'schuyler',
+      username: 'schuyler',
       password: 'SUPERpaz123'
     },
     {
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      user: 'chiara',
+      username: 'chiara',
       password: '*********'
     },
   ]
