@@ -36,5 +36,6 @@ module.exports = {
   Submission,
   QuestionForm,
   Program,
-  Client
+  Client,
+  User
 }

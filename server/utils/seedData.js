@@ -108,6 +108,23 @@ const testData = {
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     }
+  ],
+  users: [
+    {
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      user: 'jamie',
+      password: 'SUPERb4sicpaz123'
+    },
+    {
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      user: 'schuyler',
+      password: 'SUPERpaz123'
+    },
+    {
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      user: 'chiara',
+      password: '*********'
+    },
   ]
 }
 

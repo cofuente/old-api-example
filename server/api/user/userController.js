@@ -14,3 +14,5 @@ router.post('/login', async (req, res) => {
         console.log('Error Occured:  ', err)
     }
 })
+
+module.exports = router
