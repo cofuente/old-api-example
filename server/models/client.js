@@ -24,47 +24,47 @@ const Client = db.define( 'client', {
   //   unique: true,
   //   allowNull: false
   // },
-  handle: {
-    type: Sequelize.STRING,
-    get() {
-      return () => this.getDataValue('handle')
-    }
-  },
-  salt: {
-    type: Sequelize.STRING,
-    get() {
-      return () => this.getDataValue('salt')
-    }
-  }
+  // handle: {
+  //   type: Sequelize.STRING,
+  //   get() {
+  //     return () => this.getDataValue('handle')
+  //   }
+  // },
+  // salt: {
+  //   type: Sequelize.STRING,
+  //   get() {
+  //     return () => this.getDataValue('salt')
+  //   }
+  // }
 })
 
 module.exports = Client
-Client.prototype.correctHandle = function(candidatePwd) {
-  return Client.encryptHandle(candidatePwd, this.salt()) === this.handle()
-}
+// Client.prototype.correctHandle = function(candidatePwd) {
+//   return Client.encryptHandle(candidatePwd, this.salt()) === this.handle()
+// }
 
-Client.generateSalt = function() {
-  return crypto.randomBytes(16).toString('base64')
-}
+// Client.generateSalt = function() {
+//   return crypto.randomBytes(16).toString('base64')
+// }
 
-Client.encryptHandle = function(plainText, salt) {
-  return crypto
-    .createHash('RSA-SHA256')
-    .update(plainText)
-    .update(salt)
-    .digest('hex')
-}
+// Client.encryptHandle = function(plainText, salt) {
+//   return crypto
+//     .createHash('RSA-SHA256')
+//     .update(plainText)
+//     .update(salt)
+//     .digest('hex')
+// }
 
-const setSaltAndHandle = client => {
-  const localClient = client
-  if (localClient.changed('handle')) {
-    localClient.salt = Client.generateSalt()
-    localClient.handle = Client.encryptHandle(localClient.handle(), localClient.salt())
-  }
-}
+// const setSaltAndHandle = client => {
+//   const localClient = client
+//   if (localClient.changed('handle')) {
+//     localClient.salt = Client.generateSalt()
+//     localClient.handle = Client.encryptHandle(localClient.handle(), localClient.salt())
+//   }
+// }
 
-Client.beforeCreate(setSaltAndHandle)
-Client.beforeUpdate(setSaltAndHandle)
-Client.beforeBulkCreate(users => {
-  users.forEach(setSaltAndHandle)
-})
+// Client.beforeCreate(setSaltAndHandle)
+// Client.beforeUpdate(setSaltAndHandle)
+// Client.beforeBulkCreate(users => {
+//   users.forEach(setSaltAndHandle)
+// })

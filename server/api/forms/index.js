@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const db = require('../../config/db')
 
+// currently not working
 router.get('/test', async (req, res) => {
     try {
         const result = await db.query( 'SELECT * FROM test_table' )
