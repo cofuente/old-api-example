@@ -37,4 +37,4 @@ if (module === require.main) {
   runMethodTest()
 }
 
-module.exports = method
+module.exports = runMethod
