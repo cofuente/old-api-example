@@ -6,7 +6,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server/index.js",
     "seed": "node server/utils/seed.js",
     "methods": "node server/utils/methods.js",
     "just-lint": "npx eslint -c ./.eslintrc.js . --ext .js",

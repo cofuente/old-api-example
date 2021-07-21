@@ -7,11 +7,6 @@ const QuestionForm = require('./questionform')
 const Submission = require('./submission')
 const Answer = require( './answer' )
 
-Form.belongsTo( Program, {foreignKey: 'programUUID'} )
-
-Client.belongsTo( Program, {foreignKey: 'programUUID'} )
-
-User.belongsTo(Program, {foreignKey: 'programUUID'})
 
 Question.belongsToMany(Form, {
   through: QuestionForm,
@@ -23,6 +18,12 @@ Form.belongsToMany(Question, {
 })
 
 Submission.belongsTo(Form, {foreignKey: 'formUUID'})
+
+Form.belongsTo( Program, {foreignKey: 'programUUID'} )
+
+Client.belongsTo( Program, {foreignKey: 'programUUID'} )
+
+User.belongsTo(Program, {foreignKey: 'programUUID'})
 
 Answer.belongsTo(Question, {foreignKey: 'questionUUID'} )
 
