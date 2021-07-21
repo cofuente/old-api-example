@@ -24,7 +24,7 @@ if (process.env.DATABASE_URL) {
 
 const db = new Sequelize(
 
-  process.env.DATABASE_URL || `postgres://postgres:password@localhost:5432/secure_form_api`,
+  process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`,
   config
 )
 
