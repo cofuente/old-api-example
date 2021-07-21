@@ -25,7 +25,7 @@ async function seed() {
   console.log(`seeded ${seededForms.length} test forms`)
   console.log('seeded successfully')
 
-  console.log("user field:" + user)
+
   const userdata = users.map( ( x ) => User.create( x ) )
   const seededUsers = await Promise.all(userdata)
   console.log(`with ${seededUsers.length} test users`)
