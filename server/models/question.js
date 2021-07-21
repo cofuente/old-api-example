@@ -37,7 +37,6 @@ const Question = db.define('question', {
   },
   questionDescription: {
     type: Sequelize.STRING,
-    allowNull: true,
     defaultValue: 'n/a'
   },
   possibleAnswers: {
