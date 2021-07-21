@@ -19,11 +19,11 @@ const Client = db.define( 'client', {
     allowNull: false
   },
   // TO CONSIDER: unclear as to which would be the better paradigm
-  // handle: {
-  //   type: Sequelize.STRING,
-  //   unique: true,
-  //   allowNull: false
-  // },
+  handle: {
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false
+  },
   // handle: {
   //   type: Sequelize.STRING,
   //   get() {
