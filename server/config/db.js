@@ -6,13 +6,13 @@ const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 // BONGA NEED TO DYNAMICALLY TOGGLE THE SSL CONFIGURATION DEPENDING ON THE ENVIRONMENT THE SERVER IS RUNNING IN
 
 const config = {
-  logging: true,
-    // ssl: true,
-    // dialectOptions: {
-    //   ssl: {
-    //     require: true,
-    //     rejectUnauthorized: false
-    //   }
+  logging: false,
+    ssl: false,
+  //   dialectOptions: {
+  //     ssl: {
+  //       require: true,
+  //       rejectUnauthorized: false
+  //     }
   // }
 }
 
