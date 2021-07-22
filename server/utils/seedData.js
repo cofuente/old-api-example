@@ -76,34 +76,34 @@ const testData = {
     }
   ],
   programs: [
-      {
+      { // NY
         programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304'
       },
-      {
-        programUUID: '24bafe46-5478-4917-882b-8e14348ec1d3'
+      { // CA
+        programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad'
       },
       {
         programUUID: '24bafe56-5478-4917-882b-8e14348ec1d3'
       }
   ],
   forms: [
-    {
-      formUUID: '184a6221-3871-4db0-8081-a42c0ecff497',
+    { // NY-order-form
+      formUUID: '9fff3eec-231a-48d7-a2a3-593ffe924d50',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
       stateCode: 'NY',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     },
-    {
-      formUUID: '2818ddf0-792f-472e-84a0-df08584bb00d',
-      programUUID: '24bafe46-5478-4917-882b-8e14348ec1d3',
-      stateCode: 'CA',
+    { // NY-enrollment-form
+      formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      stateCode: 'NY',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     },
-    {
-      formUUID: '1dfb1ed3-58c8-434b-839e-feaae4e7e2ed',
-      programUUID: '24bafe56-5478-4917-882b-8e14348ec1d3',
+    { // CA-enrollment-form
+      formUUID: 'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3',
+      programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
       stateCode: 'CA',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
@@ -116,7 +116,7 @@ const testData = {
       password: 'SUPERb4sicpaz123'
     },
     {
-      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
       username: 'schuyler',
       password: 'SUPERpaz123'
     },
