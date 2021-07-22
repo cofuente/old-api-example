@@ -1,9 +1,11 @@
 const router = require('express').Router()
 const User = require('../../models').User
+const passport = require('passport')
 
 router.post( '/login', async ( req, res, next ) => {
   try {
-    const user = await User.findOne( {where: {username: req.body.username}} )
+    const {username} =  req.body
+    const user = await User.findOne( {where: {username}} )
     if ( !user ) {
        res.status(401).send( {success: false, message: 'Username or password is incorrect'} )
     } else {
@@ -14,5 +16,9 @@ router.post( '/login', async ( req, res, next ) => {
   }
   })
 
+router.post('/logout', (req, res) => {
+  req.logOut()
+  res.send({success: true})
+} )
 
 module.exports = router
