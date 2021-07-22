@@ -35,11 +35,6 @@ const Question = db.define('question', {
     ),
     allowNull: false
   },
-  questionDescription: {
-    type: Sequelize.STRING,
-    allowNull: true,
-    defaultValue: 'n/a'
-  },
   possibleAnswers: {
     type: Sequelize.ARRAY(Sequelize.TEXT),
     defaultValue: [

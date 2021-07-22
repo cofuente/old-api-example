@@ -1,11 +1,11 @@
-const User = require( './user' )
 const Program = require('./program')
-const Question = require('./question')
-const Answer = require( './answer' )
-const Client = require('./client')
 const Form = require('./form')
-const Submission = require('./submission')
+const Client = require('./client')
+const User = require( './user' )
+const Question = require('./question')
 const QuestionForm = require('./questionform')
+const Submission = require('./submission')
+const Answer = require( './answer' )
 
 
 Question.belongsToMany(Form, {
@@ -30,11 +30,12 @@ Answer.belongsTo(Question, {foreignKey: 'questionUUID'} )
 Submission.hasMany(Answer, {foreignKey: 'submissionUUID'})
 
 module.exports = {
-  Question,
-  Answer,
-  Form,
-  Submission,
-  QuestionForm,
   Program,
-  Client
+  Form,
+  Client,
+  User,
+  Question,
+  QuestionForm,
+  Submission,
+  Answer,
 }

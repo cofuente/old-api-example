@@ -36,3 +36,5 @@ async function runMethodTest() {
 if (module === require.main) {
   runMethodTest()
 }
+
+module.exports = runMethod

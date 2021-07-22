@@ -12,7 +12,7 @@ const Form = db.define('form', {
     type: Sequelize.STRING,
     allowNull: false
   },
-    programUUID: {
+  programUUID: {
     type: Sequelize.UUID,
     references: {
       model: db.model.Program,
