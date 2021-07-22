@@ -2,18 +2,17 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
-const db = require('./config/db')
-
 const PORT = process.env.PORT || 1337
+const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
+const db = require('./config')
 const server = express()
 
-server.use(bodyParser.urlencoded({extended: true}))
-server.use(bodyParser.json())
+module.exports = server
+
+server.use(express.urlencoded({extended: true}))
+server.use(express.json())
 server.use(cors())
 server.use(morgan('dev'))
-
-
-const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 
 
 server.get('/', (req, res) => {
@@ -29,16 +28,20 @@ const errorHandler = (err, res) => {
 }
 server.use(errorHandler)
 
-const init = async () => {
-  try {
-    await db.sync()
-    server.listen(PORT)
-    console.log(` API is listening on port:${PORT} `)
+const startListening = () => {
+  const runningServer = server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))
+}
+
+const syncDb = () => db.sync()
+
+ async function init() {
+   try {
+    await syncDb()
+    await startListening()
   } catch (err) {
-    console.error(err)
+     console.error(err)
+     console.error(err.stack)
   }
 }
 
-module.exports = {
-  init
-}
+init()

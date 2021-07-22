@@ -20,11 +20,10 @@ const Answer = db.define('answer', {
       },
       allowNull: false
     },
-    // additional patterns include: making a separate association, or setting encryptedAnswer as a virtual field
     encryptedAnswer: {
         type: Sequelize.BOOLEAN,
-        allowNull: false
-    }
+        allowNull: false,
+    },
   },
   {
     timestamps: true
