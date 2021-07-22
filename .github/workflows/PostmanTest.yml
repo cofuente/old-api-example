@@ -7,35 +7,13 @@ jobs:
   test-api:
     runs-on: ubuntu-latest
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-      
-    # INstall Node on the runner
-    - name: Install Node
-      uses: actions/setup-node@v2.3.0
-      with: 
-        node-version: '14.17.0'
-    
-    # Install the newman command line utility and also install the html extra reporter
-    - name: Install newman
-      run: |
-       npm install -g newman
-       npm install -g newman-reporter-htmlextra
-    # Make directory to upload the test results
-    - name: Make Directory for results
-      run: mkdir -p testResults
-
-
-    # Run the POSTMAN collection
-    - name: Run POSTMAN collection
-      run: |
-       newman run ./tests/Test-All-EndpointsV2.postman_collection.json -e ./tests/stagingV2.postman_environment.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
-    # Upload the contents of Test Results directory to workspace
-    - name: Output the run Details
-      uses: actions/upload-artifact@v2
-      with: 
-       name: RunReports
-       path: testResults
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with: # This is being done via the API
+          apiKey: ${{ secrets.POSTMAN_API_KEY }}
+          collection: ${{ POSTMAN_COLLECTION_ID }}
+          environment: ${{ POSTMAN_ENVIRONMENT }}
+  
   notify:
     name: Discord Notification
     runs-on: ubuntu-latest
