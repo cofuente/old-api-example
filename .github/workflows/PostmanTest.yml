@@ -11,8 +11,8 @@ jobs:
       - uses: matt-ball/newman-action@master
         with: # This is being done via the API
           apiKey: ${{ secrets.POSTMAN_API_KEY }}
-          collection: ${{ POSTMAN_COLLECTION_ID }}
-          environment: ${{ POSTMAN_ENVIRONMENT }}
+          collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
+          environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
   
   notify:
     name: Discord Notification
