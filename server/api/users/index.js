@@ -13,6 +13,7 @@ router.post( '/login', async ( req, res, next ) => {
     next( err )
   }
 } )
+
 router.post( '/logout', async ( req, res, next ) => {
   try {
     req.logout()
