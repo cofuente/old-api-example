@@ -12,7 +12,17 @@ router.post( '/login', async ( req, res, next ) => {
   } catch ( err ) {
     next( err )
   }
-  })
+} )
+
+router.post( '/logout', async ( req, res, next ) => {
+  try {
+    req.logout()
+    req.session.destroy()
+    res.redirect('/')
+  } catch ( err ) {
+    next( err )
+  }
+})
 
 
 module.exports = router
