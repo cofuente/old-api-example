@@ -13,10 +13,11 @@ router.post( '/login', async ( req, res, next ) => {
     next( err )
   }
 } )
-router.delete( '/logout', async ( req, res, next ) => {
+router.post( '/logout', async ( req, res, next ) => {
   try {
-    const user = await User.findOne( {where: {username: req.body.username}} )
-    // delete the session from the db
+    req.logout()
+    req.session.destroy()
+    res.redirect('/')
   } catch ( err ) {
     next( err )
   }
