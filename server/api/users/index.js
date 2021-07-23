@@ -12,7 +12,15 @@ router.post( '/login', async ( req, res, next ) => {
   } catch ( err ) {
     next( err )
   }
-  })
+} )
+router.delete( '/logout', async ( req, res, next ) => {
+  try {
+    const user = await User.findOne( {where: {username: req.body.username}} )
+    // delete the session from the db
+  } catch ( err ) {
+    next( err )
+  }
+})
 
 
 module.exports = router
