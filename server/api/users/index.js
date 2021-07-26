@@ -2,23 +2,8 @@ const router = require('express').Router()
 const User = require('../../models').User
 const passport = require('passport')
 
-// router.post( '/login', passport.authenticate('local'), async ( req, res, next ) => {
-//   try {
-//     const { username } =  req.body
-//     const user = await User.findOne( {where: { username } } )
-//     if ( !user ) {
-//        res.status( 401 ).send( { success: false, message: 'Username or password is incorrect'} )
-//     } else {
-//       res.status( 200 ).json( user )
-//     }
-//   } catch ( err ) {
-//     next( err )
-//   }
-// } )
-
 router.post( '/login',  async ( req, res, next ) => {
   passport.authenticate('local', (err, user) => {
-    if (err) throw err
     if (!user) {res.status( 401 ).send( {success: false, message: 'Username or password is incorrect'} )}
     else {
       req.logIn(user, (err) => {
@@ -28,7 +13,7 @@ router.post( '/login',  async ( req, res, next ) => {
       })
     }
   })(req, res, next)
-  })
+})
 
 router.post( '/logout', async ( req, res, next ) => {
   try {
