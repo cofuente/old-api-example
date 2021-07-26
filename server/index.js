@@ -4,8 +4,9 @@ const cors = require('cors')
 const morgan = require('morgan')
 const PORT = process.env.PORT || 1337
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-const db = require('./config')
+const db = require('./config/db')
 const server = express()
+const passport = require('passport')
 
 module.exports = server
 
@@ -14,6 +15,9 @@ server.use(express.json())
 server.use(cors())
 server.use(morgan('dev'))
 
+require('./config/passport')(passport)
+server.use(passport.initialize())
+server.use(passport.session())
 
 server.get('/', (req, res) => {
   res.send({enviroment: CURRENT_ENV})
