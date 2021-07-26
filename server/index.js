@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const PORT = process.env.PORT || 1337
@@ -15,7 +14,7 @@ server.use(express.json())
 server.use(cors())
 server.use(morgan('dev'))
 
-require('./config/passport')(passport)
+require('./config/passportConfig')(passport)
 server.use(passport.initialize())
 server.use(passport.session())
 
