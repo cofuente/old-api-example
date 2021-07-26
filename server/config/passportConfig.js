@@ -5,12 +5,9 @@ module.exports = function(passport){
     passport.use(
         new localStrategy( ( username, password, done ) => {
             //Find if the user exists
-            console.log( 'We Found the username: ' + username )
             User.findOne( {where: {username}} )
             .then(user => {
-                console.log( 'We Found user: ' + user )
                 if (!user){
-                    console.log( username + ' does not exist')
                     return done( null, false, {message: ' User doesnt exist'} )
                 }
                 return done(null, user)

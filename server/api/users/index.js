@@ -8,7 +8,6 @@ router.post( '/login',  async ( req, res, next ) => {
     else {
       req.logIn(user, (err) => {
         if (err) throw err
-        console.log(req.session)
         res.status( 200 ).json( user )
       })
     }
