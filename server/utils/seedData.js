@@ -1,6 +1,6 @@
 const testData = {
   questions: [
-    { // default question 1
+    { // default question 0
       questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
       required: true,
       encryptAnswer: false,
@@ -8,7 +8,7 @@ const testData = {
       questionType: 'multiplechoice',
       possibleAnswers: [ 'answer a', 'answer b', 'answer c' ]
     },
-    { // default question 2
+    { // default question 1
       questionUUID: 'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
       required: true,
       encryptAnswer: false,
@@ -16,28 +16,28 @@ const testData = {
       questionType: 'checkbox',
       possibleAnswers: [ 'checkbox option a', 'checkbox option b' ]
     },
-    { // default question 3
+    { // default question 2
       questionUUID: '886d73ab-1a54-4616-b1fd-f4c4898ed059',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'paragraph',
     },
-    { // default question 4
+    { // default question 3
       questionUUID: '839743bd-fd80-4094-9d89-52fbee80dfcd',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'input',
     },
-    { // default question 5
+    { // default question 4
       questionUUID: '6b57b827-9694-4fb4-aaac-d265f86a2f72',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'date',
     },
-    { // default question 6
+    { // default question 5
       questionUUID: '3412308f-e653-4712-a1bd-abfd3d777ea5',
       required: true,
       encryptAnswer: false,
@@ -45,7 +45,7 @@ const testData = {
       questionType: 'radio',
       possibleAnswers: [ 'radio option a', 'radio option b' ]
     },
-    { // default question 7
+    { // default question 6
       questionUUID: '2ebb82be-a117-491c-bf52-64f57e358475',
       required: true,
       encryptAnswer: false,
@@ -53,28 +53,28 @@ const testData = {
       questionType: 'dropdown',
       possibleAnswers: [ 'dropdown option a', 'dropdown option b' ]
     },
-    { // default question 8
+    { // default question 7
       questionUUID: '24bafe55-5478-4917-882b-8e14348ec1d3',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'heading',
     },
-    { // default question 9
+    { // default question 8
       questionUUID: '21154dc7-5fac-43f9-a058-a4ee492cb304',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'number',
     },
-    { // default question 10
+    { // default question 9
       questionUUID: '0e956a4e-63a8-32ff-9f80-01daa32e1615',
       required: true,
       encryptAnswer: false,
       questionPrompt: 'This is the question prompt.',
       questionType: 'textarea',
     },
-    { // ne question 1
+    { // ne question 0
         questionUUID: '50e1ee43-03f6-4231-affc-195ee76c7e12',
         required: true,
         encryptAnswer: false,
