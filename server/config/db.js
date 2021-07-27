@@ -3,9 +3,10 @@ const pkg = require('../../package.json')
 
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
-let config
+let config = {}
 if (process.env.DATABASE_URL){
-   config = {
+  config = {
+    dialect: 'postgres',
     logging: false,
       ssl: false,
       dialectOptions: {
@@ -17,6 +18,7 @@ if (process.env.DATABASE_URL){
   }
 } else {
   config = {
+    dialect: 'postgres',
     logging: false,
     ssl: false
   }

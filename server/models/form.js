@@ -19,6 +19,16 @@ const Form = db.define('form', {
       key: 'programUUID'
     },
     allowNull: false
+  },
+  start: {
+    type: Sequelize.DATE,
+    // an arbitratry date in the past
+    defaultValue: '2021-07-26 14:31:25.295-04'
+  },
+  end: {
+    type: Sequelize.DATE,
+    // an arbitrary date 4 years into the future
+    defaultValue: '2025-07-26 14:31:25.295-04'
   }
 })
 Form.getQuestions = async ( formUUID ) => {
