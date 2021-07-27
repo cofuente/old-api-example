@@ -8,11 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: matt-ball/newman-action@master
+      - uses: anthonyvscode/newman-action@v1
+      - id: run-api-tests
         with: # This is being done via the API
           apiKey: ${{ secrets.POSTMAN_API_KEY }}
           collection: ${{ secrets.POSTMAN_COLLECTION_ID }}
           environment: ${{ secrets.POSTMAN_ENVIRONMENT }}
+          reporters: cli
+      
+      - name: Export Summary from Outputs
+        run: echo ${{ steps.run-api-tests.outputs.summary_full }}
   
   notify:
     name: Discord Notification
