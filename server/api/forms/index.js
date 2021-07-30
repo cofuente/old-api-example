@@ -10,6 +10,16 @@ router.get('/', async (req, res, next) => {
   }
 } )
 
+router.post('/', async (req, res, next) => {
+  try {
+    const {form} = req.body
+    const formCreated = await Form.create( form )
+    res.json(formCreated)
+  } catch (err) {
+    next(err)
+  }
+} )
+
 router.get( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -20,6 +30,18 @@ router.get( '/:formUUID', async ( req, res, next ) => {
       } ]
     } )
     res.json(formFound)
+  } catch (err) {
+    next(err)
+  }
+} )
+
+router.delete( '/:formUUID', async ( req, res, next ) => {
+  try {
+    const {formUUID} = req.params
+    const formToDelete = await Form.destroy( {
+      where: {formUUID}
+    } )
+    res.json(formToDelete)
   } catch (err) {
     next(err)
   }
