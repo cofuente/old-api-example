@@ -10,6 +10,16 @@ router.get('/', async (req, res, next) => {
   }
 } )
 
+router.post('/', async (req, res, next) => {
+  try {
+    const {form} = req.body
+    const formCreated = await Form.create( form )
+    res.json(formCreated)
+  } catch (err) {
+    next(err)
+  }
+} )
+
 router.get( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
