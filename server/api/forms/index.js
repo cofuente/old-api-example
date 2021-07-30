@@ -35,6 +35,18 @@ router.get( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+router.delete( '/:formUUID', async ( req, res, next ) => {
+  try {
+    const {formUUID} = req.params
+    const formToDelete = await Form.destroy( {
+      where: {formUUID}
+    } )
+    res.json(formToDelete)
+  } catch (err) {
+    next(err)
+  }
+} )
+
 router.get('/live/:formUUID', async (req, res, next) => {
   try {
     const {formUUID} = req.params
