@@ -1,8 +1,9 @@
 const router = require( 'express' ).Router()
+const passport = require( 'passport' )
 const User = require('../../models/user')
 
 // login user
-router.post('/login', async (req, res, next) => {
+router.post('/login', passport.authenticate('local'), async (req, res, next) => {
   try {
     const {username} = req.body
     const user = await User.findOne({where: {username}})
