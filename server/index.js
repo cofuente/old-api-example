@@ -10,6 +10,7 @@ const {User} = require('./models')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const passport = require( 'passport' )
+const cookieParser = require('cookie-parser')
 const {Strategy} = require('passport-local')
 const sessionStore = new SequelizeStore({db})
 module.exports = server
@@ -17,7 +18,7 @@ module.exports = server
 // logging middleware
 server.use(morgan('dev'))
 server.use(express.urlencoded( {extended: true}))
-// server.use(express.cookieParser()) // see https://github.com/senchalabs/connect#middleware for replacement
+server.use(cookieParser()) // allows for cookies and signedCookies on req object
 server.use(express.json()) // consider using app.use(bodyParser.json()) && app.use(bodyParser.urlencoded({ extended: true }))
 server.use(cors())
 
