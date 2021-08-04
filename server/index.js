@@ -16,13 +16,13 @@ const sessionStore = new SequelizeStore({db})
 module.exports = server
 
 // logging middleware
-server.use(morgan('dev'))
+server.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 server.use(express.urlencoded( {extended: true}))
-server.use(cookieParser()) // allows for cookies and signedCookies on req object
+// allows for 'cookies' and 'signedCookies' on request object
+server.use( cookieParser() )
 server.use(express.json()) // consider using app.use(bodyParser.json()) && app.use(bodyParser.urlencoded({ extended: true }))
 server.use(cors())
 
-/* passport implementation */
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
@@ -39,26 +39,15 @@ server.use(
     }
   })
 )
-// passport.use(new Strategy( async ( username, password, done ) => {
-//   try {
-//     const user = await User.findOne( {where: {username}} )
-//     if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
-//     if ( !user.correctPassword( password ) ) {
-//       return done( null, false, {message: 'Wrong username and/or password'} )
-//     }
-//     return done( null, user )
-//   } catch ( err ){
-//     console.log(err)
-//   }
-// } ) )
 
-server.use(passport.initialize())
-server.use(passport.session())
+// server.use(passport.initialize())
+// server.use(passport.session())
 
-passport.serializeUser((user, done) => done(null, user))
-passport.deserializeUser((user, done) => done(null, user))
+// passport.serializeUser((user, done) => done(null, user))
+// passport.deserializeUser((user, done) => done(null, user))
 
-server.use('/api', require('./api'))
+server.use('/api', require('./api') )
+server.use('/auth', require('./auth'))
 
 
 const errorHandler = (err, res) => {
