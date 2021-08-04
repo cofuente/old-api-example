@@ -3,26 +3,31 @@ const pkg = require('../../package.json')
 
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
-let config = {}
-if (process.env.DATABASE_URL){
-  config = {
-    dialect: 'postgres',
-    logging: false,
-      ssl: false,
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false // TODO: investigate switching to true
-        }
+// on staging or prod
+const configForHosted = {
+  logging: false,
+  ssl: true,
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // TODO: investigate switching to true
     }
-  }
-} else {
-  config = {
-    dialect: 'postgres',
-    logging: false,
-    ssl: false
-  }
+  },
 }
+// on localhost
+const configForLocal = {
+  ssl: false,
+  dialectOptions: {
+    ssl: {
+      require: false,
+      rejectUnauthorized: false
+    }
+  },
+}
+
+// replaces keys depending on db url presence
+const config = process.env.DATABASE_URL ? configForHosted : Object.assign(configForHosted, configForLocal)
 
 
 const db = new Sequelize(process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`, config )
