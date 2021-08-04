@@ -1,6 +1,7 @@
 const router = require( 'express' ).Router()
 const User = require('../../models/user')
 
+// login user
 router.post('/login', async (req, res, next) => {
   try {
     const {username} = req.body
@@ -17,6 +18,7 @@ router.post('/login', async (req, res, next) => {
   }
 })
 
+// logout user
 router.delete( '/logout', async ( req, res, next ) => {
   try {
 
