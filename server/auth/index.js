@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
 router.use( '/sfc', require( './secure-form-client' ) )
-router.use( '/sfa', require( './secure-desktop-app' ) )
+router.use( '/sda', require( './secure-desktop-app' ) )
 
 module.exports = router
