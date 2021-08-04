@@ -14,17 +14,18 @@ const {Strategy} = require('passport-local')
 const sessionStore = new SequelizeStore({db})
 module.exports = server
 
-server.use( express.urlencoded( {extended: true} ) )
+// logging middleware
+server.use(morgan('dev'))
+server.use(express.urlencoded( {extended: true}))
 // server.use(express.cookieParser()) // see https://github.com/senchalabs/connect#middleware for replacement
 server.use(express.json()) // consider using app.use(bodyParser.json()) && app.use(bodyParser.urlencoded({ extended: true }))
 server.use(cors())
-server.use(morgan('dev'))
 
 /* passport implementation */
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
-    resave: false,
+    resave: false, // todo: investigate use
     store: sessionStore,
     saveUninitialized: false,
     name: '24hrsessionId',
