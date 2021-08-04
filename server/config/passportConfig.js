@@ -5,16 +5,12 @@ module.exports = function(passport){
     passport.use(
         new localStrategy( async ( username, password, done ) => {
             try {
-                 //Find if the user exists
                 const user = await User.findOne( {where: {username}} )
-                    if ( !user ){
-                        return done( null, false, {message: ' User doesnt exist'} )
-                    } else if ( !user.correctPassword( password ) ){
-                    // return if user password don't match
+                if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
+                if ( !user.correctPassword( password ) ) {
                     return done( null, false, {message: 'Wrong username and/or password'} )
-            }
-            return done( null, user )
-
+                }
+                return done( null, user )
             } catch ( err ){
                 console.log(err)
             }
