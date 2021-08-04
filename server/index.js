@@ -21,7 +21,8 @@ server.use(
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
     store: sessionStore,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    name: '24hrsessionId',
   })
 )
 require('./config/passportConfig')(passport)
