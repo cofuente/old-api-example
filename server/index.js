@@ -19,8 +19,10 @@ server.use( morgan( ':method :url :status :res[content-length] - :response-time 
 const cookieSecret = process.env.COOKIE_SECRET || 'xXxX!!23@Abc'
 server.use( cookieParser(cookieSecret) )
 
+// parses x-www-form-urlencoded
+server.use( express.urlencoded( {extended: true} ) ) // TODO: investigate use if false
+
 // typical express setup
-server.use(express.urlencoded( {extended: true}))
 server.use(express.json())
 server.use(cors())
 
