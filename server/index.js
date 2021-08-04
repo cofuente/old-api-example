@@ -10,7 +10,7 @@ const {User} = require('./models')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const passport = require( 'passport' )
-const localStrategy = require('passport-local').Strategy
+const {Strategy} = require('passport-local')
 const sessionStore = new SequelizeStore({db})
 module.exports = server
 
@@ -21,17 +21,23 @@ server.use(cors())
 server.use(morgan('dev'))
 
 /* passport implementation */
-passport.serializeUser((user, done) => done(null, user.id))
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findByPk(id)
-    done(null, user)
-  } catch (err) {
-    done(err)
-  }
-} )
-
-passport.use(new localStrategy( async ( username, password, done ) => {
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    resave: false,
+    store: sessionStore,
+    saveUninitialized: false,
+    name: '24hrsessionId',
+    cookie: {
+      secure: true,
+      httpOnly: CURRENT_ENV !== 'LOCAL',
+      domain: CURRENT_DOMAIN,
+      // path: 'foo/bar', // TODO: investigate this use
+      expires: new Date(Date.now() + 60 * 60 * 1000) // set to 1 hour but pls add moment.js specifics later
+    }
+  })
+)
+passport.use(new Strategy( async ( username, password, done ) => {
   try {
     const user = await User.findOne( {where: {username}} )
     if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
@@ -44,29 +50,20 @@ passport.use(new localStrategy( async ( username, password, done ) => {
   }
 } ) )
 
-server.use(
-  session({
-    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
-    resave: false,
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false,
-    name: '24hrsessionId',
-    cookie: {
-      secure: true,
-      httpOnly: CURRENT_ENV !== 'LOCAL',
-      domain: CURRENT_DOMAIN,
-      // path: 'foo/bar', // TODO: investigate this use
-      expires: new Date(Date.now() + 60 * 60 * 1000) // set to 1 hour but pls add moment.js specifics later
-    }
-  })
-)
 server.use(passport.initialize())
 server.use(passport.session())
 
-server.get('/', (req, res) => {
-  res.send({enviroment: CURRENT_ENV})
-})
+passport.serializeUser((user, done) => done(null, user))
+passport.deserializeUser((user, done) => done(null, user))
+// passport.deserializeUser(async (id, done) => {
+//   try {
+//     const user = await User.findByPk(id)
+//     done(null, user)
+//   } catch (err) {
+//     done(err)
+//   }
+// } )
+
 
 server.use('/api', require('./api'))
 
