@@ -1,28 +1,29 @@
 const express = require('express')
-const cors = require('cors')
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
+const cors = require('cors')
+const session = require('express-session')
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
+
+const db = require( './config/db' )
+const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 1337
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
 const CURRENT_DOMAIN = process.env.CURRENT_DOMAIN || 'http://localhost:1337'
-const db = require( './config/db' )
 const server = express()
-const {User} = require('./models')
-const session = require('express-session')
-const SequelizeStore = require('connect-session-sequelize')(session.Store)
-const passport = require( 'passport' )
-const cookieParser = require('cookie-parser')
-const {Strategy} = require('passport-local')
-const sessionStore = new SequelizeStore({db})
-module.exports = server
 
 // logging middleware
-server.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
-server.use(express.urlencoded( {extended: true}))
-// allows for 'cookies' and 'signedCookies' on request object
+server.use( morgan( ':method :url :status :res[content-length] - :response-time ms' ) )
+
+// 'cookies' and 'signedCookies' on request object
 server.use( cookieParser() )
-server.use(express.json()) // consider using app.use(bodyParser.json()) && app.use(bodyParser.urlencoded({ extended: true }))
+
+// typical express setup
+server.use(express.urlencoded( {extended: true}))
+server.use(express.json())
 server.use(cors())
 
+// saved sessions
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
@@ -71,3 +72,5 @@ const syncDb = () => db.sync()
 }
 
 init()
+
+module.exports = server

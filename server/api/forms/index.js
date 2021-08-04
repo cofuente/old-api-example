@@ -4,6 +4,7 @@ const {verifyReorderRequest} = require( '../../utils' )
 
 // get all forms
 router.get( '/', async ( req, res, next ) => {
+  console.log('cooooookies--->', req.cookies, req.signedCookies)
   try {
     const forms = await Form.findAll()
     res.json(forms)
