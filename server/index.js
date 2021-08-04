@@ -38,18 +38,18 @@ server.use(
     }
   })
 )
-passport.use(new Strategy( async ( username, password, done ) => {
-  try {
-    const user = await User.findOne( {where: {username}} )
-    if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
-    if ( !user.correctPassword( password ) ) {
-      return done( null, false, {message: 'Wrong username and/or password'} )
-    }
-    return done( null, user )
-  } catch ( err ){
-    console.log(err)
-  }
-} ) )
+// passport.use(new Strategy( async ( username, password, done ) => {
+//   try {
+//     const user = await User.findOne( {where: {username}} )
+//     if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
+//     if ( !user.correctPassword( password ) ) {
+//       return done( null, false, {message: 'Wrong username and/or password'} )
+//     }
+//     return done( null, user )
+//   } catch ( err ){
+//     console.log(err)
+//   }
+// } ) )
 
 server.use(passport.initialize())
 server.use(passport.session())
