@@ -56,15 +56,6 @@ server.use(passport.session())
 
 passport.serializeUser((user, done) => done(null, user))
 passport.deserializeUser((user, done) => done(null, user))
-// passport.deserializeUser(async (id, done) => {
-//   try {
-//     const user = await User.findByPk(id)
-//     done(null, user)
-//   } catch (err) {
-//     done(err)
-//   }
-// } )
-
 
 server.use('/api', require('./api'))
 
@@ -75,9 +66,7 @@ const errorHandler = (err, res) => {
 }
 server.use(errorHandler)
 
-const startListening = () => {
-  const runningServer = server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))
-}
+const startListening = () => {server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))}
 
 const syncDb = () => db.sync()
 
