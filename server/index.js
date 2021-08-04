@@ -3,11 +3,14 @@ const cors = require('cors')
 const morgan = require('morgan')
 const PORT = process.env.PORT || 1337
 const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-const db = require('./config/db')
+const CURRENT_DOMAIN = process.env.CURRENT_DOMAIN || 'http://localhost:1337'
+const db = require( './config/db' )
 const server = express()
+const {User} = require('./models')
 const session = require('express-session')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-const passport = require('passport')
+const passport = require( 'passport' )
+const localStrategy = require('passport-local').Strategy
 const sessionStore = new SequelizeStore({db})
 module.exports = server
 
@@ -23,9 +26,37 @@ server.use(
     resave: false,
     saveUninitialized: false,
     name: '24hrsessionId',
+    // cookie: {
+    //   secure: true,
+    //   httpOnly: CURRENT_ENV !== 'LOCAL',
+    //   domain: CURRENT_DOMAIN,
+    //   // path: 'foo/bar', // TODO: investigate this use
+    //   expires: new Date(Date.now() + 60 * 60 * 1000) // set to 1 hour but pls add moment.js specifics later
+    // }
   })
 )
-require('./config/passportConfig')(passport)
+/* passport implementation */
+passport.use(new localStrategy( async ( username, password, done ) => {
+  try {
+    const user = await User.findOne( {where: {username}} )
+    if ( !user ) { return done( null, false, {message: 'User not found.'} ) }
+    if ( !user.correctPassword( password ) ) {
+      return done( null, false, {message: 'Wrong username and/or password'} )
+    }
+    return done( null, user )
+  } catch ( err ){
+    console.log(err)
+  }
+} ) )
+passport.serializeUser((user, done) => done(null, user.id))
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findByPk(id)
+    done(null, user)
+  } catch (err) {
+    done(err)
+  }
+} )
 server.use(passport.initialize())
 server.use(passport.session())
 
