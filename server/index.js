@@ -47,6 +47,7 @@ passport.use(new localStrategy( async ( username, password, done ) => {
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    resave: false,
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
