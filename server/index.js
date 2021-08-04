@@ -14,28 +14,23 @@ const localStrategy = require('passport-local').Strategy
 const sessionStore = new SequelizeStore({db})
 module.exports = server
 
-server.use(express.urlencoded({extended: true}))
-server.use(express.json())
+server.use( express.urlencoded( {extended: true} ) )
+// server.use(express.cookieParser()) // see https://github.com/senchalabs/connect#middleware for replacement
+server.use(express.json()) // consider using app.use(bodyParser.json()) && app.use(bodyParser.urlencoded({ extended: true }))
 server.use(cors())
 server.use(morgan('dev'))
 
-server.use(
-  session({
-    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false,
-    name: '24hrsessionId',
-    // cookie: {
-    //   secure: true,
-    //   httpOnly: CURRENT_ENV !== 'LOCAL',
-    //   domain: CURRENT_DOMAIN,
-    //   // path: 'foo/bar', // TODO: investigate this use
-    //   expires: new Date(Date.now() + 60 * 60 * 1000) // set to 1 hour but pls add moment.js specifics later
-    // }
-  })
-)
 /* passport implementation */
+passport.serializeUser((user, done) => done(null, user.id))
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findByPk(id)
+    done(null, user)
+  } catch (err) {
+    done(err)
+  }
+} )
+
 passport.use(new localStrategy( async ( username, password, done ) => {
   try {
     const user = await User.findOne( {where: {username}} )
@@ -48,15 +43,23 @@ passport.use(new localStrategy( async ( username, password, done ) => {
     console.log(err)
   }
 } ) )
-passport.serializeUser((user, done) => done(null, user.id))
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findByPk(id)
-    done(null, user)
-  } catch (err) {
-    done(err)
-  }
-} )
+
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    name: '24hrsessionId',
+    cookie: {
+      secure: true,
+      httpOnly: CURRENT_ENV !== 'LOCAL',
+      domain: CURRENT_DOMAIN,
+      // path: 'foo/bar', // TODO: investigate this use
+      expires: new Date(Date.now() + 60 * 60 * 1000) // set to 1 hour but pls add moment.js specifics later
+    }
+  })
+)
 server.use(passport.initialize())
 server.use(passport.session())
 
