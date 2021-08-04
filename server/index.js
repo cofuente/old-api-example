@@ -16,7 +16,8 @@ const server = express()
 server.use( morgan( ':method :url :status :res[content-length] - :response-time ms' ) )
 
 // 'cookies' and 'signedCookies' on request object
-server.use( cookieParser() )
+const cookieSecret = process.env.COOKIE_SECRET || 'xXxX!!23@Abc'
+server.use( cookieParser(cookieSecret) )
 
 // typical express setup
 server.use(express.urlencoded( {extended: true}))
