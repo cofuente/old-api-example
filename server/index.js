@@ -41,12 +41,6 @@ server.use(
   })
 )
 
-// server.use(passport.initialize())
-// server.use(passport.session())
-
-// passport.serializeUser((user, done) => done(null, user))
-// passport.deserializeUser((user, done) => done(null, user))
-
 server.use('/api', require('./api') )
 server.use('/auth', require('./auth'))
 
