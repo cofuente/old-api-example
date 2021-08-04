@@ -25,7 +25,7 @@ server.use(cors())
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
-    resave: false, // todo: investigate use
+    resave: false, // TODO: investigate use
     store: sessionStore,
     saveUninitialized: false,
     name: '24hrsessionId',
