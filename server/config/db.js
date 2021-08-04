@@ -12,7 +12,7 @@ if (process.env.DATABASE_URL){
       dialectOptions: {
         ssl: {
           require: true,
-          rejectUnauthorized: false
+          rejectUnauthorized: false // TODO: investigate switching to true
         }
     }
   }
