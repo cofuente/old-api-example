@@ -41,6 +41,7 @@ server.use(
   })
 )
 
+// routes
 server.use('/api', require('./api') )
 server.use('/auth', require('./auth'))
 
