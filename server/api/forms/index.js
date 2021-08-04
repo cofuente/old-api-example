@@ -2,7 +2,8 @@ const router = require('express').Router()
 const {Form, QuestionForm} = require( '../../models' )
 const {verifyReorderRequest} = require( '../../utils' )
 
-router.get('/', async (req, res, next) => {
+// get all forms
+router.get( '/', async ( req, res, next ) => {
   try {
     const forms = await Form.findAll()
     res.json(forms)
@@ -11,7 +12,8 @@ router.get('/', async (req, res, next) => {
   }
 } )
 
-router.post('/', async (req, res, next) => {
+// make a new form
+router.post( '/', async ( req, res, next ) => {
   try {
     const {form} = req.body
     const formCreated = await Form.create( form )
@@ -21,6 +23,7 @@ router.post('/', async (req, res, next) => {
   }
 } )
 
+// get form by id
 router.get( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -36,6 +39,7 @@ router.get( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+// update form
 router.put( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -54,6 +58,7 @@ router.put( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+// add question(s) to form
 router.put( '/:formUUID/add', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -66,6 +71,7 @@ router.put( '/:formUUID/add', async ( req, res, next ) => {
   }
 } )
 
+// remove question(s) on a form
 router.put( '/:formUUID/remove', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -78,6 +84,7 @@ router.put( '/:formUUID/remove', async ( req, res, next ) => {
   }
 } )
 
+// reorder questions on form
 router.put( '/:formUUID/order', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -94,6 +101,7 @@ router.put( '/:formUUID/order', async ( req, res, next ) => {
   }
 } )
 
+// delete form
 router.delete( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -108,6 +116,7 @@ router.delete( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+// get form times
 router.get('/live/:formUUID', async (req, res, next) => {
   try {
     const {formUUID} = req.params
