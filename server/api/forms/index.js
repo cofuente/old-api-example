@@ -1,7 +1,8 @@
 const router = require('express').Router()
 const Form = require( '../../models' ).Form
 
-router.get('/', async (req, res, next) => {
+// get all forms
+router.get( '/', async ( req, res, next ) => {
   try {
     const forms = await Form.findAll()
     res.json(forms)
@@ -10,6 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 } )
 
+// get form by id
 router.get( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
@@ -25,6 +27,7 @@ router.get( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+// get form times
 router.get('/live/:formUUID', async (req, res, next) => {
   try {
     const {formUUID} = req.params
