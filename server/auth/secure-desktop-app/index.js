@@ -1,5 +1,8 @@
 const router = require('express').Router()
-const User = require('../../models/user')
+const User = require( '../../models/user' )
+const passport = require( 'passport' )
+const localStrategy = require( 'passport-local' ).Strategy
+
 
 // login desktop app user
 router.post('/login', async (req, res, next) => {
@@ -11,7 +14,7 @@ router.post('/login', async (req, res, next) => {
     } else if (!user.correctPassword(req.body.password)) {
       res.status(401).send('Wrong username and/or password')
     } else {
-      req.login(user, err => (err ? next(err) : res.json(user)))
+      res.status(202).send('Succesfully logged in')
     }
   } catch (err) {
     next(err)
