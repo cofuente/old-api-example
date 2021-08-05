@@ -3,7 +3,9 @@ const {
   Form,
   Question,
   Program,
-  User
+  User,
+  Submission,
+  Answer
 } = require('../models')
 
 const {testData} = require('.')
@@ -11,7 +13,7 @@ const {testData} = require('.')
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
-  const {questions, programs, forms, users} = testData
+  const {questions, programs, forms, users, submissions, answers} = testData
   const questionsData = questions.map( ( x ) => Question.create( x ) )
   const seededQuestions = await Promise.all(questionsData)
   console.log(`with ${seededQuestions.length} test questions`)
@@ -27,6 +29,14 @@ async function seed() {
   const userdata = users.map( ( x ) => User.create( x ) )
   const seededUsers = await Promise.all(userdata)
   console.log( `with ${ seededUsers.length } test users` )
+
+  const submissionsdata = submissions.map( ( x ) => Submission.create( x ) )
+  const seededsubmissions = await Promise.all(submissionsdata)
+  console.log( `with ${ seededsubmissions.length } test submissions ` )
+
+  const answersdata = answers.map( ( x ) => Answer.create( x ) )
+  const seededanswers = await Promise.all(answersdata)
+  console.log( `with ${ seededanswers.length } test answers ` )
 
   const nextEnrollmentForm = await Form.findOne( {where: {formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f'}})
   await nextEnrollmentForm.addQuestion( [
