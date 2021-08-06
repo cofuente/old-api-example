@@ -884,24 +884,21 @@ const testData = {
     },
   ],
   submissions: [
-    {
-      // NY-order-form
+    { // submission 0 to NY-enrollment-form
       submissionUUID: '5b4b92b9-59d1-4054-b75f-f2a2cd588f76',
-      formUUID: '9fff3eec-231a-48d7-a2a3-593ffe924d50',
+      formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
     },
-    {
-      // NY-enrollment-form
+    { // submission 1 to NY-enrollment-form
       submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91',
       formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f'
     },
-    {
+    { // submission 2 to NY-enrollment-form
       submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91',
       formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f'
     },
-    {
-      // CA-enrollment-form
+    { // submission 3 to NY-enrollment-form
       submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91',
-      formUUID: 'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3'
+      formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
     }
   ],
   answers: [
