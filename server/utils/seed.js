@@ -30,16 +30,37 @@ async function seed() {
   const seededUsers = await Promise.all(userdata)
   console.log( `with ${ seededUsers.length } test users` )
 
-  const submissionsdata = submissions.map( ( x ) => Submission.create( x ) )
-  const seededsubmissions = await Promise.all(submissionsdata)
-  console.log( `with ${ seededsubmissions.length } test submissions ` )
 
-  const answersdata = answers.map( ( x ) => Answer.create( x ) )
-  const seededanswers = await Promise.all(answersdata)
-  console.log( `with ${ seededanswers.length } test answers ` )
+  /* ---- Adding Questions to Forms ----- */
 
-  const nextEnrollmentForm = await Form.findOne( {where: {formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f'}})
-  await nextEnrollmentForm.addQuestion( [
+  const defaultQuestionsList = [
+    'ede83751-33f3-4dcf-8c12-b7fc650c501c',
+    'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
+    '886d73ab-1a54-4616-b1fd-f4c4898ed059',
+    '839743bd-fd80-4094-9d89-52fbee80dfcd',
+    '6b57b827-9694-4fb4-aaac-d265f86a2f72',
+    '3412308f-e653-4712-a1bd-abfd3d777ea5',
+    '2ebb82be-a117-491c-bf52-64f57e358475',
+    '24bafe55-5478-4917-882b-8e14348ec1d3',
+    '21154dc7-5fac-43f9-a058-a4ee492cb304',
+    '0e956a4e-63a8-32ff-9f80-01daa32e1615',
+  ]
+  const defaultFormsList = [
+    '9fff3eec-231a-48d7-a2a3-593ffe924d50',
+    'b0b649c2-03c2-490f-89b4-fcd16b953986',
+    'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3'
+  ]
+
+  const addDefaultsToForm = async ( formUUID ) => {
+    const form = await Form.findOne({where: {formUUID}})
+    await form.addQuestion( defaultQuestionsList )
+  }
+  const defaultForms = defaultFormsList.map( x => addDefaultsToForm( x ) )
+  const seededDefaultForms = await Promise.all(defaultForms)
+  console.log( `seeded ${ seededDefaultForms.length } forms with ${ defaultQuestionsList.length } default q's each` )
+
+    // Next Enrollment
+  const nextEnrollmentQuestions = [
       '50e1ee43-03f6-4231-affc-195ee76c7e12',
       '842c7508-b000-4fc7-9c9f-4e934d0b8ed0',
       '26464b66-7afb-443d-bc69-e6b3cb16ecfa',
@@ -81,53 +102,12 @@ async function seed() {
       'e496c927-bb34-4c43-9115-83e43889ed05',
       '753eda43-a227-4651-a3b2-b6538ce6f54c',
       '932aa8f6-9e56-4944-9485-778d5650ccf1',
-  ] )
-  console.log('added next enrollment questions to form')
+  ]
+  const nextEnrollmentForm = await Form.findOne( {where: {formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f'}})
+  const questionsAdded = await nextEnrollmentForm.addQuestion( nextEnrollmentQuestions )
+  if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestions.length } questions to Next Enrollment` )
 
-  const nextOrderForm = await Form.findOne( {where: {formUUID: '9fff3eec-231a-48d7-a2a3-593ffe924d50'}})
-  await nextOrderForm.addQuestion( [
-      'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      '839743bd-fd80-4094-9d89-52fbee80dfcd',
-      '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      '2ebb82be-a117-491c-bf52-64f57e358475',
-      '24bafe55-5478-4917-882b-8e14348ec1d3',
-      '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-  ])
-  console.log( 'added next order questions to form' )
 
-  const nextOtherForm = await Form.findOne( {where: {formUUID: 'b0b649c2-03c2-490f-89b4-fcd16b953986'}})
-  await nextOtherForm.addQuestion( [
-      'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      '839743bd-fd80-4094-9d89-52fbee80dfcd',
-      '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      '2ebb82be-a117-491c-bf52-64f57e358475',
-      '24bafe55-5478-4917-882b-8e14348ec1d3',
-      '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-  ])
-  console.log( 'added next other questions to form' )
-
-  const caOtherForm = await Form.findOne( {where: {formUUID: 'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3'}})
-  await caOtherForm.addQuestion( [
-      'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      '839743bd-fd80-4094-9d89-52fbee80dfcd',
-      '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      '2ebb82be-a117-491c-bf52-64f57e358475',
-      '24bafe55-5478-4917-882b-8e14348ec1d3',
-      '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-  ])
-  console.log('added ca other questions to form')
   console.log('seeded successfully')
 }
 
