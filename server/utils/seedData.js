@@ -890,6 +890,7 @@ const testData = {
   forms: [
     { // NY-order-form
       tag: 'default',
+      endpoint: 'hereGOESaNICEendpointSTRING1',
       formUUID: '9fff3eec-231a-48d7-a2a3-593ffe924d50',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
       stateCode: 'NY',
@@ -898,6 +899,7 @@ const testData = {
     },
     { // NY-enrollment-form
       tag: 'nextEnrollment',
+      endpoint: 'nydistro/enrollment',
       formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
       stateCode: 'NY',
@@ -906,6 +908,7 @@ const testData = {
     },
     { // CA-enrollment-form
       tag: 'default',
+      endpoint: 'hereGOESaNICEendpointSTRING2',
       formUUID: 'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3',
       programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
       stateCode: 'CA',
@@ -914,6 +917,7 @@ const testData = {
     },
     { // NY-other-form
       tag: 'default',
+      endpoint: 'hereGOESaNICEendpointSTRING3',
       formUUID: 'b0b649c2-03c2-490f-89b4-fcd16b953986',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
       stateCode: 'NY',
