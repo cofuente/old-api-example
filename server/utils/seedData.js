@@ -127,7 +127,6 @@ const testData = {
         questionPrompt: 'What is the state where you live?',
         questionType: 'dropdown',
         possibleAnswers: [
-          [
               'AK',
               'AL',
               'AR',
@@ -179,7 +178,6 @@ const testData = {
               'WV',
               'WY',
           ]
-      ]
       },
       {// ne question 4
         tag: 'nextEnrollment',
@@ -332,18 +330,9 @@ const testData = {
         questionPrompt: 'Do you have health insurance?',
         questionType: 'radio',
         possibleAnswers: [
-          [
               'Yes',
-              'Yes'
-          ],
-          [
               'No',
-              'No'
-          ],
-          [
-              'Not sure',
               'I\'m not sure'
-          ]
       ]
       },
       {// ne question 16
