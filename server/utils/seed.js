@@ -5,9 +5,12 @@ const {
   Program,
   User,
   Submission,
+  Answer
 } = require('../models')
 const {testData} = require( '.' )
+const generateSubmission = require('./generateSubmission')
 
+// eslint-disable-next-line max-statements
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
@@ -41,17 +44,19 @@ async function seed() {
   const seededDefaultForms = await Promise.all(defaultForms)
   console.log( `added ${ defaultQuestionsList.length } default questions to ${ seededDefaultForms.length } default forms` )
 
-    // Next Enrollment Questions List
-  const nextEnrollmentQuestionsList = questions.filter( ( x ) => x.tag === 'nextEnrollment' ).map( ( x ) => x.questionUUID )
+  // Next Enrollment Questions List
+  const nextEnrollmentQuestions = questions.filter( x => x.tag === 'nextEnrollment' )
+  const nextEnrollmentQuestionsList = nextEnrollmentQuestions.map( ( x ) => x.questionUUID )
   const nextEnrollment = forms.filter( (x) => x.tag === 'nextEnrollment' ).map( ( x ) => x.formUUID )
   const nextEnrollmentForm = await Form.findOne( {where: {formUUID: nextEnrollment[0]}} )
   const questionsAdded = await nextEnrollmentForm.addQuestion( nextEnrollmentQuestionsList )
   if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestionsList.length } questions to Next Enrollment form` )    // Next Enrollment Questions List
 
   // // Creating Randomized Submissions for the Next Enrollment Form
-  // const randomizedSubmissions = submissions.map( ( x ) => generateSubmission( x.submissionUUID, x.formUUID ) )
-  // const seededSubmissionTest = await Submission.create( randomizedSubmissions[ 0 ] )
-  // console.log( seededSubmissionTest)
+  const randomizedSubmissions = submissions.map( ( x ) => generateSubmission( x.submissionUUID, x.formUUID, nextEnrollmentQuestions ) )
+console.log(randomizedSubmissions[0])
+  const seededSubmissionTest = await Submission.create( randomizedSubmissions[ 0 ], {include: Answer} )
+  console.log( seededSubmissionTest)
   console.log( 'all tables seeded successfully!' )
 }
 
