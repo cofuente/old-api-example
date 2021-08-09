@@ -1,7 +1,3 @@
-const {testData} = require( '.' )
-const {questions} = testData
-const nextEnrollmentQuestions = questions.filter(x => x.tag === 'nextEnrollment')
-
 const generateRandomString = ( length ) => {
   const charactersAllowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   let randomString = ''
@@ -32,7 +28,7 @@ const assignValue = ( question ) => {
   }
 }
 
-const generateSubmission = ( submissionUUID, formUUID ) => {
+const generateSubmission = ( submissionUUID, formUUID, formQuestions ) => {
 
   const generateAnswer = ( question ) => {
     return {
@@ -45,8 +41,8 @@ const generateSubmission = ( submissionUUID, formUUID ) => {
   return {
     submissionUUID,
     formUUID,
-    answers: nextEnrollmentQuestions.map( (x) => generateAnswer( x ) ),
+    answers: formQuestions.map( (x) => generateAnswer( x ) ),
   }
 }
 
-module.export = generateSubmission
+module.exports = generateSubmission
