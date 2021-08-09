@@ -22,15 +22,15 @@ const Question = db.define('question', {
   },
   questionType: {
     type: Sequelize.ENUM(
-      'multiplechoice',
       'checkbox',
-      'paragraph',
-      'input',
       'date',
-      'radio',
       'dropdown',
       'heading',
+      'input',
+      'multiplechoice',
       'number',
+      'paragraph',
+      'radio',
       'textarea'
     ),
     allowNull: false
