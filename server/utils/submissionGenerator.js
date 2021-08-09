@@ -1,5 +1,4 @@
 const {testData} = require( '.' )
-console.log( testData )
 const {questions} = testData
 const nextEnrollmentQuestions = questions.filter(x => x.tag === 'nextEnrollment')
 
