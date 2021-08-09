@@ -7,7 +7,6 @@ const generateRandomString = ( length ) => {
   return randomString
 }
 
-// eslint-disable-next-line complexity
 const assignValue = ( question ) => {
   switch ( question.questionType ) {
     case 'date':
