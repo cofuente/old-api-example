@@ -91,7 +91,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Is this your first time filling out NEXT\'s enrollment application?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Yes',
           'No',
@@ -105,7 +104,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'The First Letter of Your First Name',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -117,7 +115,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'The First Letter of Your Last Name',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -129,7 +126,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What is the state where you live?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           [
               'AK',
@@ -340,7 +336,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What\'s your zip code?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -352,7 +347,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What is your county?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -364,7 +358,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Please create a handle.',
         questionType: 'input',
-        questionDescription: 'This is the handle you will need to send to NEXT to confirm you have enrolled.  Ensure the handle is one you\'ll remember. It must be at least 6 characters long and contain no spaces or special characters. If you previously filled out this form, please type the same handle you used last time. *NEXT will not accept racist/white supremacist handles. DO NOT USE YOUR REAL NAME*',
         possibleAnswers: [
             'n/a'
         ]
@@ -376,7 +369,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -388,7 +380,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Date of Birth',
         questionType: 'date',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -400,7 +391,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Gender Identity',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Cis Woman  (non-transgender)',
           'Cis Man (non-transgender)',
@@ -416,7 +406,6 @@ const testData = {
         required: false,
         questionPrompt: 'Are you pregnant?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Yes',
           'No',
@@ -430,7 +419,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'My race/ethnicity could be characterized as...',
         questionType: 'checkbox',
-        questionDescription: '(select all that apply)',
         possibleAnswers: [
           'African American/ Black',
           'Hispanic/Latinx',
@@ -448,7 +436,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What is your preferred language? ',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'English',
           'Spanish',
@@ -464,7 +451,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What is your housing status?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           [
               'I rent or own my own home/apartment- Stable Situation',
@@ -503,7 +489,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'How would you describe your sexual orientation',
         questionType: 'input',
-        questionDescription: '(some answers may include gay, straight, bisexual, queer, lesbian, etc)',
         possibleAnswers: [
             'n/a'
         ]
@@ -515,7 +500,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Do you have health insurance?',
         questionType: 'radio',
-        questionDescription: null,
         possibleAnswers: [
           [
               'Yes',
@@ -538,7 +522,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Do you currently have a Primary Care Provider?',
         questionType: 'dropdown',
-        questionDescription: 'That is, a doctor, nurse or physician assistant you see when it is not an emergency.',
         possibleAnswers: [
           'Yes',
           'No',
@@ -551,7 +534,6 @@ const testData = {
         required: false,
         questionPrompt: 'If you have been hospitalized within the past six months, how many times?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -562,7 +544,6 @@ const testData = {
         required: false,
         questionPrompt: 'Have you had issues related to abscesses, cellulitis, or endocarditis? Please explain.',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -574,7 +555,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Are you on public benefits not related to COVID?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -586,7 +566,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Have you been diagnosed with any of the following?',
         questionType: 'checkbox',
-        questionDescription: null,
         possibleAnswers: [
             'HIV/AIDS',
             'Hepatitis C',
@@ -604,7 +583,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Are you a US veteran or in active duty?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Yes',
           'No'
@@ -617,7 +595,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Are you parenting / do you have children at your residence?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Yes',
           'No'
@@ -630,7 +607,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Have you been arrested or incarcerated in the past year?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'No',
           'Yes, on probation',
@@ -649,7 +625,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'How old were you when you started injecting drugs?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -661,7 +636,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'About how many times per day do you inject?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -673,7 +647,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What drugs have you used in the past 30 days?',
         questionType: 'checkbox',
-        questionDescription: null,
         possibleAnswers: [
           'Heroin',
           'Cocaine',
@@ -697,7 +670,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Have you overdosed in the past year?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -709,7 +681,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Have you witnessed someone overdose in the past year?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
             'Yes',
             'No',
@@ -723,7 +694,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Please tell us about your ability or inability to access syringes',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -735,7 +705,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'How often have you reused your own syringes in the past month?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -747,7 +716,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'How often have you shared syringes with another person in the past month?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -759,7 +727,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -770,7 +737,6 @@ const testData = {
         required: false,
         questionPrompt: 'Is there anything else you want us to know about you, your history, or situation?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -782,7 +748,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Where do you currently obtain injection related supplies?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -794,7 +759,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'In addition to getting supplies for you, how many other people do you plan to get supplies from NEXT for?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'Just getting supplies for myself, no other people',
           '1-4 people',
@@ -809,7 +773,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Related to security of packages containing injection related supplies:',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'You can send whatever to my address, I\'ll always get it'
         ]
@@ -821,7 +784,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'What else should we know about sending you supplies or communicating with you?',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -833,7 +795,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Do you inject pills?',
         questionType: 'dropdown',
-        questionDescription: null,
         possibleAnswers: [
           'No',
           'Yes, often',
@@ -846,7 +807,6 @@ const testData = {
         required: false,
         questionPrompt: 'Security Concern:',
         questionType: 'input',
-        questionDescription: 'NEXT always uses the US Post Office to ship packages. Due to COVID19 we use a 3rd party mailing service (for example, Stamps.com) to purchase postage online. This poses some minimal risk if records are ever subpoenaed by a court (although they will never know the contents, only that our program sent them).  If you are concerned about this, please note it below and we\'ll reach out to make accommodations. Your safety is our top priority.',
         possibleAnswers: [
             'n/a'
         ]
@@ -858,7 +818,6 @@ const testData = {
         encryptAnswer: false,
         questionPrompt: 'Age',
         questionType: 'input',
-        questionDescription: null,
         possibleAnswers: [
             'n/a'
         ]
@@ -961,188 +920,6 @@ const testData = {
     }
   ],
   answers: [
-    {
-      value: 'answer Please tell us how you anserr about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: '5b4b92b9-59d1-4054-b75f-f2a2cd588f76'
-    },
-    {
-      value: 'answer (2) Please tell us how you anserr about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: '5b4b92b9-59d1-4054-b75f-f2a2cd588f76'
-    },
-    {
-      value: 'answer (3) Please tell us how you anserr about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: '5b4b92b9-59d1-4054-b75f-f2a2cd588f76'
-    },
-    {
-      value: 'answer Please tell us how you learned about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What\'s your zip code?',
-      questionUUID: 'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your First Name',
-      questionUUID: '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What is the state where you live?',
-      questionUUID: '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'radio option a',
-      questionUUID: '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your Last Name',
-      questionUUID: '2ebb82be-a117-491c-bf52-64f57e358475',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your First Name',
-      questionUUID: '24bafe55-5478-4917-882b-8e14348ec1d3',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Is this your first time filling out NEXT\'s enrollment application?',
-      questionUUID: '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Please tell us how you learned about NEXT. Be specific.',
-      questionUUID: '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-      encryptedAnswer: false,
-      submissionUUID: 'b4792b92-59d1-4054-b75f-f2a2dd588f91'
-    },
-
-
-    {
-      value: 'Please tell us how you learned about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What\'s your zip code?',
-      questionUUID: 'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'answer goes here',
-      questionUUID: '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What is the state where you live?',
-      questionUUID: '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'radio option a',
-      questionUUID: '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your Last Name',
-      questionUUID: '2ebb82be-a117-491c-bf52-64f57e358475',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your First Name',
-      questionUUID: '24bafe55-5478-4917-882b-8e14348ec1d3',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Is this your first time filling out NEXT\'s enrollment application?',
-      questionUUID: '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Gender Identity',
-      questionUUID: '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-      encryptedAnswer: false,
-      submissionUUID: '2b4792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Please tell us how you learned about NEXT. Be specific.',
-      questionUUID: 'ede83751-33f3-4dcf-8c12-b7fc650c501c',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What\'s your zip code?',
-      questionUUID: 'b2d224a6-0bf9-4c5b-880d-c62fec019a8d',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'answer goes here',
-      questionUUID: '886d73ab-1a54-4616-b1fd-f4c4898ed059',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'What is the state where you live?',
-      questionUUID: '6b57b827-9694-4fb4-aaac-d265f86a2f72',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'radio option a',
-      questionUUID: '3412308f-e653-4712-a1bd-abfd3d777ea5',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your Last Name',
-      questionUUID: '2ebb82be-a117-491c-bf52-64f57e358475',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'The First Letter of Your First Name',
-      questionUUID: '24bafe55-5478-4917-882b-8e14348ec1d3',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Is this your first time filling out NEXT\'s enrollment application?',
-      questionUUID: '21154dc7-5fac-43f9-a058-a4ee492cb304',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    },
-    {
-      value: 'Gender Identity',
-      questionUUID: '0e956a4e-63a8-32ff-9f80-01daa32e1615',
-      encryptedAnswer: false,
-      submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91'
-    }
   ]
 }
 
