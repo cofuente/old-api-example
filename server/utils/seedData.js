@@ -129,203 +129,55 @@ const testData = {
         possibleAnswers: [
           [
               'AK',
-              'Alabama'
-          ],
-          [
               'AL',
-              'Alaska'
-          ],
-          [
               'AR',
-              'Arizona'
-          ],
-          [
               'AZ',
-              'Arkansas'
-          ],
-          [
               'CA',
-              'California'
-          ],
-          [
               'CO',
-              'Colorado'
-          ],
-          [
               'CT',
-              'Connecticut'
-          ],
-          [
               'DE',
-              'Delaware'
-          ],
-          [
               'FL',
-              'Florida'
-          ],
-          [
               'GA',
-              'Georgia'
-          ],
-          [
               'HI',
-              'Hawaii'
-          ],
-          [
               'IA',
-              'Iowa'
-          ],
-          [
               'ID',
-              'Idaho'
-          ],
-          [
               'IL',
-              'Illinois'
-          ],
-          [
               'IN',
-              'Illinois'
-          ],
-          [
               'KS',
-              'Kansas'
-          ],
-          [
               'KY',
-              'Kentucky'
-          ],
-          [
               'LA',
-              'Louisiana'
-          ],
-          [
               'MA',
-              'Massachusetts'
-          ],
-          [
               'MD',
-              'Maryland'
-          ],
-          [
               'ME',
-              'Maine'
-          ],
-          [
               'MI',
-              'Michigan'
-          ],
-          [
               'MN',
-              'Minnesota'
-          ],
-          [
               'MO',
-              'Missouri'
-          ],
-          [
               'MS',
-              'Mississippi'
-          ],
-          [
               'MT',
-              'Montana'
-          ],
-          [
               'NC',
-              'North Carolina'
-          ],
-          [
               'ND',
-              'North Dakota'
-          ],
-          [
               'NE',
-              'Nebraska'
-          ],
-          [
               'NH',
-              'New Hampshire'
-          ],
-          [
               'NJ',
-              'New Jersey'
-          ],
-          [
               'NM',
-              'New Mexico'
-          ],
-          [
               'NV',
-              'Nevada'
-          ],
-          [
               'NY',
-              'New York'
-          ],
-          [
               'OH',
-              'Ohio'
-          ],
-          [
               'OK',
-              'Oklahoma'
-          ],
-          [
               'OR',
-              'Oregon'
-          ],
-          [
               'PA',
-              'Pennsylvania'
-          ],
-          [
               'RI',
-              'Rhode Island'
-          ],
-          [
               'SC',
-              'South Carolina'
-          ],
-          [
               'SD',
-              'South Dakota'
-          ],
-          [
               'TN',
-              'Tennessee'
-          ],
-          [
               'TX',
-              'Texas'
-          ],
-          [
               'UT',
-              'Utah'
-          ],
-          [
               'VA',
-              'Virginia'
-          ],
-          [
               'VT',
-              'Vermont'
-          ],
-          [
               'WA',
-              'Washington'
-          ],
-          [
               'WI',
-              'Wisconsin'
-          ],
-          [
               'WV',
-              'West Virginia'
-          ],
-          [
               'WY',
-              'Wyoming'
           ]
       ]
       },
@@ -452,34 +304,13 @@ const testData = {
         questionPrompt: 'What is your housing status?',
         questionType: 'dropdown',
         possibleAnswers: [
-          [
               'I rent or own my own home/apartment- Stable Situation',
-              'I rent or own my own home/apartment- Stable Situation'
-          ],
-          [
               'I rent or own my own home/apartment- Unstable Situation',
-              'I rent or own my own home/apartment- Unstable Situation'
-          ],
-          [
               'I live with family or friends - Stable Situation',
-              'I live with family or friends - Stable Situation'
-          ],
-          [
               'I live with family or friends- Unstable Situation',
-              'I live with family or friends- Unstable Situation'
-          ],
-          [
               'Homeless in the Shelter System',
-              'Homeless in the Shelter System'
-          ],
-          [
               'Homeless not in the Shelter System',
-              'Homeless not in the Shelter System'
-          ],
-          [
               'Other',
-              'My housing status is not described here'
-          ]
       ]
       },
       {// ne question 14
