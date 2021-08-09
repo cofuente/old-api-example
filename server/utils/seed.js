@@ -50,13 +50,13 @@ async function seed() {
   const nextEnrollment = forms.filter( (x) => x.tag === 'nextEnrollment' ).map( ( x ) => x.formUUID )
   const nextEnrollmentForm = await Form.findOne( {where: {formUUID: nextEnrollment[0]}} )
   const questionsAdded = await nextEnrollmentForm.addQuestion( nextEnrollmentQuestionsList )
-  if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestionsList.length } questions to Next Enrollment form` )    // Next Enrollment Questions List
+  if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestionsList.length } questions to Next Enrollment form` )
 
   // // Creating Randomized Submissions for the Next Enrollment Form
   const randomizedSubmissions = submissions.map( ( x ) => generateSubmission( x.submissionUUID, x.formUUID, nextEnrollmentQuestions ) )
-console.log(randomizedSubmissions[0])
-  const seededSubmissionTest = await Submission.create( randomizedSubmissions[ 0 ], {include: Answer} )
-  console.log( seededSubmissionTest)
+  const seededRandomizedSubmissions = randomizedSubmissions.map( x => Submission.create( x, {include: Answer} ) )
+  const seededSubmissions = await Promise.all( seededRandomizedSubmissions )
+  if ( seededSubmissions ) console.log( `seeded ${ seededSubmissions.length } submissions with their respective answers to Next Enrollment form` )
   console.log( 'all tables seeded successfully!' )
 }
 
