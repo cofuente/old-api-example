@@ -35,13 +35,55 @@ router.get( '/:formUUID', async ( req, res, next ) => {
   }
 } )
 
+router.put( '/:formUUID', async ( req, res, next ) => {
+  try {
+    const {formUUID} = req.params
+    const {title, programUUID, endpoint, start, end} = req.body
+    const newForm = {title, programUUID, endpoint, start, end}
+    const formToUpdate = await Form.findOne( {
+      where: {formUUID},
+      include: [ {
+        all: true
+      }]
+    } )
+    const updatedForm = await formToUpdate.update( newForm )
+    res.json(updatedForm)
+  } catch (err) {
+    next(err)
+  }
+} )
+
+router.put( '/:formUUID/add', async ( req, res, next ) => {
+  try {
+    const {formUUID} = req.params
+    const {questions} = req.body
+    const formToUpdate = await Form.findOne( {where: {formUUID}} )
+    const updatedForm = await formToUpdate.addQuestions( questions )
+    res.json(updatedForm)
+  } catch (err) {
+    next(err)
+  }
+} )
+
+router.put( '/:formUUID/remove', async ( req, res, next ) => {
+  try {
+    const {formUUID} = req.params
+    const {questions} = req.body
+    const formToUpdate = await Form.findOne( {where: {formUUID}} )
+    const updatedForm = await formToUpdate.removeQuestions( questions )
+    res.send(`Succesfully removed ${updatedForm} questions from form ${formUUID}`)
+  } catch (err) {
+    next(err)
+  }
+} )
+
 router.delete( '/:formUUID', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const formToDelete = await Form.destroy( {
       where: {formUUID}
     } )
-    res.json(formToDelete)
+    if (formToDelete) res.send(`Form ${formUUID} and all related submissions have been deleted`)
   } catch (err) {
     next(err)
   }
