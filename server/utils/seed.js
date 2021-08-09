@@ -28,7 +28,7 @@ async function seed() {
 
   const userdata = users.map( ( x ) => User.create( x ) )
   const seededUsers = await Promise.all(userdata)
-  console.log( `${ seededUsers.length }  users` )
+  console.log( `${ seededUsers.length } users` )
 
 
   // Adding default questions to default forms in the database
