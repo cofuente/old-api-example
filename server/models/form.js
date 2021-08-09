@@ -20,6 +20,10 @@ const Form = db.define('form', {
     },
     allowNull: false
   },
+  endpoint: {
+    type: Sequelize.STRING,
+    unique: true
+  },
   start: {
     type: Sequelize.DATE,
     // an arbitratry date in the past
