@@ -672,7 +672,6 @@ const testData = {
       endpoint: 'hereGOESaNICEendpointSTRING1',
       formUUID: '9fff3eec-231a-48d7-a2a3-593ffe924d50',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      stateCode: 'NY',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     },
@@ -681,7 +680,6 @@ const testData = {
       endpoint: 'nydistro/enrollment',
       formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      stateCode: 'NY',
       title: 'Secure Enrollment for NEXT Distro\'s Mail-based Harm Reduction Program',
       instructions: 'We are committed to your safety and security, for that reason this enrollment form does not ask for your name and address. After you complete this form, please text the \'handle\' you choose and your name and mailing address to nextdistro@pm.me. Alternately you can use the Signal app (signal.org) to message (646) 389-0752. More information about Signal can be found at nextdistro.org/privacy Please reach out to Jamie and Dan at nextdistro@pm.me if you have any questions.\nIf you are only looking for naloxone/Narcan, please go to nextdistro.org/naloxone. Do not fill out this form.'
     },
@@ -690,7 +688,6 @@ const testData = {
       endpoint: 'hereGOESaNICEendpointSTRING2',
       formUUID: 'b48a73bb-d7ee-4cbc-9420-fbb8614bbab3',
       programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
-      stateCode: 'CA',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     },
@@ -699,7 +696,6 @@ const testData = {
       endpoint: 'hereGOESaNICEendpointSTRING3',
       formUUID: 'b0b649c2-03c2-490f-89b4-fcd16b953986',
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
-      stateCode: 'NY',
       title: 'Example of a form title.',
       instructions: 'Here go example instructions.'
     }
