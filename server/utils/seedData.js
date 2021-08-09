@@ -514,7 +514,7 @@ const testData = {
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Do you have health insurance?',
-        questionType: 'input',
+        questionType: 'radio',
         questionDescription: null,
         possibleAnswers: [
           [
