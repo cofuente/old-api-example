@@ -918,8 +918,6 @@ const testData = {
       submissionUUID: '24b792b9-59d1-4054-b75f-f2a2dd588f91',
       formUUID: '95dfc8ea-30a1-4c4b-be03-62fbf5b7cd2f',
     }
-  ],
-  answers: [
   ]
 }
 
