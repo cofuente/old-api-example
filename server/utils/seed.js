@@ -10,7 +10,6 @@ const {
 const {testData} = require( '.' )
 const generateSubmission = require('./generateSubmission')
 
-// eslint-disable-next-line max-statements
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
