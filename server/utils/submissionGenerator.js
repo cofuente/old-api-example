@@ -1,4 +1,5 @@
-const {testData} = require('.')
+const {testData} = require( '.' )
+console.log( testData )
 const {questions} = testData
 const nextEnrollmentQuestions = questions.filter(x => x.tag === 'nextEnrollment')
 
@@ -32,7 +33,7 @@ const assignValue = ( question ) => {
   }
 }
 
-const generateSubmission = ( dummySubmissionUUID, formUUID ) => {
+const generateSubmission = ( submissionUUID, formUUID ) => {
 
   const generateAnswer = ( question ) => {
     return {
@@ -43,7 +44,7 @@ const generateSubmission = ( dummySubmissionUUID, formUUID ) => {
   }
 
   return {
-    submissionUUID: dummySubmissionUUID,
+    submissionUUID,
     formUUID,
     answers: nextEnrollmentQuestions.map( (x) => generateAnswer( x ) ),
   }

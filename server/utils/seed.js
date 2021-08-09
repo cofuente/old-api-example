@@ -5,15 +5,13 @@ const {
   Program,
   User,
   Submission,
-  Answer
 } = require('../models')
-
-const {testData} = require('.')
+const {testData} = require( '.' )
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
-  const {questions, programs, forms, users} = testData
+  const {questions, programs, forms, users, submissions} = testData
   const questionsData = questions.map( ( x ) => Question.create( x ) )
   const seededQuestions = await Promise.all(questionsData)
   console.log(`seeded ${seededQuestions.length} questions`)
@@ -26,8 +24,8 @@ async function seed() {
   const seededForms = await Promise.all(formsData)
   console.log(`${seededForms.length} forms`)
 
-  const userdata = users.map( ( x ) => User.create( x ) )
-  const seededUsers = await Promise.all(userdata)
+  const userData = users.map( ( x ) => User.create( x ) )
+  const seededUsers = await Promise.all(userData)
   console.log( `${ seededUsers.length } users` )
 
 
@@ -48,8 +46,13 @@ async function seed() {
   const nextEnrollment = forms.filter( (x) => x.tag === 'nextEnrollment' ).map( ( x ) => x.formUUID )
   const nextEnrollmentForm = await Form.findOne( {where: {formUUID: nextEnrollment[0]}} )
   const questionsAdded = await nextEnrollmentForm.addQuestion( nextEnrollmentQuestionsList )
-  if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestionsList.length } questions to Next Enrollment form` )
-  console.log('all tables seeded successfully!')
+  if ( questionsAdded ) console.log( `added all ${ nextEnrollmentQuestionsList.length } questions to Next Enrollment form` )    // Next Enrollment Questions List
+
+  // // Creating Randomized Submissions for the Next Enrollment Form
+  // const randomizedSubmissions = submissions.map( ( x ) => generateSubmission( x.submissionUUID, x.formUUID ) )
+  // const seededSubmissionTest = await Submission.create( randomizedSubmissions[ 0 ] )
+  // console.log( seededSubmissionTest)
+  console.log( 'all tables seeded successfully!' )
 }
 
 // Separated the `seed` function from the `runSeed` function.
