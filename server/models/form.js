@@ -41,6 +41,17 @@ Form.getQuestions = async ( formUUID ) => {
   return questions
 }
 
+Form.getQuestionsWithOrder = async ( formUUID ) => {
+  const formWithQs = await Form.findOne( {where: {formUUID}, include: {model: db.model( 'question' )}} )
+  const questionsWithOrder = formWithQs.dataValues.questions.map( ( x ) => {
+    return {
+      questionUUID: x.dataValues.questionUUID,
+      order: x.dataValues.questionsforms.dataValues.order
+    }
+  } )
+  return questionsWithOrder
+}
+
 Form.prototype.assimilateForm = async function (otherFormUUID) {
   const questionsToAdd = await Form.getQuestions(otherFormUUID)
   return this.addQuestions(questionsToAdd)

@@ -7,8 +7,7 @@ const {
   Submission,
   Answer
 } = require('../models')
-const {testData} = require( '.' )
-const generateSubmission = require('./generateSubmission')
+const {testData, generateSubmission} = require( '.' )
 
 async function seed() {
   await db.sync({force: true})
@@ -16,19 +15,19 @@ async function seed() {
   const {questions, programs, forms, users, submissions} = testData
   const questionsData = questions.map( ( x ) => Question.create( x ) )
   const seededQuestions = await Promise.all(questionsData)
-  console.log(`seeded ${seededQuestions.length} questions`)
+  if (seededQuestions) console.log(`seeded ${seededQuestions.length} questions`)
 
   const programsData = programs.map( ( x ) => Program.create( x ) )
   const seededPrograms = await Promise.all(programsData)
-  console.log( `${ seededPrograms.length } programs` )
+  if (seededPrograms) console.log( `${ seededPrograms.length } programs` )
 
   const formsData = forms.map( ( x ) => Form.create( x ) )
   const seededForms = await Promise.all(formsData)
-  console.log(`${seededForms.length} forms`)
+  if (seededForms) console.log(`${seededForms.length} forms`)
 
   const userData = users.map( ( x ) => User.create( x ) )
   const seededUsers = await Promise.all(userData)
-  console.log( `${ seededUsers.length } users` )
+  if (seededUsers) console.log( `${ seededUsers.length } users` )
 
 
   // Adding default questions to default forms in the database
@@ -41,7 +40,7 @@ async function seed() {
   }
   const defaultForms = defaultFormsList.map( x => addDefaultsToForm( x ) )
   const seededDefaultForms = await Promise.all(defaultForms)
-  console.log( `added ${ defaultQuestionsList.length } default questions to ${ seededDefaultForms.length } default forms` )
+  if (seededDefaultForms) console.log( `added ${ defaultQuestionsList.length } default questions to ${ seededDefaultForms.length } default forms` )
 
   // Next Enrollment Questions List
   const nextEnrollmentQuestions = questions.filter( x => x.tag === 'nextEnrollment' )
