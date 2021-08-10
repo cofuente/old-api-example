@@ -7,8 +7,7 @@ const {
   Submission,
   Answer
 } = require('../models')
-const {testData} = require( '.' )
-const generateSubmission = require('./generateSubmission')
+const {testData, generateSubmission} = require( '.' )
 
 async function seed() {
   await db.sync({force: true})
