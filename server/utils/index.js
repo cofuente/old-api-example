@@ -1,8 +1,7 @@
 const testData = require( './seedData' )
-const {verifyReorderRequest, helperFunc2} = require( './helperFunctions')
+const {verifyReorderRequest} = require( './helperFunctions')
 
 module.exports = {
   testData,
-  verifyReorderRequest,
-  helperFunc2
+  verifyReorderRequest
 }

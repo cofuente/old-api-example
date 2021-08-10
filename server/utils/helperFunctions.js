@@ -13,8 +13,6 @@ const verifyReorderRequest = async ( questionsArray, formUUID ) => {
       else return true
 }
 
-const helperFunc2 = (blergh) => console.log(blergh)
 module.exports = {
-  verifyReorderRequest,
-  helperFunc2
+  verifyReorderRequest
 }
