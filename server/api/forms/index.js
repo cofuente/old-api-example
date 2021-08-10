@@ -72,7 +72,7 @@ router.put( '/:formUUID/remove', async ( req, res, next ) => {
     const {questions} = req.body
     const formToUpdate = await Form.findOne( {where: {formUUID}} )
     const updatedForm = await formToUpdate.removeQuestions( questions )
-    res.send(`Succesfully removed ${updatedForm} questions from form ${formUUID}`)
+    res.send(`Succesfully removed ${updatedForm} questions from form ${formUUID}.`)
   } catch (err) {
     next(err)
   }
@@ -85,9 +85,9 @@ router.put( '/:formUUID/order', async ( req, res, next ) => {
     const isValid = await verifyReorderRequest( questions, formUUID )
     if ( isValid ) {
       const reorder = await QuestionForm.updateOrder( questions, formUUID )
-      if ( reorder.every( x => x[ 0 ] === 1 ) ) res.send( `Succesfully reordered questions on form ${ formUUID } ` )
+      if ( reorder.every( x => x[ 0 ] === 1 ) ) res.send( `Succesfully reordered questions on form ${ formUUID }.` )
     } else {
-      throw new Error( 'There is something wrong with your request. Please try again' )
+      throw new Error( 'There is something wrong with your request. Please try again.' )
     }
   } catch (err) {
     next(err)
@@ -100,7 +100,9 @@ router.delete( '/:formUUID', async ( req, res, next ) => {
     const formToDelete = await Form.destroy( {
       where: {formUUID}
     } )
-    if (formToDelete) res.send(`Form ${formUUID} and all related submissions have been deleted`)
+    console.log(formToDelete)
+    if ( formToDelete ) res.send( `Form ${ formUUID } has been deleted.` )
+    else res.status(500).send( `There was an error deleting form ${ formUUID }.` )
   } catch (err) {
     next(err)
   }
