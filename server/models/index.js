@@ -17,11 +17,7 @@ Form.belongsToMany(Question, {
   foreignKey: 'formUUID'
 })
 
-Submission.belongsTo( Form, {
-  foreignKey: 'formUUID',
-  onDelete: 'cascade',
-  hooks: true
-} )
+Submission.belongsTo( Form, {foreignKey: 'formUUID'} )
 
 Form.belongsTo(Program, {foreignKey: 'programUUID'})
 
