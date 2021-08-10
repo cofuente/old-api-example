@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const {Form, QuestionForm} = require( '../../models' )
-const {verifyRequest} = require( '../../utils' )
+const {verifyReorderRequest} = require( '../../utils' )
 
 router.get('/', async (req, res, next) => {
   try {
@@ -82,7 +82,7 @@ router.put( '/:formUUID/order', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const {questions} = req.body
-    const isValid = await verifyRequest( questions, formUUID )
+    const isValid = await verifyReorderRequest( questions, formUUID )
     if ( isValid ) {
       const reorder = await QuestionForm.updateOrder( questions, formUUID )
       if ( reorder.every( x => x[ 0 ] === 1 ) ) res.send( `Succesfully reordered questions on form ${ formUUID } ` )

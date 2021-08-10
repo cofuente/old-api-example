@@ -1,5 +1,5 @@
 const {Form} = require('../models')
-const verifyRequest = async ( questionsArray, formUUID ) => {
+const verifyReorderRequest = async ( questionsArray, formUUID ) => {
       if ( !questionsArray.length || !Array.isArray( questionsArray ) ) return false
       const targetForm = await Form.getQuestions( formUUID )
       if ( questionsArray.length !== targetForm.length ) return false
@@ -15,6 +15,6 @@ const verifyRequest = async ( questionsArray, formUUID ) => {
 
 const helperFunc2 = (blergh) => console.log(blergh)
 module.exports = {
-  verifyRequest,
+  verifyReorderRequest,
   helperFunc2
 }
