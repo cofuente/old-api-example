@@ -90,6 +90,17 @@ const testData = {
       },
       {// ne question 1
         tag: 'nextEnrollment',
+        questionUUID: 'PLACEHOLDER',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
+        questionType: 'paragraph',
+        possibleAnswers: [
+            'n/a'
+        ]
+      },
+      {// ne question 1
+        tag: 'nextEnrollment',
         questionUUID: '842c7508-b000-4fc7-9c9f-4e934d0b8ed0',
         required: true,
         encryptAnswer: false,
@@ -126,6 +137,7 @@ const testData = {
               'CO',
               'CT',
               'DE',
+              'DC',
               'FL',
               'GA',
               'HI',
@@ -156,6 +168,7 @@ const testData = {
               'OK',
               'OR',
               'PA',
+              'PR',
               'RI',
               'SC',
               'SD',
