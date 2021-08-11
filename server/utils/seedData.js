@@ -94,9 +94,9 @@ const testData = {
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
-        questionType: 'paragraph'
+        questionType: 'input'
       },
-      {// ne question 1
+      {// ne question 2
         tag: 'nextEnrollment',
         questionUUID: 'f766957a-e5b0-4e90-a239-8071102e96f8',
         required: true,
@@ -104,7 +104,7 @@ const testData = {
         questionPrompt: 'Please tell us about your ability or inability to access syringes.',
         questionType: 'paragraph'
       },
-      {// ne question 34
+      {// ne question 3
         tag: 'nextEnrollment',
         questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
         required: true,
@@ -112,7 +112,7 @@ const testData = {
         questionPrompt: 'Where do you currently obtain injection related supplies?',
         questionType: 'input'
       },
-      {// ne question 1
+      {// ne question 4
         tag: 'nextEnrollment',
         questionUUID: '842c7508-b000-4fc7-9c9f-4e934d0b8ed0',
         required: true,
@@ -120,7 +120,7 @@ const testData = {
         questionPrompt: 'The First Letter of Your First Name',
         questionType: 'input'
       },
-      {// ne question 2
+      {// ne question 5
         tag: 'nextEnrollment',
         questionUUID: '26464b66-7afb-443d-bc69-e6b3cb16ecfa',
         required: true,
@@ -128,15 +128,7 @@ const testData = {
         questionPrompt: 'The First Letter of Your Last Name',
         questionType: 'input'
       },
-      {// ne question 7
-        tag: 'nextEnrollment',
-        questionUUID: 'c0e71e1b-c7d0-47dd-8b7b-17ebc37a7b95',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
-        questionType: 'input'
-      },
-      {// ne question 8
+      {// ne question 6
         tag: 'nextEnrollment',
         questionUUID: '98e8fa30-9792-4081-830f-96a236fac83d',
         required: true,
@@ -144,13 +136,13 @@ const testData = {
         questionPrompt: 'Date of Birth',
         questionType: 'date'
       },
-      {// ne question 9
+      {// ne question 7
         tag: 'nextEnrollment',
         questionUUID: 'b9dc6102-502b-4ab6-b4f3-2b3ee161b5ce',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Gender Identity',
-        questionType: 'dropdown',
+        questionType: 'checkbox',
         possibleAnswers: [
           'Cis Woman  (non-transgender)',
           'Cis Man (non-transgender)',
@@ -161,7 +153,7 @@ const testData = {
           'Gender identity not listed here'
         ]
       },
-      {// ne question 9
+      {// ne question 8
         tag: 'nextEnrollment',
         questionUUID: 'ed716db9-9a0d-4054-866e-37e0725fd8a3',
         required: true,
@@ -181,7 +173,7 @@ const testData = {
           'Choose not to respond'
         ]
       },
-      {// ne question 11
+      {// ne question 9
         tag: 'nextEnrollment',
         questionUUID: '440af351-63d2-454b-a3af-a18d40d9d8f5',
         required: true,
@@ -195,10 +187,10 @@ const testData = {
           'Native American/ American Indian, Alaska Native',
           'Native Hawaiian or Pacific Islander',
           'Asian',
-          'I don\'t fit into this box'
+          'Race/ethnicity not listed here'
         ]
       },
-      {// ne question 12
+      {// ne question 10
         tag: 'nextEnrollment',
         questionUUID: '872af9f8-d99c-46e0-b222-a1cbdc6490d4',
         required: true,
@@ -213,7 +205,7 @@ const testData = {
           'Language not listed here'
         ]
       },
-      {// ne question 13
+      {// ne question 11
         tag: 'nextEnrollment',
         questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
         required: true,
@@ -228,9 +220,9 @@ const testData = {
               'Homeless in the Shelter System',
               'Homeless not in the Shelter System',
               'My housing status is not described here',
-      ]
+        ]
       },
-      {// ne question 4
+      {// ne question 12
         tag: 'nextEnrollment',
         questionUUID: '025d46a1-5144-42d9-9176-67501915af25',
         required: true,
@@ -238,7 +230,7 @@ const testData = {
         questionPrompt: 'What\'s your street address?',
         questionType: 'input'
       },
-      {// ne question 4
+      {// ne question 13
         tag: 'nextEnrollment',
         questionUUID: '0657b2c9-d611-4066-8f8d-dd74fd266227',
         required: true,
@@ -246,7 +238,7 @@ const testData = {
         questionPrompt: 'What\'s your city?',
         questionType: 'input'
       },
-      {// ne question 3
+      {// ne question 14
         tag: 'nextEnrollment',
         questionUUID: 'b1a3c65a-1ddd-4666-a1b0-4d2842577094',
         required: true,
@@ -306,9 +298,9 @@ const testData = {
               'WI',
               'WV',
               'WY',
-          ]
+        ]
       },
-      {// ne question 4
+      {// ne question 15
         tag: 'nextEnrollment',
         questionUUID: '9c8f020c-9ca9-4abc-90b2-817c6f49b1fa',
         required: true,
@@ -316,7 +308,7 @@ const testData = {
         questionPrompt: 'What\'s your zip code?',
         questionType: 'input'
       },
-      {// ne question 5
+      {// ne question 16
         tag: 'nextEnrollment',
         questionUUID: '65809857-da07-4a65-8656-d158a5bb0b75',
         required: true,
@@ -324,7 +316,7 @@ const testData = {
         questionPrompt: 'What is your county?',
         questionType: 'input'
       },
-      {// ne question 15
+      {// ne question 17
         tag: 'nextEnrollment',
         questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
         required: true,
@@ -335,9 +327,9 @@ const testData = {
               'Yes',
               'No',
               'I\'m not sure'
-      ]
+        ]
       },
-      {// ne question 16
+      {// ne question 18
         tag: 'nextEnrollment',
         questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
         required: true,
@@ -350,27 +342,26 @@ const testData = {
           'I\'m not sure'
         ]
       },
-      {// ne question 17
+      {// ne question 19
         tag: 'nextEnrollment',
         questionUUID: 'cd6e3ccf-279b-4fa3-bbd3-e566a3d99773',
         required: false,
         questionPrompt: 'If you have been hospitalized within the past six months, how many times?',
         questionType: 'input'
       },
-      {// ne question 18
+      {// ne question 20
         tag: 'nextEnrollment',
         questionUUID: '2994a592-f148-4e91-8d4b-85fb85b0eb30',
         required: false,
         questionPrompt: 'Have you had issues related to abscesses, cellulitis, or endocarditis? Please explain.',
         questionType: 'input'
       },
-      {// ne question 19
+      {// ne question 21
         tag: 'nextEnrollment',
         questionUUID: 'c2c0d01f-4187-4f51-9b3b-8ad246aa11cc',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Are you on public benefits not related to COVID?',
-        questionType: 'input',
         questionType: 'checkbox',
         possibleAnswers: [
             'SSI',
@@ -381,7 +372,7 @@ const testData = {
             'No benefits'
         ]
       },
-      {// ne question 20
+      {// ne question 22
         tag: 'nextEnrollment',
         questionUUID: 'aa28ef3c-d32b-40ea-9ca8-3b4e911a7d3a',
         required: true,
@@ -398,43 +389,43 @@ const testData = {
             'None of the above'
         ]
       },
-      {// ne question 21
+      {// ne question 23
         tag: 'nextEnrollment',
         questionUUID: '07136a3c-5439-4f70-bc4b-3788578e99dd',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Are you a US veteran or in active duty?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
           'Yes',
           'No'
         ]
       },
-      {// ne question 10
+      {// ne question 24
         tag: 'nextEnrollment',
         questionUUID: '43aea536-e644-4d67-8881-11873f4c10f6',
         required: false,
         questionPrompt: 'Are you pregnant?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
           'Yes',
           'No',
           'I\'m not sure'
         ]
       },
-      {// ne question 22
+      {// ne question 25
         tag: 'nextEnrollment',
         questionUUID: '1d546604-8e0c-442b-b9c6-b10082de8b27',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Are you parenting / do you have children at your residence?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
           'Yes',
           'No'
         ]
       },
-      {// ne question 23
+      {// ne question 26
         tag: 'nextEnrollment',
         questionUUID: '0dd4fd38-3969-4d2d-a1da-48093a762c66',
         required: true,
@@ -452,7 +443,7 @@ const testData = {
           'Yes, none of the above'
         ]
       },
-      {// ne question 24
+      {// ne question 27
         tag: 'nextEnrollment',
         questionUUID: 'db8b8bfa-299f-42a0-9e6d-d99610a4322f',
         required: true,
@@ -460,7 +451,7 @@ const testData = {
         questionPrompt: 'How old were you when you started injecting drugs?',
         questionType: 'input'
       },
-      {// ne question 32
+      {// ne question 28
         tag: 'nextEnrollment',
         questionUUID: '34936d25-314a-4664-abc1-693dbd2068e0',
         required: true,
@@ -468,7 +459,7 @@ const testData = {
         questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
         questionType: 'input'
       },
-      {// ne question 25
+      {// ne question 29
         tag: 'nextEnrollment',
         questionUUID: '2691ed4e-3256-4c3f-95eb-92050cd12ed6',
         required: true,
@@ -476,7 +467,7 @@ const testData = {
         questionPrompt: 'About how many times per day do you inject?',
         questionType: 'input'
       },
-      {// ne question 26
+      {// ne question 30
         tag: 'nextEnrollment',
         questionUUID: '7f4a3588-3926-4132-a325-c7f33a1fbf25',
         required: true,
@@ -500,20 +491,20 @@ const testData = {
           'other'
         ]
       },
-      {// ne question 38
+      {// ne question 31
         tag: 'nextEnrollment',
         questionUUID: 'e496c927-bb34-4c43-9115-83e43889ed05',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Do you inject pills?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
           'No',
           'Yes, often',
           'Yes, rarely'
         ]
       },
-      {// ne question 30
+      {// ne question 32
         tag: 'nextEnrollment',
         questionUUID: '8575fc03-b4fe-4f5d-9353-0b502baac1ac',
         required: true,
@@ -521,7 +512,7 @@ const testData = {
         questionPrompt: 'How often have you reused your own syringes in the past month?',
         questionType: 'input'
       },
-      {// ne question 31
+      {// ne question 33
         tag: 'nextEnrollment',
         questionUUID: 'a6ba3467-cd78-4e1c-9f3c-567edf5651d0',
         required: true,
@@ -529,40 +520,40 @@ const testData = {
         questionPrompt: 'How often have you shared syringes with another person in the past month?',
         questionType: 'input'
       },
-      {// ne question 27
+      {// ne question 34
         tag: 'nextEnrollment',
         questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Have you overdosed in the past year?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
             'Yes',
             'No',
             'I don\'t know/ I don\'t remember'
         ]
       },
-      {// ne question 28
+      {// ne question 35
         tag: 'nextEnrollment',
         questionUUID: '2ae2c762-2373-4034-b2af-959304a39b19',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Have you witnessed someone overdose in the past year?',
-        questionType: 'dropdown',
+        questionType: 'radio',
         possibleAnswers: [
             'Yes',
             'No',
             'I don\'t know/ I don\'t remember'
         ]
       },
-      {// ne question 33
+      {// ne question 36
         tag: 'nextEnrollment',
         questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
         required: false,
         questionPrompt: 'Is there anything else you want us to know about you, your history, or situation?',
         questionType: 'input'
       },
-      {// ne question 35
+      {// ne question 37
         tag: 'nextEnrollment',
         questionUUID: '33ef7055-5edf-4edf-baf9-83d6ef9b076b',
         required: true,
@@ -576,7 +567,7 @@ const testData = {
           '11+ people'
         ]
       },
-      {// ne question 36
+      {// ne question 39
         tag: 'nextEnrollment',
         questionUUID: '21d865c3-1d3c-4e99-9968-8405b90f9c5f',
         required: true,
@@ -589,7 +580,7 @@ const testData = {
           'Other with free text field'
         ]
       },
-      {// ne question 37
+      {// ne question 40
         tag: 'nextEnrollment',
         questionUUID: '3e53d554-f50a-4866-85ec-aeab31af2c64',
         required: true,
@@ -597,14 +588,14 @@ const testData = {
         questionPrompt: 'What else should we know about sending you supplies or communicating with you?',
         questionType: 'input'
       },
-      {// ne question 39
+      {// ne question 41
         tag: 'nextEnrollment',
         questionUUID: '753eda43-a227-4651-a3b2-b6538ce6f54c',
         required: false,
         questionPrompt: 'Security Concern:',
         questionType: 'input'
       },
-      {// ne question 40
+      {// ne question 42
         tag: 'nextEnrollment',
         questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
         required: true,
@@ -612,7 +603,7 @@ const testData = {
         questionPrompt: 'Age',
         questionType: 'input'
       },
-      {// ne question 6
+      {// ne question 43
         tag: 'nextEnrollment',
         questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
         required: true,
