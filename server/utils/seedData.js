@@ -98,7 +98,7 @@ const testData = {
       },
       {// ne question 1
         tag: 'nextEnrollment',
-        questionUUID: 'PLACEHOLDER',
+        questionUUID: 'f766957a-e5b0-4e90-a239-8071102e96f8',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Please tell us about your ability or inability to access syringes.',
@@ -513,6 +513,35 @@ const testData = {
           'other'
         ]
       },
+      {// ne question 38
+        tag: 'nextEnrollment',
+        questionUUID: 'e496c927-bb34-4c43-9115-83e43889ed05',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Do you inject pills?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'No',
+          'Yes, often',
+          'Yes, rarely'
+        ]
+      },
+      {// ne question 30
+        tag: 'nextEnrollment',
+        questionUUID: '8575fc03-b4fe-4f5d-9353-0b502baac1ac',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How often have you reused your own syringes in the past month?',
+        questionType: 'input'
+      },
+      {// ne question 31
+        tag: 'nextEnrollment',
+        questionUUID: 'a6ba3467-cd78-4e1c-9f3c-567edf5651d0',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How often have you shared syringes with another person in the past month?',
+        questionType: 'input'
+      },
       {// ne question 27
         tag: 'nextEnrollment',
         questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
@@ -533,273 +562,80 @@ const testData = {
         possibleAnswers: [
             'Yes',
             'No',
-            'I\'m not sure'
-    ]
-    },
-    {// ne question 16
-      tag: 'nextEnrollment',
-      questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Do you currently have a Primary Care Provider?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Yes',
-        'No',
-        'I\'m not sure'
-      ]
-    },
-    {// ne question 17
-      tag: 'nextEnrollment',
-      questionUUID: 'cd6e3ccf-279b-4fa3-bbd3-e566a3d99773',
-      required: false,
-      questionPrompt: 'If you have been hospitalized within the past six months, how many times?',
-      questionType: 'input'
-    },
-    {// ne question 18
-      tag: 'nextEnrollment',
-      questionUUID: '2994a592-f148-4e91-8d4b-85fb85b0eb30',
-      required: false,
-      questionPrompt: 'Have you had issues related to abscesses, cellulitis, or endocarditis? Please explain.',
-      questionType: 'input'
-    },
-    {// ne question 19
-      tag: 'nextEnrollment',
-      questionUUID: 'c2c0d01f-4187-4f51-9b3b-8ad246aa11cc',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Are you on public benefits not related to COVID?',
-      questionType: 'input'
-    },
-    {// ne question 20
-      tag: 'nextEnrollment',
-      questionUUID: 'aa28ef3c-d32b-40ea-9ca8-3b4e911a7d3a',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Have you been diagnosed with any of the following?',
-      questionType: 'checkbox',
-      possibleAnswers: [
-          'HIV/AIDS',
-          'Hepatitis C',
-          'Diabetes',
-          'Mental Health Disorder (Bi-Polar Disorder, Depressive Disorder, Major Personality Disorder, Schizophrenia, etc)',
-          'Cardiovascular Disease (Hypertension, Advanced Coronary Artery Disease, Peripheral Vascular Disease, etc)',
-          'Respiratory Disease (Asthma, Chronic Obstructive Pulmonary Disease)',
-          'None of the above'
-      ]
-    },
-    {// ne question 21
-      tag: 'nextEnrollment',
-      questionUUID: '07136a3c-5439-4f70-bc4b-3788578e99dd',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Are you a US veteran or in active duty?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Yes',
-        'No'
-      ]
-    },
-    {// ne question 22
-      tag: 'nextEnrollment',
-      questionUUID: '1d546604-8e0c-442b-b9c6-b10082de8b27',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Are you parenting / do you have children at your residence?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Yes',
-        'No'
-      ]
-    },
-    {// ne question 23
-      tag: 'nextEnrollment',
-      questionUUID: '0dd4fd38-3969-4d2d-a1da-48093a762c66',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Have you been arrested or incarcerated in the past year?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'No',
-        'Yes, on probation',
-        'Yes, on parole',
-        'Yes, on probation and parole',
-        'Yes, awaiting trial/ judge',
-        'Yes, outstanding warrant',
-        'Yes, case pending',
-        'Yes, none of the above'
-      ]
-    },
-    {// ne question 24
-      tag: 'nextEnrollment',
-      questionUUID: 'db8b8bfa-299f-42a0-9e6d-d99610a4322f',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'How old were you when you started injecting drugs?',
-      questionType: 'input'
-    },
-    {// ne question 25
-      tag: 'nextEnrollment',
-      questionUUID: '2691ed4e-3256-4c3f-95eb-92050cd12ed6',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'About how many times per day do you inject?',
-      questionType: 'input'
-    },
-    {// ne question 26
-      tag: 'nextEnrollment',
-      questionUUID: '7f4a3588-3926-4132-a325-c7f33a1fbf25',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What drugs have you used in the past 30 days?',
-      questionType: 'checkbox',
-      possibleAnswers: [
-        'Heroin',
-        'Cocaine',
-        'Methamphetamine',
-        'Crack-cocaine',
-        'Marijuana',
-        'Alcohol',
-        'Methadone (prescribed/ from a program or doctor)',
-        'Methadone (not prescribed)',
-        'Buprenorphine (prescribed/ from a program or doctor)',
-        'Buprenorphine (not prescribed)',
-        'Other opiates such as Oxycontin, Vicodin, Percocet, etc.',
-        'Benzos such as Valium, Ativan, Xanax',
-        'Synthetic marijuana/ K2'
-      ]
-    },
-    {// ne question 27
-      tag: 'nextEnrollment',
-      questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Have you overdosed in the past year?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-      ]
-    },
-    {// ne question 28
-      tag: 'nextEnrollment',
-      questionUUID: '2ae2c762-2373-4034-b2af-959304a39b19',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Have you witnessed someone overdose in the past year?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-          'Yes',
-          'No',
-          'I don\'t know/ I don\'t remember'
-      ]
-    },
-    {// ne question 29
-      tag: 'nextEnrollment',
-      questionUUID: 'f766957a-e5b0-4e90-a239-8071102e96f8',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Please tell us about your ability or inability to access syringes',
-      questionType: 'input'
-    },
-    {// ne question 30
-      tag: 'nextEnrollment',
-      questionUUID: '8575fc03-b4fe-4f5d-9353-0b502baac1ac',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'How often have you reused your own syringes in the past month?',
-      questionType: 'input'
-    },
-    {// ne question 31
-      tag: 'nextEnrollment',
-      questionUUID: 'a6ba3467-cd78-4e1c-9f3c-567edf5651d0',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'How often have you shared syringes with another person in the past month?',
-      questionType: 'input'
-    },
-    {// ne question 32
-      tag: 'nextEnrollment',
-      questionUUID: '34936d25-314a-4664-abc1-693dbd2068e0',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
-      questionType: 'input'
-    },
-    {// ne question 33
-      tag: 'nextEnrollment',
-      questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
-      required: false,
-      questionPrompt: 'Is there anything else you want us to know about you, your history, or situation?',
-      questionType: 'input'
-    },
-    {// ne question 34
-      tag: 'nextEnrollment',
-      questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Where do you currently obtain injection related supplies?',
-      questionType: 'input'
-    },
-    {// ne question 35
-      tag: 'nextEnrollment',
-      questionUUID: '33ef7055-5edf-4edf-baf9-83d6ef9b076b',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'In addition to getting supplies for you, how many other people do you plan to get supplies from NEXT for?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Just getting supplies for myself, no other people',
-        '1-4 people',
-        '4-10 people',
-        '11+ people'
-      ]
-    },
-    {// ne question 36
-      tag: 'nextEnrollment',
-      questionUUID: '21d865c3-1d3c-4e99-9968-8405b90f9c5f',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Related to security of packages containing injection related supplies:',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'You can send whatever to my address, I\'ll always get it'
-      ]
-    },
-    {// ne question 37
-      tag: 'nextEnrollment',
-      questionUUID: '3e53d554-f50a-4866-85ec-aeab31af2c64',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What else should we know about sending you supplies or communicating with you?',
-      questionType: 'input'
-    },
-    {// ne question 38
-      tag: 'nextEnrollment',
-      questionUUID: 'e496c927-bb34-4c43-9115-83e43889ed05',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Do you inject pills?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'No',
-        'Yes, often',
-        'Yes, rarely'
-      ]
-    },
-    {// ne question 39
-      tag: 'nextEnrollment',
-      questionUUID: '753eda43-a227-4651-a3b2-b6538ce6f54c',
-      required: false,
-      questionPrompt: 'Security Concern:',
-      questionType: 'input'
-    },
-    {// ne question 40
-      tag: 'nextEnrollment',
-      questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Age',
-      questionType: 'input'
-    }
+            'I don\'t know/ I don\'t remember'
+        ]
+      },
+      {// ne question 32
+        tag: 'nextEnrollment',
+        questionUUID: '34936d25-314a-4664-abc1-693dbd2068e0',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
+        questionType: 'input'
+      },
+      {// ne question 33
+        tag: 'nextEnrollment',
+        questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
+        required: false,
+        questionPrompt: 'Is there anything else you want us to know about you, your history, or situation?',
+        questionType: 'input'
+      },
+      {// ne question 34
+        tag: 'nextEnrollment',
+        questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Where do you currently obtain injection related supplies?',
+        questionType: 'input'
+      },
+      {// ne question 35
+        tag: 'nextEnrollment',
+        questionUUID: '33ef7055-5edf-4edf-baf9-83d6ef9b076b',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'In addition to getting supplies for you, how many other people do you plan to get supplies from NEXT for?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'Just getting supplies for myself, no other people',
+          '1-4 people',
+          '4-10 people',
+          '11+ people'
+        ]
+      },
+      {// ne question 36
+        tag: 'nextEnrollment',
+        questionUUID: '21d865c3-1d3c-4e99-9968-8405b90f9c5f',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Related to security of packages containing injection related supplies:',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'You can send whatever to my address, I\'ll always get it'
+        ]
+      },
+      {// ne question 37
+        tag: 'nextEnrollment',
+        questionUUID: '3e53d554-f50a-4866-85ec-aeab31af2c64',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What else should we know about sending you supplies or communicating with you?',
+        questionType: 'input'
+      },
+      {// ne question 39
+        tag: 'nextEnrollment',
+        questionUUID: '753eda43-a227-4651-a3b2-b6538ce6f54c',
+        required: false,
+        questionPrompt: 'Security Concern:',
+        questionType: 'input'
+      },
+      {// ne question 40
+        tag: 'nextEnrollment',
+        questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Age',
+        questionType: 'input'
+      }
   ],
   programs: [
     { // NY
