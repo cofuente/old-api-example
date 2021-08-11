@@ -413,9 +413,9 @@ const testData = {
             'HIV/AIDS',
             'Hepatitis C',
             'Diabetes',
-            'Mental Health Disorder (Bi-Polar Disorder, Depressive Disorder, Major Personality Disorder, Schizophrenia, etc)',
-            'Cardiovascular Disease (Hypertension, Advanced Coronary Artery Disease, Peripheral Vascular Disease, etc)',
-            'Respiratory Disease (Asthma, Chronic Obstructive Pulmonary Disease)',
+            'Mental Health Disorder',
+            'Cardiovascular Disease',
+            'Respiratory Disease',
             'None of the above'
         ]
       },
@@ -509,7 +509,8 @@ const testData = {
           'Buprenorphine (not prescribed)',
           'Other opiates such as Oxycontin, Vicodin, Percocet, etc.',
           'Benzos such as Valium, Ativan, Xanax',
-          'Synthetic marijuana/ K2'
+          'Synthetic marijuana/ K2',
+          'other'
         ]
       },
       {// ne question 27
