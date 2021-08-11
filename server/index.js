@@ -32,7 +32,9 @@ const errorHandler = (err, res) => {
 server.use(errorHandler)
 
 const startListening = () => {
-  const runningServer = server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))
+  // no-console is disabled, since it's valuable to view the log below
+  // eslint-disable-next-line no-console
+  server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))
 }
 
 const syncDb = () => db.sync()

@@ -17,7 +17,7 @@ router.post('/login', async (req, res, next) => {
   }
 })
 
-router.post( '/logout', async ( req, res, next ) => {
+router.post( '/logout', ( req, res, next ) => {
   try {
     req.logout()
     res.redirect('/')
