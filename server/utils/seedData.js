@@ -345,19 +345,6 @@ const testData = {
               'I\'m not sure'
       ]
       },
-      {// ne question 15
-        tag: 'nextEnrollment',
-        questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Do you have health insurance?',
-        questionType: 'radio',
-        possibleAnswers: [
-              'Yes',
-              'No',
-              'I\'m not sure'
-      ]
-      },
       {// ne question 16
         tag: 'nextEnrollment',
         questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
