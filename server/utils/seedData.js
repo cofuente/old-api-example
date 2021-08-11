@@ -104,13 +104,13 @@ const testData = {
         questionPrompt: 'Please tell us about your ability or inability to access syringes.',
         questionType: 'paragraph'
       },
-      {// ne question 1
+      {// ne question 34
         tag: 'nextEnrollment',
-        questionUUID: 'PLACEHOLDER',
+        questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Where do you currently obtain injection related supplies?',
-        questionType: 'paragraph'
+        questionType: 'input'
       },
       {// ne question 1
         tag: 'nextEnrollment',
@@ -126,14 +126,6 @@ const testData = {
         required: true,
         encryptAnswer: false,
         questionPrompt: 'The First Letter of Your Last Name',
-        questionType: 'input'
-      },
-      {// ne question 6
-        tag: 'nextEnrollment',
-        questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Please create a handle.',
         questionType: 'input'
       },
       {// ne question 7
@@ -468,6 +460,14 @@ const testData = {
         questionPrompt: 'How old were you when you started injecting drugs?',
         questionType: 'input'
       },
+      {// ne question 32
+        tag: 'nextEnrollment',
+        questionUUID: '34936d25-314a-4664-abc1-693dbd2068e0',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
+        questionType: 'input'
+      },
       {// ne question 25
         tag: 'nextEnrollment',
         questionUUID: '2691ed4e-3256-4c3f-95eb-92050cd12ed6',
@@ -537,6 +537,9 @@ const testData = {
         questionPrompt: 'Have you overdosed in the past year?',
         questionType: 'dropdown',
         possibleAnswers: [
+            'Yes',
+            'No',
+            'I don\'t know/ I don\'t remember'
         ]
       },
       {// ne question 28
@@ -552,27 +555,11 @@ const testData = {
             'I don\'t know/ I don\'t remember'
         ]
       },
-      {// ne question 32
-        tag: 'nextEnrollment',
-        questionUUID: '34936d25-314a-4664-abc1-693dbd2068e0',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'How / where do you currently dispose of syringes? Please be specific.',
-        questionType: 'input'
-      },
       {// ne question 33
         tag: 'nextEnrollment',
         questionUUID: '53eea840-5a58-4758-a19a-597af757fd8f',
         required: false,
         questionPrompt: 'Is there anything else you want us to know about you, your history, or situation?',
-        questionType: 'input'
-      },
-      {// ne question 34
-        tag: 'nextEnrollment',
-        questionUUID: '394376d2-a161-4bbe-b0b4-b4dd400b99b6',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Where do you currently obtain injection related supplies?',
         questionType: 'input'
       },
       {// ne question 35
@@ -597,7 +584,9 @@ const testData = {
         questionPrompt: 'Related to security of packages containing injection related supplies:',
         questionType: 'dropdown',
         possibleAnswers: [
-          'You can send whatever to my address, I\'ll always get it'
+          'You can send whatever to my address, I\'ll always get it',
+          'Please don\'t send boxes to my address, only large envelopes',
+          'Other with free text field'
         ]
       },
       {// ne question 37
@@ -621,6 +610,14 @@ const testData = {
         required: true,
         encryptAnswer: false,
         questionPrompt: 'Age',
+        questionType: 'input'
+      },
+      {// ne question 6
+        tag: 'nextEnrollment',
+        questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Please create a handle.',
         questionType: 'input'
       }
   ],
