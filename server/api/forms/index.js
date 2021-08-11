@@ -84,7 +84,7 @@ router.put( '/:formUUID/remove', async ( req, res, next ) => {
   }
 } )
 
-// reorder questions on form
+// reorder question(s) on form
 router.put( '/:formUUID/order', async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
