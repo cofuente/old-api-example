@@ -247,16 +247,24 @@ const testData = {
           'Gender identity not listed here'
         ]
       },
-      {// ne question 10
+      {// ne question 9
         tag: 'nextEnrollment',
-        questionUUID: '43aea536-e644-4d67-8881-11873f4c10f6',
-        required: false,
-        questionPrompt: 'Are you pregnant?',
+        questionUUID: 'PLACEHOLDER',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Sexual Orientation',
         questionType: 'dropdown',
         possibleAnswers: [
-          'Yes',
-          'No',
-          'I\'m not sure'
+          'Gay',
+          'Lesbian',
+          'Straight or heterosexual',
+          'Bisexual',
+          'Queer',
+          'Pansexual',
+          'Asexual',
+          'Not sure or questioning',
+          'Sexual orientation not listed',
+          'Choose not to respond'
         ]
       },
       {// ne question 11
@@ -290,61 +298,34 @@ const testData = {
           'Chinese (Cantonese or Mandarin)',
           'Another language'
         ]
-    },
-    {// ne question 4
-      tag: 'nextEnrollment',
-      questionUUID: '9c8f020c-9ca9-4abc-90b2-817c6f49b1fa',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What\'s your zip code?',
-      questionType: 'input'
-    },
-    {// ne question 5
-      tag: 'nextEnrollment',
-      questionUUID: '65809857-da07-4a65-8656-d158a5bb0b75',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What is your county?',
-      questionType: 'input'
-    },
-    {// ne question 6
-      tag: 'nextEnrollment',
-      questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Please create a handle.',
-      questionType: 'input'
-    },
-    {// ne question 7
-      tag: 'nextEnrollment',
-      questionUUID: 'c0e71e1b-c7d0-47dd-8b7b-17ebc37a7b95',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
-      questionType: 'input'
-    },
-    {// ne question 8
-      tag: 'nextEnrollment',
-      questionUUID: '98e8fa30-9792-4081-830f-96a236fac83d',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Date of Birth',
-      questionType: 'date'
-    },
-    {// ne question 9
-      tag: 'nextEnrollment',
-      questionUUID: 'b9dc6102-502b-4ab6-b4f3-2b3ee161b5ce',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Gender Identity',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Cis Woman  (non-transgender)',
-        'Cis Man (non-transgender)',
-        'Transgender Woman (MTF)',
-        'Transgender Man (FTM)',
-        'Non-binary or genderqueer, assigned female at birth',
-        'Non-binary or genderqueer, assigned male at birth'
+      },
+      {// ne question 10
+        tag: 'nextEnrollment',
+        questionUUID: '43aea536-e644-4d67-8881-11873f4c10f6',
+        required: false,
+        questionPrompt: 'Are you pregnant?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'Yes',
+          'No',
+          'I\'m not sure'
+        ]
+      },
+      {// ne question 13
+        tag: 'nextEnrollment',
+        questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What is your housing status?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+              'I rent or own my own home/apartment- Stable Situation',
+              'I rent or own my own home/apartment- Unstable Situation',
+              'I live with family or friends - Stable Situation',
+              'I live with family or friends- Unstable Situation',
+              'Homeless in the Shelter System',
+              'Homeless not in the Shelter System',
+              'Other',
       ]
     },
     {// ne question 10
