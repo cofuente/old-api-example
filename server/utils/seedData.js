@@ -128,6 +128,132 @@ const testData = {
         questionPrompt: 'The First Letter of Your Last Name',
         questionType: 'input'
       },
+      {// ne question 6
+        tag: 'nextEnrollment',
+        questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Please create a handle.',
+        questionType: 'input'
+      },
+      {// ne question 7
+        tag: 'nextEnrollment',
+        questionUUID: 'c0e71e1b-c7d0-47dd-8b7b-17ebc37a7b95',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
+        questionType: 'input'
+      },
+      {// ne question 8
+        tag: 'nextEnrollment',
+        questionUUID: '98e8fa30-9792-4081-830f-96a236fac83d',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Date of Birth',
+        questionType: 'date'
+      },
+      {// ne question 9
+        tag: 'nextEnrollment',
+        questionUUID: 'b9dc6102-502b-4ab6-b4f3-2b3ee161b5ce',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Gender Identity',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'Cis Woman  (non-transgender)',
+          'Cis Man (non-transgender)',
+          'Transgender Woman (MTF)',
+          'Transgender Man (FTM)',
+          'Non-binary or genderqueer, assigned female at birth',
+          'Non-binary or genderqueer, assigned male at birth',
+          'Gender identity not listed here'
+        ]
+      },
+      {// ne question 9
+        tag: 'nextEnrollment',
+        questionUUID: 'ed716db9-9a0d-4054-866e-37e0725fd8a3',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How would you describe your sexual orientation?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'Gay',
+          'Lesbian',
+          'Straight or heterosexual',
+          'Bisexual',
+          'Queer',
+          'Pansexual',
+          'Asexual',
+          'Not sure or questioning',
+          'Sexual orientation not listed',
+          'Choose not to respond'
+        ]
+      },
+      {// ne question 11
+        tag: 'nextEnrollment',
+        questionUUID: '440af351-63d2-454b-a3af-a18d40d9d8f5',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'My race/ethnicity could be characterized as...',
+        questionType: 'checkbox',
+        possibleAnswers: [
+          'African American/ Black',
+          'Hispanic/Latinx',
+          'Caucasian/ White',
+          'Native American/ American Indian, Alaska Native',
+          'Native Hawaiian or Pacific Islander',
+          'Asian',
+          'I don\'t fit into this box'
+        ]
+      },
+      {// ne question 12
+        tag: 'nextEnrollment',
+        questionUUID: '872af9f8-d99c-46e0-b222-a1cbdc6490d4',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What is your preferred language? ',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'English',
+          'Spanish',
+          'Russian',
+          'Chinese (Cantonese or Mandarin)',
+          'Language not listed here'
+        ]
+      },
+      {// ne question 13
+        tag: 'nextEnrollment',
+        questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What is your housing status?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+              'I rent or own my own home/apartment- Stable Situation',
+              'I rent or own my own home/apartment- Unstable Situation',
+              'I live with family or friends - Stable Situation',
+              'I live with family or friends- Unstable Situation',
+              'Homeless in the Shelter System',
+              'Homeless not in the Shelter System',
+              'My housing status is not described here',
+      ]
+      },
+      {// ne question 4
+        tag: 'nextEnrollment',
+        questionUUID: 'PLACEHOLDER',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What\'s your street address?',
+        questionType: 'input'
+      },
+      {// ne question 4
+        tag: 'nextEnrollment',
+        questionUUID: 'PLACEHOLDER',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What\'s your city?',
+        questionType: 'input'
+      },
       {// ne question 3
         tag: 'nextEnrollment',
         questionUUID: 'b1a3c65a-1ddd-4666-a1b0-4d2842577094',
@@ -206,97 +332,103 @@ const testData = {
         questionPrompt: 'What is your county?',
         questionType: 'input'
       },
-      {// ne question 6
+      {// ne question 15
         tag: 'nextEnrollment',
-        questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
+        questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'Please create a handle.',
-        questionType: 'input'
+        questionPrompt: 'Do you have health insurance?',
+        questionType: 'radio',
+        possibleAnswers: [
+              'Yes',
+              'No',
+              'I\'m not sure'
+      ]
       },
-      {// ne question 7
+      {// ne question 15
         tag: 'nextEnrollment',
-        questionUUID: 'c0e71e1b-c7d0-47dd-8b7b-17ebc37a7b95',
+        questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'Please tell us how you learned about NEXT. Be specific.',
-        questionType: 'input'
+        questionPrompt: 'Do you have health insurance?',
+        questionType: 'radio',
+        possibleAnswers: [
+              'Yes',
+              'No',
+              'I\'m not sure'
+      ]
       },
-      {// ne question 8
+      {// ne question 16
         tag: 'nextEnrollment',
-        questionUUID: '98e8fa30-9792-4081-830f-96a236fac83d',
+        questionUUID: 'ac6ce973-3a36-41e3-9369-8f2033ef5022',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'Date of Birth',
-        questionType: 'date'
-      },
-      {// ne question 9
-        tag: 'nextEnrollment',
-        questionUUID: 'b9dc6102-502b-4ab6-b4f3-2b3ee161b5ce',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Gender Identity',
+        questionPrompt: 'Do you currently have a Primary Care Provider?',
         questionType: 'dropdown',
         possibleAnswers: [
-          'Cis Woman  (non-transgender)',
-          'Cis Man (non-transgender)',
-          'Transgender Woman (MTF)',
-          'Transgender Man (FTM)',
-          'Non-binary or genderqueer, assigned female at birth',
-          'Non-binary or genderqueer, assigned male at birth',
-          'Gender identity not listed here'
+          'Yes',
+          'No',
+          'I\'m not sure'
         ]
       },
-      {// ne question 9
+      {// ne question 17
         tag: 'nextEnrollment',
-        questionUUID: 'PLACEHOLDER',
-        required: true,
-        encryptAnswer: false,
-        questionPrompt: 'Sexual Orientation',
-        questionType: 'dropdown',
-        possibleAnswers: [
-          'Gay',
-          'Lesbian',
-          'Straight or heterosexual',
-          'Bisexual',
-          'Queer',
-          'Pansexual',
-          'Asexual',
-          'Not sure or questioning',
-          'Sexual orientation not listed',
-          'Choose not to respond'
-        ]
+        questionUUID: 'cd6e3ccf-279b-4fa3-bbd3-e566a3d99773',
+        required: false,
+        questionPrompt: 'If you have been hospitalized within the past six months, how many times?',
+        questionType: 'input'
       },
-      {// ne question 11
+      {// ne question 18
         tag: 'nextEnrollment',
-        questionUUID: '440af351-63d2-454b-a3af-a18d40d9d8f5',
+        questionUUID: '2994a592-f148-4e91-8d4b-85fb85b0eb30',
+        required: false,
+        questionPrompt: 'Have you had issues related to abscesses, cellulitis, or endocarditis? Please explain.',
+        questionType: 'input'
+      },
+      {// ne question 19
+        tag: 'nextEnrollment',
+        questionUUID: 'c2c0d01f-4187-4f51-9b3b-8ad246aa11cc',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'My race/ethnicity could be characterized as...',
+        questionPrompt: 'Are you on public benefits not related to COVID?',
+        questionType: 'input',
         questionType: 'checkbox',
         possibleAnswers: [
-          'African American/ Black',
-          'Hispanic/Latinx',
-          'Caucasian/ White',
-          'Native American/ American Indian, Alaska Native',
-          'Native Hawaiian or Pacific Islander',
-          'Asian',
-          'I don\'t fit into this box'
+            'SSI',
+            'SSD',
+            'Food Stamps',
+            'WIC',
+            'Another form of benefits',
+            'No benefits'
         ]
       },
-      {// ne question 12
+      {// ne question 20
         tag: 'nextEnrollment',
-        questionUUID: '872af9f8-d99c-46e0-b222-a1cbdc6490d4',
+        questionUUID: 'aa28ef3c-d32b-40ea-9ca8-3b4e911a7d3a',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'What is your preferred language? ',
+        questionPrompt: 'Have you been diagnosed with any of the following?',
+        questionType: 'checkbox',
+        possibleAnswers: [
+            'HIV/AIDS',
+            'Hepatitis C',
+            'Diabetes',
+            'Mental Health Disorder (Bi-Polar Disorder, Depressive Disorder, Major Personality Disorder, Schizophrenia, etc)',
+            'Cardiovascular Disease (Hypertension, Advanced Coronary Artery Disease, Peripheral Vascular Disease, etc)',
+            'Respiratory Disease (Asthma, Chronic Obstructive Pulmonary Disease)',
+            'None of the above'
+        ]
+      },
+      {// ne question 21
+        tag: 'nextEnrollment',
+        questionUUID: '07136a3c-5439-4f70-bc4b-3788578e99dd',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Are you a US veteran or in active duty?',
         questionType: 'dropdown',
         possibleAnswers: [
-          'English',
-          'Spanish',
-          'Russian',
-          'Chinese (Cantonese or Mandarin)',
-          'Another language'
+          'Yes',
+          'No'
         ]
       },
       {// ne question 10
@@ -311,100 +443,93 @@ const testData = {
           'I\'m not sure'
         ]
       },
-      {// ne question 13
+      {// ne question 22
         tag: 'nextEnrollment',
-        questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
+        questionUUID: '1d546604-8e0c-442b-b9c6-b10082de8b27',
         required: true,
         encryptAnswer: false,
-        questionPrompt: 'What is your housing status?',
+        questionPrompt: 'Are you parenting / do you have children at your residence?',
         questionType: 'dropdown',
         possibleAnswers: [
-              'I rent or own my own home/apartment- Stable Situation',
-              'I rent or own my own home/apartment- Unstable Situation',
-              'I live with family or friends - Stable Situation',
-              'I live with family or friends- Unstable Situation',
-              'Homeless in the Shelter System',
-              'Homeless not in the Shelter System',
-              'Other',
-      ]
-    },
-    {// ne question 10
-      tag: 'nextEnrollment',
-      questionUUID: '43aea536-e644-4d67-8881-11873f4c10f6',
-      required: false,
-      questionPrompt: 'Are you pregnant?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'Yes',
-        'No',
-        'I\'m not sure'
-      ]
-    },
-    {// ne question 11
-      tag: 'nextEnrollment',
-      questionUUID: '440af351-63d2-454b-a3af-a18d40d9d8f5',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'My race/ethnicity could be characterized as...',
-      questionType: 'checkbox',
-      possibleAnswers: [
-        'African American/ Black',
-        'Hispanic/Latinx',
-        'Caucasian/ White',
-        'Native American/ American Indian, Alaska Native',
-        'Native Hawaiian or Pacific Islander',
-        'Asian',
-        'I don\'t fit into this box'
-      ]
-    },
-    {// ne question 12
-      tag: 'nextEnrollment',
-      questionUUID: '872af9f8-d99c-46e0-b222-a1cbdc6490d4',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What is your preferred language? ',
-      questionType: 'dropdown',
-      possibleAnswers: [
-        'English',
-        'Spanish',
-        'Russian',
-        'Chinese (Cantonese or Mandarin)',
-        'Another language'
-      ]
-    },
-    {// ne question 13
-      tag: 'nextEnrollment',
-      questionUUID: '01fffdfa-a893-47e2-8ee0-60809cd57726',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'What is your housing status?',
-      questionType: 'dropdown',
-      possibleAnswers: [
-            'I rent or own my own home/apartment- Stable Situation',
-            'I rent or own my own home/apartment- Unstable Situation',
-            'I live with family or friends - Stable Situation',
-            'I live with family or friends- Unstable Situation',
-            'Homeless in the Shelter System',
-            'Homeless not in the Shelter System',
-            'Other',
-    ]
-    },
-    {// ne question 14
-      tag: 'nextEnrollment',
-      questionUUID: 'ed716db9-9a0d-4054-866e-37e0725fd8a3',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'How would you describe your sexual orientation',
-      questionType: 'input'
-    },
-    {// ne question 15
-      tag: 'nextEnrollment',
-      questionUUID: 'e7581915-b0a9-464f-a9b1-5f6fd293cec6',
-      required: true,
-      encryptAnswer: false,
-      questionPrompt: 'Do you have health insurance?',
-      questionType: 'radio',
-      possibleAnswers: [
+          'Yes',
+          'No'
+        ]
+      },
+      {// ne question 23
+        tag: 'nextEnrollment',
+        questionUUID: '0dd4fd38-3969-4d2d-a1da-48093a762c66',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Have you been arrested or incarcerated in the past year?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+          'No',
+          'Yes, on probation',
+          'Yes, on parole',
+          'Yes, on probation and parole',
+          'Yes, awaiting trial/ judge',
+          'Yes, outstanding warrant',
+          'Yes, case pending',
+          'Yes, none of the above'
+        ]
+      },
+      {// ne question 24
+        tag: 'nextEnrollment',
+        questionUUID: 'db8b8bfa-299f-42a0-9e6d-d99610a4322f',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'How old were you when you started injecting drugs?',
+        questionType: 'input'
+      },
+      {// ne question 25
+        tag: 'nextEnrollment',
+        questionUUID: '2691ed4e-3256-4c3f-95eb-92050cd12ed6',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'About how many times per day do you inject?',
+        questionType: 'input'
+      },
+      {// ne question 26
+        tag: 'nextEnrollment',
+        questionUUID: '7f4a3588-3926-4132-a325-c7f33a1fbf25',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'What drugs have you used in the past 30 days?',
+        questionType: 'checkbox',
+        possibleAnswers: [
+          'Heroin',
+          'Cocaine',
+          'Methamphetamine',
+          'Crack-cocaine',
+          'Marijuana',
+          'Alcohol',
+          'Methadone (prescribed/ from a program or doctor)',
+          'Methadone (not prescribed)',
+          'Buprenorphine (prescribed/ from a program or doctor)',
+          'Buprenorphine (not prescribed)',
+          'Other opiates such as Oxycontin, Vicodin, Percocet, etc.',
+          'Benzos such as Valium, Ativan, Xanax',
+          'Synthetic marijuana/ K2'
+        ]
+      },
+      {// ne question 27
+        tag: 'nextEnrollment',
+        questionUUID: '364f1742-6ba2-4f10-a396-3f1a7d1ee7c7',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Have you overdosed in the past year?',
+        questionType: 'dropdown',
+        possibleAnswers: [
+        ]
+      },
+      {// ne question 28
+        tag: 'nextEnrollment',
+        questionUUID: '2ae2c762-2373-4034-b2af-959304a39b19',
+        required: true,
+        encryptAnswer: false,
+        questionPrompt: 'Have you witnessed someone overdose in the past year?',
+        questionType: 'dropdown',
+        possibleAnswers: [
             'Yes',
             'No',
             'I\'m not sure'
