@@ -597,7 +597,7 @@ const testData = {
       ],
     },
     {
-      // ne question 39
+      // ne question 38
       tag: 'nextEnrollment',
       questionUUID: '21d865c3-1d3c-4e99-9968-8405b90f9c5f',
       required: true,
@@ -612,7 +612,7 @@ const testData = {
       ],
     },
     {
-      // ne question 40
+      // ne question 39
       tag: 'nextEnrollment',
       questionUUID: '3e53d554-f50a-4866-85ec-aeab31af2c64',
       required: true,
@@ -622,7 +622,7 @@ const testData = {
       questionType: 'input',
     },
     {
-      // ne question 41
+      // ne question 40
       tag: 'nextEnrollment',
       questionUUID: '753eda43-a227-4651-a3b2-b6538ce6f54c',
       required: false,
@@ -630,7 +630,7 @@ const testData = {
       questionType: 'input',
     },
     {
-      // ne question 42
+      // ne question 41
       tag: 'nextEnrollment',
       questionUUID: '932aa8f6-9e56-4944-9485-778d5650ccf1',
       required: true,
@@ -639,7 +639,7 @@ const testData = {
       questionType: 'input',
     },
     {
-      // ne question 43
+      // ne question 42
       tag: 'nextEnrollment',
       questionUUID: '31a4dec2-6587-4232-9925-2c106fb50494',
       required: true,
