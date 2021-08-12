@@ -27,7 +27,6 @@ const Question = db.define('question', {
       'dropdown',
       'heading',
       'input',
-      'multiplechoice',
       'number',
       'paragraph',
       'radio',
