@@ -116,7 +116,7 @@ const testData = {
       encryptAnswer: false,
       questionPrompt:
         'Please tell us about your ability or inability to access syringes.',
-      questionType: 'paragraph',
+      questionType: 'textarea',
     },
     {
       // ne question 3
