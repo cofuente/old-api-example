@@ -14,6 +14,7 @@
     "lint:fix": "npm run update-linter && eslint -c ./.eslintrc.js . --ext .js  --fix",
     "update-linter": "npx install-peerdeps --dev eslint && npx install-peerdeps --dev eslint-config-prettier && npx install-peerdeps --dev prettier"
   },
+  "pre-commit": [ "just-lint" ],
   "author": "Chiara Marcial Martínez <contact@cofuente.io> (https://cofuente.io)",
   "contributors": [
     {
@@ -70,6 +71,7 @@
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.3.2",
     "supertest": "^6.1.5"
   },

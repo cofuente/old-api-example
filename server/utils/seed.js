@@ -1,3 +1,7 @@
+// no-console is disabled for the whole file,
+// because of the value the logs bring to seed runs
+/* eslint-disable no-console */
+
 const db = require('../config/db')
 const {
   Form,
@@ -9,6 +13,9 @@ const {
 } = require('../models')
 const {testData, generateSubmission} = require( '.' )
 
+// max-statements is ignored, because the additional lines
+// are not introducing needless complexity. Generally, they are logs
+// eslint-disable-next-line max-statements
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
