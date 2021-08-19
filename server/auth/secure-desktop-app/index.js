@@ -2,7 +2,7 @@ const router = require('express').Router()
 const {User} = require( '../../models' )
 const passport = require( 'passport' )
 
-
+// TODO consider scope scope: [],
 // login desktop app user
 router.post('/login', passport.authenticate('local', {failureRedirect: '/login-failure', successRedirect: 'login-success'}))
 // router.post('/login', async (req, res, next) => {

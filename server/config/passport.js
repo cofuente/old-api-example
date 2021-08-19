@@ -8,14 +8,14 @@ passport.serializeUser( ( user, done ) => {
 	console.log('=== serialize ... called ===')
 	console.log(user)
 	console.log('---------')
-	done(null, {_id: user._id})
+	done(null, {userUUID: user.dataValues.userUUID})
 })
 
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (userUUID, done) => {
 	console.log( 'DEserialize ... called' )
-	console.log( id )
+	console.log( userUUID )
 	try {
-		const requestedUser = await User.findOne( {where: {userUUID: id}} )
+		const requestedUser = await User.findOne( {where: {userUUID}} )
 		console.log('======= DESERILAIZE USER CALLED ======')
 		console.log(requestedUser)
 		console.log('--------------')
