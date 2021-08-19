@@ -1,9 +1,16 @@
+/* eslint-disable no-console */
 const express = require('express')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
-const cors = require('cors')
+const cors = require( 'cors' )
+const session = require( 'express-session' ) // TODO remove cookie-session module
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
+// const passport = require( 'passport' )
 
-const db = require( './config/db' )
+// const {db} = require( './config' )
+const {db, passport} = require( './config' )
+const sessionStore = new SequelizeStore( {db} )
+// const {User} = require( './models')
 const PORT = process.env.PORT || 1337
 const server = express()
 
@@ -19,7 +26,25 @@ server.use( express.urlencoded( {extended: true} ) ) // TODO: investigate use if
 
 // typical express setup
 server.use(express.json())
-server.use(cors())
+server.use( cors() )
+
+// passport setup
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+  })
+)
+server.use(passport.initialize())
+server.use( passport.session() )
+server.use((req, res, next) => {
+    console.log(req.session)
+    console.log(req.user)
+    next()
+})
+
 
 // routes
 server.use('/api', require('./api') )
