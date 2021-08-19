@@ -3,14 +3,11 @@ const express = require('express')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const cors = require( 'cors' )
-const session = require( 'express-session' ) // TODO remove cookie-session module
+const session = require( 'express-session' )
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-// const passport = require( 'passport' )
 
-// const {db} = require( './config' )
 const {db, passport} = require( './config' )
 const sessionStore = new SequelizeStore( {db} )
-// const {User} = require( './models')
 const PORT = process.env.PORT || 1337
 const server = express()
 
@@ -38,7 +35,7 @@ server.use(
   })
 )
 server.use(passport.initialize())
-server.use( passport.session() )
+server.use(passport.session())
 server.use((req, res, next) => {
     console.log(req.session)
     console.log(req.user)
@@ -51,11 +48,11 @@ server.use('/api', require('./api') )
 server.use('/auth', require('./auth'))
 
 
-const errorHandler = (err, res) => {
-  console.error(err.stack)
-  return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
-}
-server.use(errorHandler)
+// const errorHandler = (err, res) => {
+//   console.error(err.stack)
+//   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
+// }
+// server.use(errorHandler)
 
 const startListening = () => {server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))}
 
