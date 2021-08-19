@@ -18,11 +18,10 @@ server.use( morgan( ':method :url :status :res[content-length] - :response-time 
 const cookieSecret = process.env.COOKIE_SECRET || 'xXxX!!23@Abc'
 server.use( cookieParser(cookieSecret) )
 
-// parses x-www-form-urlencoded
-server.use( express.urlencoded( {extended: true} ) ) // TODO: investigate use if false
 
 // typical express setup
-server.use(express.json())
+server.use( express.json() )
+server.use( express.urlencoded( {extended: true} ) ) // parses x-www-form-urlencoded
 server.use( cors() )
 
 // passport setup
@@ -31,14 +30,17 @@ server.use(
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
     store: sessionStore,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+    }
   })
 )
 server.use(passport.initialize())
 server.use(passport.session())
 server.use((req, res, next) => {
-    console.log(req.session)
-    console.log(req.user)
+    console.log('middleware session', req.session)
+  console.log( 'middleware user', req.user )
     next()
 })
 

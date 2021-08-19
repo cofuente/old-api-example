@@ -8,15 +8,16 @@ passport.serializeUser( ( user, done ) => {
 	console.log('=== serialize ... called ===')
 	console.log(user)
 	console.log('---------')
-	done(null, {userUUID: user.dataValues.userUUID})
+	done(null, user)
 })
 
-passport.deserializeUser(async (userUUID, done) => {
+passport.deserializeUser(async (user, done) => {
 	console.log( 'DEserialize ... called' )
-	console.log( userUUID )
+	console.log( user )
+	const {userUUID} = user
 	try {
-		const requestedUser = await User.findOne( {where: {userUUID}} )
-		console.log('======= DESERILAIZE USER CALLED ======')
+		const requestedUser = await User.findOne( {where: {userUUID}, attributes: {exclude: ['salt', 'password']}} )
+		console.log('======= DESERIALIZE USER CALLED ======')
 		console.log(requestedUser)
 		console.log('--------------')
 		done(null, requestedUser)
@@ -25,10 +26,6 @@ passport.deserializeUser(async (userUUID, done) => {
 	}
 } )
 
-// const customFields = {
-// 		usernameField: 'username',
-// 		passwordField: 'password'
-// }
 const localVerification = async ( username, password, done ) => {
 	try {
 		const requestedUser = await User.findOne( {where: {username}} )
@@ -40,7 +37,6 @@ const localVerification = async ( username, password, done ) => {
 	}
 }
 
-// const strategy = new LocalStrategy(customFields, localVerification)
 const strategy = new LocalStrategy(localVerification)
 
 // register strategy
