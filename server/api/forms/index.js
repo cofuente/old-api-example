@@ -108,7 +108,6 @@ router.delete( '/:formUUID', async ( req, res, next ) => {
     const formToDelete = await Form.destroy( {
       where: {formUUID}
     } )
-    console.log(formToDelete)
     if ( formToDelete ) res.send( `Form ${ formUUID } has been deleted.` )
     else res.status(500).send( `There was an error deleting form ${ formUUID }.` )
   } catch (err) {
