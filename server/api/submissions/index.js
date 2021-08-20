@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const Submission = require( '../../models' ).Submission
-const Answer = require( '../../models' ).Answer
+const {Submission, Answer} = require( '../../models' )
+const {isAuth} = require('../../config')
 
 // get submission by formUUID
 router.get( '/:formUUID', async ( req, res, next ) => {
