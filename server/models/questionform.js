@@ -12,7 +12,7 @@ const QuestionForm = db.define('questionsforms', {
 })
 
 QuestionForm.updateOrder = async (questions, formUUID) => {
-  const update = await questions.map( async(question) => {
+  const update = await questions.map((question) => {
     const {order, questionUUID} = question
     return QuestionForm.update({order},
       {where: {formUUID, questionUUID}} )

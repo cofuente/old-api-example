@@ -28,7 +28,6 @@ const assignValue = ( question ) => {
       return '2017-01-01'
     case 'checkbox':
     case 'dropdown':
-    case 'multiplechoice':
     case 'radio':
       return question.possibleAnswers[ Math.floor( Math.random() * question.possibleAnswers.length ) ]
     case 'input':
