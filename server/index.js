@@ -30,7 +30,7 @@ server.use(
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
     store: sessionStore,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 1 day
     }
@@ -39,9 +39,9 @@ server.use(
 server.use(passport.initialize())
 server.use(passport.session())
 server.use((req, res, next) => {
-    console.log('middleware session', req.session)
+  console.log('middleware session', req.session)
   console.log( 'middleware user', req.user )
-    next()
+  next()
 })
 
 

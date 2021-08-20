@@ -1,10 +1,9 @@
 const router = require('express').Router()
-const {User} = require( '../../models' )
+// const {User} = require( '../../models' )
 const passport = require( 'passport' )
 
-// TODO consider scope scope: [],
 // login desktop app user
-router.post('/login', passport.authenticate('local', {failureRedirect: '/login-failure', successRedirect: 'login-success'}))
+router.post('/login', passport.authenticate('local'))
 // router.post('/login', async (req, res, next) => {
 //   try {
 //     const {username, password} = req.body
@@ -22,9 +21,12 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/login-f
 // })
 
 // logout desktop app user
-router.delete('/logout', async ( req, res, next ) => {
+router.delete( '/logout', async ( req, res, next ) => {
   try {
-    console.log( 'logout' )
+    req.session.destroy()
+    req.logout()
+    res.status( 202 ).send( 'Succesfully logged out' )
+    next()
   } catch ( err ) {
     next(err)
   }
