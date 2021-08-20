@@ -21,26 +21,30 @@ server.use( cookieParser(cookieSecret) )
 
 // typical express setup
 server.use( express.json() )
-server.use( express.urlencoded( {extended: true} ) ) // parses x-www-form-urlencoded
+server.use( express.urlencoded( {extended: false} ) )
 server.use( cors() )
 
 // passport setup
 server.use(
   session({
     secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    name: 'sid',
     store: sessionStore,
     resave: false,
     saveUninitialized: true,
     cookie: {
+      httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24, // 1 day
+      secure: true
     }
   })
 )
 server.use(passport.initialize())
 server.use(passport.session())
 server.use((req, res, next) => {
-  console.log('middleware session', req.session)
-  console.log( 'middleware user', req.user )
+  console.log('======= MIDDLEWARE ======')
+  console.log(req.user, req.session)
+  console.log('======= MIDDLEWARE ======')
   next()
 })
 
