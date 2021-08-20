@@ -16,7 +16,7 @@ const configForHosted = {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false // TODO: investigate switching to true
+      rejectUnauthorized: false // https://stackoverflow.com/a/31862256
     }
   }
 }
