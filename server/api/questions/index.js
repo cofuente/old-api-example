@@ -16,7 +16,9 @@ router.post( '/',
 } )
 
 // update a q
-router.put( '/:questionUUID', async ( req, res, next ) => {
+router.put( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {questionUUID} = req.params
     const {required, possibleAnswers, questionType, questionPrompt, encryptAnswer} = req.body
