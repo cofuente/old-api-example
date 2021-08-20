@@ -16,7 +16,9 @@ router.get( '/',
 } )
 
 // make a new form
-router.post( '/', async ( req, res, next ) => {
+router.post( '/',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {form} = req.body
     const formCreated = await Form.create( form )
