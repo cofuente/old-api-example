@@ -45,7 +45,9 @@ router.get( '/:formUUID', async ( req, res, next ) => {
 } )
 
 // update form
-router.put( '/:formUUID', async ( req, res, next ) => {
+router.put( '/:formUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const {title, programUUID, endpoint, start, end} = req.body
