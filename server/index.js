@@ -41,7 +41,7 @@ server.use(
   })
 )
 server.use(passport.initialize())
-server.use( passport.session() )
+server.use(passport.session())
 server.use((req, res, next) => {
   console.log('======= MIDDLEWARE ======')
   console.log(req.user, req.session)
@@ -50,18 +50,25 @@ server.use((req, res, next) => {
 })
 
 // helmet setup
-server.use(helmet())
+server.use(
+  helmet( {
+    crossOriginEmbedderPolicy: true,
+    crossOriginOpenerPolicy: true,
+    originAgentCluster: true,
+    crossOriginResourcePolicy: true
+  } )
+)
 
 // routes
 server.use('/api', require('./api') )
 server.use('/auth', require('./auth'))
 
 
-// const errorHandler = (err, res) => {
-//   console.error(err.stack)
-//   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
-// }
-// server.use(errorHandler)
+const errorHandler = (err, res) => {
+  console.error(err.stack)
+  return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
+}
+server.use(errorHandler)
 
 const startListening = () => {server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))}
 
