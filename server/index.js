@@ -3,6 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const cors = require( 'cors' )
+const helmet = require('helmet')
 const session = require( 'express-session' )
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
@@ -40,7 +41,7 @@ server.use(
   })
 )
 server.use(passport.initialize())
-server.use(passport.session())
+server.use( passport.session() )
 server.use((req, res, next) => {
   console.log('======= MIDDLEWARE ======')
   console.log(req.user, req.session)
@@ -48,6 +49,8 @@ server.use((req, res, next) => {
   next()
 })
 
+// helmet setup
+server.use(helmet())
 
 // routes
 server.use('/api', require('./api') )
