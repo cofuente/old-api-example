@@ -1,41 +1,66 @@
+/* eslint-disable no-console */
 const express = require('express')
-const cors = require('cors')
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
+const cors = require( 'cors' )
+const session = require( 'express-session' )
+const SequelizeStore = require('connect-session-sequelize')(session.Store)
+
+const {db, passport} = require( './config' )
+const sessionStore = new SequelizeStore( {db} )
 const PORT = process.env.PORT || 1337
-const CURRENT_ENV = process.env.CURRENT_ENV || 'LOCAL'
-const db = require('./config/db')
 const server = express()
-const passport = require('passport')
 
-module.exports = server
+// logging middleware
+server.use( morgan( ':method :url :status :res[content-length] - :response-time ms' ) )
 
-server.use(express.urlencoded({extended: true}))
-server.use(express.json())
-server.use(cors())
-server.use(morgan('dev'))
+// 'cookies' and 'signedCookies' on request object
+const cookieSecret = process.env.COOKIE_SECRET || 'xXxX!!23@Abc'
+server.use( cookieParser(cookieSecret) )
 
-require('./config/passportConfig')(passport)
+
+// typical express setup
+server.use( express.json() )
+server.use( express.urlencoded( {extended: false} ) )
+server.use( cors() )
+
+// passport setup
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'xXxX!!23@Abc',
+    name: 'sid',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+      // secure: true
+    }
+  })
+)
 server.use(passport.initialize())
 server.use(passport.session())
-
-server.get('/', (req, res) => {
-  res.send({enviroment: CURRENT_ENV})
+server.use((req, res, next) => {
+  console.log('======= MIDDLEWARE ======')
+  console.log(req.user, req.session)
+  console.log('======= MIDDLEWARE ======')
+  next()
 })
 
-server.use('/api', require('./api'))
+
+// routes
+server.use('/api', require('./api') )
+server.use('/auth', require('./auth'))
 
 
-const errorHandler = (err, res) => {
-  console.error(err.stack)
-  return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
-}
-server.use(errorHandler)
+// const errorHandler = (err, res) => {
+//   console.error(err.stack)
+//   return res.status(500).send(`An error has ocurred with your request: ${err.message}.`)
+// }
+// server.use(errorHandler)
 
-const startListening = () => {
-  // no-console is disabled, since it's valuable to view the log below
-  // eslint-disable-next-line no-console
-  server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))
-}
+const startListening = () => {server.listen(PORT, () => console.log(` API is listening on port:${PORT} `))}
 
 const syncDb = () => db.sync()
 
@@ -50,3 +75,5 @@ const syncDb = () => db.sync()
 }
 
 init()
+
+module.exports = server
