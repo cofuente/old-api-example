@@ -11,7 +11,7 @@ passport.serializeUser( ( user, done ) => {
 
 passport.deserializeUser(async (userUUID, done) => {
 	try {
-		const requestedUser = await User.findOne( {where: {userUUID}, attributes: {exclude: ['salt', 'password']}} )
+		const requestedUser = await User.findOne( {where: {userUUID}, attributes: {exclude: ['salt', 'password', 'createdAt', 'updatedAt']}} )
 		done(null, requestedUser)
 	} catch (error) {
 		done(error)
@@ -20,7 +20,7 @@ passport.deserializeUser(async (userUUID, done) => {
 
 const localVerification = async ( username, password, done ) => {
 	try {
-		const requestedUser = await User.findOne( {where: {username}} )
+		const requestedUser = await User.findOne( {where: {username}, attributes: {exclude: ['createdAt', 'updatedAt' ]}} )
 		if ( !requestedUser ) return done( null, false, {message: 'Incorrect username.'} )
 		else if ( !requestedUser.correctPassword( password ) ) return done( null, false, {message: 'Incorrect password.'} )
 		else return done( null, requestedUser )
