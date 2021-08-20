@@ -1,6 +1,6 @@
 const db = require( './db' )
-const passport = require( './passport' )
+const {isAuth, passport} = require( './passport' )
 
 require('../models')
 
-module.exports = {db, passport}
+module.exports = {db, passport, isAuth}
