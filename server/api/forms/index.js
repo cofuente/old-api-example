@@ -96,7 +96,9 @@ router.put( '/:formUUID/remove',
 } )
 
 // reorder question(s) on form
-router.put( '/:formUUID/order', async ( req, res, next ) => {
+router.put( '/:formUUID/order',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const {questions} = req.body
