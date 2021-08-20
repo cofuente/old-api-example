@@ -66,7 +66,9 @@ router.put( '/:formUUID',
 } )
 
 // add question(s) to form
-router.put( '/:formUUID/add', async ( req, res, next ) => {
+router.put( '/:formUUID/add',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const {questions} = req.body
