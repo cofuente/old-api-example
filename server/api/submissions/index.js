@@ -3,7 +3,9 @@ const {Submission, Answer} = require( '../../models' )
 const {isAuth} = require('../../config')
 
 // get submission by formUUID
-router.get( '/:formUUID', async ( req, res, next ) => {
+router.get( '/:formUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const submissions = await Submission.findAll( {
