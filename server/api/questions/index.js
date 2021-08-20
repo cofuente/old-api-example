@@ -37,7 +37,9 @@ router.put( '/:questionUUID',
 } )
 
 // delete a q
-router.delete( '/:questionUUID', async ( req, res, next ) => {
+router.delete( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {questionUUID} = req.params
     const questionToDelete = await Question.destroy( {
