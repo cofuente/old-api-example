@@ -81,7 +81,9 @@ router.put( '/:formUUID/add',
 } )
 
 // remove question(s) on a form
-router.put( '/:formUUID/remove', async ( req, res, next ) => {
+router.put( '/:formUUID/remove',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const {questions} = req.body
@@ -111,7 +113,9 @@ router.put( '/:formUUID/order', async ( req, res, next ) => {
 } )
 
 // delete form
-router.delete( '/:formUUID', async ( req, res, next ) => {
+router.delete( '/:formUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {formUUID} = req.params
     const formToDelete = await Form.destroy( {
