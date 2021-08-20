@@ -5,15 +5,15 @@ const {isAuth} = require('../../config')
 
 // get all forms
 router.get( '/',
-    isAuth,
-    async ( req, res, next ) => {
-    try {
-      const forms = await Form.findAll()
-      res.json(forms)
-    } catch (err) {
-      next(err)
-    }
-  } )
+  isAuth,
+  async ( req, res, next ) => {
+  try {
+    const forms = await Form.findAll()
+    res.json(forms)
+  } catch (err) {
+    next(err)
+  }
+} )
 
 // make a new form
 router.post( '/', async ( req, res, next ) => {
