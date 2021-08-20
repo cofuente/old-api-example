@@ -1,8 +1,11 @@
 const router = require('express').Router()
-const {Question} = require( '../../models' )
+const {Question} = require('../../models')
+const {isAuth} = require('../../config')
 
 // make a new q
-router.post('/', async (req, res, next) => {
+router.post( '/',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {question} = req.body
     const questionCreated = await Question.create( question )
@@ -13,7 +16,9 @@ router.post('/', async (req, res, next) => {
 } )
 
 // update a q
-router.put( '/:questionUUID', async ( req, res, next ) => {
+router.put( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {questionUUID} = req.params
     const {required, possibleAnswers, questionType, questionPrompt, encryptAnswer} = req.body
@@ -32,7 +37,9 @@ router.put( '/:questionUUID', async ( req, res, next ) => {
 } )
 
 // delete a q
-router.delete( '/:questionUUID', async ( req, res, next ) => {
+router.delete( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
     const {questionUUID} = req.params
     const questionToDelete = await Question.destroy( {
