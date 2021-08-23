@@ -726,8 +726,8 @@ const testData = {
     },
     {
       programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
-      username: 'schuyler',
-      password: 'SUPERpaz123',
+      username: 'rana',
+      password: '@@@@@@@@@',
     },
     {
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
