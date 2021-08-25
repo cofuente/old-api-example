@@ -11,3 +11,6 @@ node_modules
 NOTES.md 
 
 **/.DS_Store
+
+# ignore methods file
+utils/methods.js
