@@ -43,9 +43,6 @@ server.use(
 server.use(passport.initialize())
 server.use(passport.session())
 server.use((req, res, next) => {
-  console.log('======= MIDDLEWARE ======')
-  console.log(req.user, req.session)
-  console.log('======= MIDDLEWARE ======')
   next()
 })
 
