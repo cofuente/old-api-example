@@ -37,7 +37,7 @@ const assignValue = ( question ) => {
     case 'number':
       return '1'
     default:
-      return '' //this will catch the heading case where no answer should be submitted
+      return '' //this will catch the heading case where no answer should be submitted, like heading
   }
 }
 
