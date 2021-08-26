@@ -36,16 +36,13 @@ server.use(
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 24, // 1 day
-      // secure: true
+      // secure: true                       // TODO: re-enable for https deployment
     }
   })
 )
 server.use(passport.initialize())
 server.use(passport.session())
 server.use((req, res, next) => {
-  console.log('======= MIDDLEWARE ======')
-  console.log(req.user, req.session)
-  console.log('======= MIDDLEWARE ======')
   next()
 })
 
