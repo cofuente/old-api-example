@@ -6,9 +6,6 @@ const {User} = require( '../../models' )
 router.post( '/login',
   passport.authenticate( 'local' ),
   async (req, res, next) => {
-    console.log('======= LOGIN ROUTE HIT ======')
-    console.log(req.user, req.session)
-    console.log('======= LOGIN ROUTE HIT ======')
     try {
       const {username, password} = req.body
       const user = await User.findOne({where: {username}})
@@ -27,14 +24,8 @@ router.post( '/login',
 // logout desktop app user
 router.delete( '/logout', ( req, res, next ) => {
   try {
-    console.log('======= LOGOUT ROUTE HIT - 1 ======')
-    console.log(req.user, req.session)
-    console.log('======= LOGOUT ROUTE HIT - 1 ======')
     req.session.destroy()
     req.logout()
-    console.log('======= LOGOUT ROUTE HIT - 2 ======')
-    console.log(req.user, req.session)
-    console.log('======= LOGOUT ROUTE HIT - 2 ======')
     res.status( 202 ).send( 'Succesfully logged out' )
     next()
   } catch ( err ) {
