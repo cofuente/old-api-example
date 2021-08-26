@@ -62,6 +62,7 @@ async function seed() {
   const seededRandomizedSubmissions = randomizedSubmissions.map( x => Submission.create( x, {include: Answer} ) )
   const seededSubmissions = await Promise.all( seededRandomizedSubmissions )
   if ( seededSubmissions ) console.log( `seeded ${ seededSubmissions.length } submissions with their respective answers to Next Enrollment form` )
+
   console.log( 'all tables seeded successfully!' )
 }
 

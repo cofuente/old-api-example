@@ -720,20 +720,29 @@ const testData = {
   ],
   users: [
     {
-      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      userUUID: '057e7331-4f4b-4527-8cfb-fc631f042eb0',
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304', // NY
       username: 'jamie',
-      password: 'SUPERb4sicpaz123',
+      password: 'SUPERb4s1cP@Z',
     },
     {
-      programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad',
+      userUUID: '9139cd17-a3a1-4940-a035-703940e97014',
+      programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad', // CA
       username: 'rana',
       password: '@@@@@@@@@',
     },
     {
-      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304',
+      userUUID: 'daaba0f8-5588-44a9-9807-c0d1596c679b',
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304', // NY
       username: 'chiara',
       password: '*********',
     },
+    {
+      userUUID: '352b4f3f-6092-42be-9004-a4e60d849eac',
+      programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304', // NY
+      username: 'kestrel',
+      password: 'abc123',
+    }
   ],
   submissions: [
     {
