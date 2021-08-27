@@ -742,6 +742,12 @@ const testData = {
       programUUID: '21154dc7-5fac-41f9-a058-a4ee492cb304', // NY
       username: 'kestrel',
       password: 'abc123',
+    },
+    {
+      userUUID: '3b561da9-6910-40ea-bf5b-84ef0e096ba4',
+      programUUID: '224ede70-0b7b-432c-89b1-8f4b938cfcad', // CA
+      username: 'zbarryte',
+      password: 'password',
     }
   ],
   submissions: [
