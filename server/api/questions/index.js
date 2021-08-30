@@ -6,14 +6,28 @@ const {isAuth} = require('../../config')
 router.post( '/',
   isAuth,
   async ( req, res, next ) => {
+    try {
+      const {question} = req.body
+      const questionCreated = await Question.create( question )
+      res.json(questionCreated)
+    } catch (err) {
+      next(err)
+    }
+  } )
+
+  // get a q
+router.get( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
-    const {question} = req.body
-    const questionCreated = await Question.create( question )
-    res.json(questionCreated)
+    const {questionUUID} = req.params
+    const questionSearched = await Question.findOne( {where: {questionUUID}} )
+    res.json(questionSearched)
   } catch (err) {
     next(err)
   }
 } )
+
 
 // update a q
 router.put( '/:questionUUID',
