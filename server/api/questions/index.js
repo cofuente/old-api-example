@@ -25,7 +25,8 @@ router.get( '/:questionUUID',
   try {
     const {questionUUID} = req.params
     const questionSearched = await Question.findOne( {where: {questionUUID}} )
-    res.json(questionSearched)
+    if ( questionSearched ) res.status(200).send(questionSearched)
+    else res.status(404).send( `Question ${ questionUUID } does not exist in the database.` )
   } catch (err) {
     next(err)
   }
@@ -47,7 +48,8 @@ router.put( '/:questionUUID',
       }]
     } )
     const updatedQuestion = await questionToUpdate.update( newQuestion )
-    res.json(updatedQuestion)
+    if ( updatedQuestion ) res.status(202).send(updatedQuestion)
+    else res.status(404).send( `Question ${ questionUUID } does not exist in the database.` )
   } catch (err) {
     next(err)
   }
