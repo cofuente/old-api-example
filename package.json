@@ -1,6 +1,6 @@
 {
   "name": "secure-form-api",
-  "version": "0.0.91",
+  "version": "0.0.92",
   "engines": {
     "node": "14.17.0"
   },
