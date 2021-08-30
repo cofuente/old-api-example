@@ -6,14 +6,32 @@ const {isAuth} = require('../../config')
 router.post( '/',
   isAuth,
   async ( req, res, next ) => {
+    try {
+      const {questionPrompt, questionType, possibleAnswers} = req.body
+      const questionCreated = await Question.findOrCreate( {
+        where: {questionPrompt, questionType, possibleAnswers},
+      } )
+      if ( questionCreated[ 1 ] ) res.status( 201 ).json( questionCreated )
+      else res.status( 303 ).json( questionCreated )
+    } catch (err) {
+      next(err)
+    }
+  } )
+
+  // get a q
+router.get( '/:questionUUID',
+  isAuth,
+  async ( req, res, next ) => {
   try {
-    const {question} = req.body
-    const questionCreated = await Question.create( question )
-    res.json(questionCreated)
+    const {questionUUID} = req.params
+    const questionSearched = await Question.findOne( {where: {questionUUID}} )
+    if ( questionSearched ) res.status(200).send(questionSearched)
+    else res.status(404).send( `Question ${ questionUUID } does not exist in the database.` )
   } catch (err) {
     next(err)
   }
 } )
+
 
 // update a q
 router.put( '/:questionUUID',
@@ -30,7 +48,8 @@ router.put( '/:questionUUID',
       }]
     } )
     const updatedQuestion = await questionToUpdate.update( newQuestion )
-    res.json(updatedQuestion)
+    if ( updatedQuestion ) res.status(202).send(updatedQuestion)
+    else res.status(404).send( `Question ${ questionUUID } does not exist in the database.` )
   } catch (err) {
     next(err)
   }
