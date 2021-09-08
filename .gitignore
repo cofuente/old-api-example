@@ -13,4 +13,4 @@ NOTES.md
 **/.DS_Store
 
 # ignore any changes to methods file
-/server/utils/methods.js
+server/utils/methods.js
