@@ -7,12 +7,9 @@ router.post( '/',
   isAuth,
   async ( req, res, next ) => {
     try {
-      const {questionPrompt, questionType, possibleAnswers} = req.body
-      const questionCreated = await Question.findOrCreate( {
-        where: {questionPrompt, questionType, possibleAnswers},
-      } )
-      if ( questionCreated[ 1 ] ) res.status( 201 ).json( questionCreated )
-      else res.status( 303 ).json( questionCreated )
+      const {question} = req.body
+      const questionCreated = await Question.create( question )
+      res.json(questionCreated)
     } catch (err) {
       next(err)
     }
