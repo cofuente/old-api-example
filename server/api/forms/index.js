@@ -106,11 +106,11 @@ router.put( '/:formUUID/order',
     const {formUUID} = req.params
     const {questions} = req.body
     const isValid = await verifyReorderRequest( questions, formUUID )
-    if ( isValid ) {
+    if ( isValid === true ) {
       const reorder = await QuestionForm.updateOrder( questions, formUUID )
       if ( reorder.every( x => x[ 0 ] === 1 ) ) res.send( `Succesfully reordered questions on form ${ formUUID }.` )
     } else {
-      throw new Error( 'There is something wrong with your request. Please try again.' )
+      throw new Error( isValid )
     }
   } catch (err) {
     next(err)
