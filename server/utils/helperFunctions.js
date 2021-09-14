@@ -2,7 +2,7 @@ const {Form} = require( '../models' )
 const verifyReorderRequest = async ( questionsArray, formUUID ) => {
       if ( !questionsArray.length || !Array.isArray( questionsArray ) ) return 'Supplied questions are not in proper format: Array'
       const targetForm = await Form.getQuestions( formUUID )
-      if ( questionsArray.length !== targetForm.length ) return 'Length of supplied questions does not match lengh of questions attached to target Form'
+      if ( questionsArray.length !== targetForm.length ) return 'Length of supplied questions does not match length of questions attached to target Form'
       const checkKeys = ( question ) => {
         const shape = Object.keys( question )
         if (!shape.includes('questionUUID')) return false
