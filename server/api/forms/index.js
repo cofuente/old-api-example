@@ -20,9 +20,12 @@ router.post( '/',
   isAuth,
   async ( req, res, next ) => {
   try {
-    const {form} = req.body
-    const formCreated = await Form.create( form )
-    res.json(formCreated)
+    const {formUUID, title, programUUID} = req.body.form
+    const formCreated = await Form.findOrCreate({
+        where: {formUUID: formUUID},
+        defaults: {formUUID, title, programUUID}
+    })
+    res.json(formCreated[0])
   } catch (err) {
     next(err)
   }
@@ -65,7 +68,7 @@ router.put( '/:formUUID',
   }
 } )
 
-// add question(s) to form
+// attach question(s) to form
 router.put( '/:formUUID/add',
   isAuth,
   async ( req, res, next ) => {
@@ -73,7 +76,7 @@ router.put( '/:formUUID/add',
     const {formUUID} = req.params
     const {questions} = req.body
     const formToUpdate = await Form.findOne( {where: {formUUID}} )
-    const updatedForm = await formToUpdate.addQuestions( questions )
+    const updatedForm = await formToUpdate.setQuestions( questions )
     res.json(updatedForm)
   } catch (err) {
     next(err)
